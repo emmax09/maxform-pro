@@ -31,7 +31,7 @@ export const SectionHeader = ({ badge, title, description, centered = true }: Se
           {badge}
         </p>
       )}
-      <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-[500] tracking-[-0.03em] text-foreground leading-[1.15]">
+      <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-medium tracking-[-0.03em] text-foreground leading-[1.15]">
         {title}
       </h2>
       {description && (
@@ -53,7 +53,7 @@ export const Card = ({ children, className, hover = false }: CardProps) => {
   return (
     <div 
       className={cn(
-        "border-2 border-border bg-card/50 backdrop-blur-sm",
+        "border-2 border-border bg-card/50 backdrop-blur-xs",
         hover && "hover:border-primary/20 hover:shadow-lg transition-all duration-300",
         className
       )}

@@ -29,7 +29,7 @@ export function VariableText({
         key={`v${index}`}
         title={match[0]}
         className={cn(
-          "mx-[1px] inline-flex items-center rounded-[4px] bg-primary/10 px-1 py-px align-baseline text-[0.92em] font-medium text-primary ring-1 ring-inset ring-primary/15",
+          "mx-px inline-flex items-center rounded-[4px] bg-primary/10 px-1 py-px align-baseline text-[0.92em] font-medium text-primary ring-1 ring-inset ring-primary/15",
           tokenClassName,
         )}
       >

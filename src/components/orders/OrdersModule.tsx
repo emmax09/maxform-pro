@@ -429,7 +429,7 @@ function OrdersTable({
               <TableRow
                 key={order.id}
                 data-state={selected.has(order.id) ? "selected" : undefined}
-                className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30"
+                className="cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30"
                 role="button"
                 tabIndex={0}
                 aria-label={`View order ${order.orderNumber || order.id}`}
@@ -600,7 +600,7 @@ function StoreOrdersTable({
             <TableRow
               key={order.id}
               data-state={selected.has(order.id) ? "selected" : undefined}
-              className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30"
+              className="cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30"
               role="button"
               tabIndex={0}
               aria-label={`View store order ${order.orderNumber || order.id}`}

@@ -1352,7 +1352,7 @@ function FieldProperties({
                     )}
                     </div>
                     <span className="min-w-0 flex-1">
-                      <span className="block line-clamp-2 break-words text-[12px] font-medium leading-snug">{product.name}</span>
+                      <span className="block line-clamp-2 wrap-break-word text-[12px] font-medium leading-snug">{product.name}</span>
                       <span className="mt-1 block text-[10px] text-muted-foreground">
                         {product.salePrice != null && product.salePrice < product.price
                           ? `${formatCurrency(product.salePrice, product.currency)} sale · ${formatCurrency(product.price, product.currency)} regular`
@@ -2317,7 +2317,7 @@ function CanvasFieldPreview({
           {options.slice(0, 6).map((option) => (
             <div
               key={option}
-              className="relative aspect-[4/3] overflow-hidden rounded-md border border-input bg-background p-2 text-[11px]"
+              className="relative aspect-4/3 overflow-hidden rounded-md border border-input bg-background p-2 text-[11px]"
             >
               {field.config?.optionImages?.[option] ? (
                 <img
@@ -3066,7 +3066,7 @@ function ThemeImageUpload({
           <div
             className={cn(
               "relative flex w-full items-center justify-center bg-muted/30",
-              kind === "cover" ? "aspect-[16/6]" : "h-[112px]",
+              kind === "cover" ? "aspect-16/6" : "h-[112px]",
             )}
           >
             <img
@@ -4761,9 +4761,9 @@ function ProductImageUpload({
       <Label htmlFor={id}>Product image</Label>
       <div className="overflow-hidden rounded-lg border border-border bg-muted/20">
         {value ? (
-          <div className="relative aspect-[16/9]">
+          <div className="relative aspect-video">
             <img src={value} alt="Product preview" className="h-full w-full object-cover" />
-            <div className="absolute inset-x-0 bottom-0 flex justify-end gap-2 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
+            <div className="absolute inset-x-0 bottom-0 flex justify-end gap-2 bg-linear-to-t from-black/70 to-transparent p-3 pt-8">
               <Button type="button" variant="secondary" size="sm" asChild>
                 <label htmlFor={id} className="cursor-pointer">Replace image</label>
               </Button>

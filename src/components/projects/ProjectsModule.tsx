@@ -736,7 +736,7 @@ function AllProjectsGrid({
               Projects
             </p>
           </div>
-          <h1 className="mt-2 text-[30px] font-semibold tracking-[-0.025em] sm:text-[38px]">
+          <h1 className="mt-2 text-[30px] font-semibold tracking-tight sm:text-[38px]">
             Projects
           </h1>
           <p className="mt-2 max-w-2xl text-[13px] leading-6 text-muted-foreground">
@@ -1058,7 +1058,7 @@ function StatCard({
     <div className="rounded-2xl border border-border bg-card p-4">
       <div className="flex items-center gap-2 text-muted-foreground">
         <Icon className="h-4 w-4" />
-        <p className="text-[11px] font-medium uppercase tracking-[0.1em]">
+        <p className="text-[11px] font-medium uppercase tracking-widest">
           {label}
         </p>
       </div>
@@ -1820,7 +1820,7 @@ function ProjectDetail({
           </span>
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <h1 className="truncate text-[26px] font-semibold tracking-[-0.025em] sm:text-[32px]">
+              <h1 className="truncate text-[26px] font-semibold tracking-tight sm:text-[32px]">
                 {project.name}
               </h1>
               {project.status === "archived" ? (

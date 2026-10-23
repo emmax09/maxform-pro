@@ -504,7 +504,7 @@ export default function PublicEvent() {
               {date}
             </p>
             <h1
-              className="mt-4 break-words text-[38px] leading-[1.08] sm:text-[58px] lg:text-[64px]"
+              className="mt-4 wrap-break-word text-[38px] leading-[1.08] sm:text-[58px] lg:text-[64px]"
               style={{
                 fontFamily: event.branding.headingFontFamily,
                 fontWeight: event.branding.headingWeight,

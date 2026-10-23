@@ -100,7 +100,7 @@ export function SearchableSelect({
       <PopoverContent
         align="start"
         collisionPadding={12}
-        className="w-[var(--radix-popover-trigger-width)] p-0"
+        className="w-(--radix-popover-trigger-width) p-0"
       >
         <Command filter={searchableSelectFilter}>
           <div className="relative">

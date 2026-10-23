@@ -163,7 +163,7 @@ function TicketCard({
   const eventDate = ticketDatePart(ticket.startsAt, ticket.timezone, { dateStyle: "medium" });
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
+    <section className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xs">
       <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:justify-between sm:p-6">
         <div className="min-w-0">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-500">
@@ -239,7 +239,7 @@ export default function PublicTicket() {
     return <main className="flex min-h-dvh items-center justify-center bg-zinc-100 px-5 text-zinc-950"><div className="text-center" role="status"><Loader2 className="mx-auto h-7 w-7 animate-spin text-blue-600" /><p className="mt-3 text-sm text-zinc-600">Opening your secure ticket</p></div></main>;
   }
   if (state === "error" || !result || !result.tickets.length) {
-    return <main className="flex min-h-dvh items-center justify-center bg-zinc-100 px-5 text-zinc-950"><section className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 text-center shadow-sm"><TicketIcon className="mx-auto h-8 w-8 text-zinc-500" /><h1 className="mt-5 text-xl font-semibold">Ticket link unavailable</h1><p className="mt-2 text-sm leading-6 text-zinc-600">{error || "Ask the event organizer to send the ticket again."}</p></section></main>;
+    return <main className="flex min-h-dvh items-center justify-center bg-zinc-100 px-5 text-zinc-950"><section className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 text-center shadow-xs"><TicketIcon className="mx-auto h-8 w-8 text-zinc-500" /><h1 className="mt-5 text-xl font-semibold">Ticket link unavailable</h1><p className="mt-2 text-sm leading-6 text-zinc-600">{error || "Ask the event organizer to send the ticket again."}</p></section></main>;
   }
 
   const accent = result.workspace.accentColor || "#236BFE";
@@ -250,7 +250,7 @@ export default function PublicTicket() {
   return (
     <main className="min-h-dvh bg-zinc-100 px-4 py-8 text-zinc-950 sm:px-6 sm:py-12" style={theme}>
       <div className="mx-auto max-w-5xl">
-        <header className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
+        <header className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xs">
           <div className="h-1.5 w-full" style={{ backgroundColor: accent }} />
           <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <div className="flex min-w-0 items-center gap-4">

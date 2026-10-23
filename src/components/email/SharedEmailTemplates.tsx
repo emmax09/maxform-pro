@@ -135,7 +135,7 @@ export function SharedEmailTemplates({ module }: { module: SharedEmailTemplateMo
         >
           <div className="relative overflow-hidden border-b border-border">
             <img src={templateArtwork(template)} alt={`${variablePlainText(template.name)} email preview`} loading="lazy" className="aspect-[1.62/1] w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]" />
-            <span className="absolute left-3 top-3 rounded-md bg-white/92 px-2 py-1 text-[9px] font-semibold text-slate-700 shadow-sm backdrop-blur-sm">{info.label}</span>
+            <span className="absolute left-3 top-3 rounded-md bg-white/92 px-2 py-1 text-[9px] font-semibold text-slate-700 shadow-xs backdrop-blur-xs">{info.label}</span>
           </div>
           <div className="flex min-h-0 flex-1 flex-col p-4">
             <div className="flex items-start justify-between gap-2">

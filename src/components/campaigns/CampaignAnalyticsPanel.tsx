@@ -453,7 +453,7 @@ export function CampaignAnalyticsPanel({
                     key={variant.id}
                     className={cn(
                       "text-[11px]",
-                      variant.winner && "bg-emerald-500/[0.06]",
+                      variant.winner && "bg-emerald-500/6",
                     )}
                   >
                     <td className="py-2.5 font-medium">

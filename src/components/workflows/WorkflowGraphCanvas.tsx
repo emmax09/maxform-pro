@@ -131,7 +131,7 @@ const WorkflowCard = memo(function WorkflowCard({ data, selected }: NodeProps) {
   return (
     <div
       className={cn(
-        "w-[228px] overflow-hidden rounded-lg border bg-card text-left shadow-sm transition-shadow",
+        "w-[228px] overflow-hidden rounded-lg border bg-card text-left shadow-xs transition-shadow",
         selected
           ? "border-primary ring-2 ring-primary/25"
           : card.invalid
@@ -169,7 +169,7 @@ const WorkflowCard = memo(function WorkflowCard({ data, selected }: NodeProps) {
         <Handle
           type="target"
           position={Position.Left}
-          className="!h-2 !w-2 !border-2 !border-background !bg-muted-foreground"
+          className="h-2! w-2! border-2! border-background! bg-muted-foreground!"
         />
       )}
       {(entry?.outputs || ["default"]).map((output, index, all) => (
@@ -183,7 +183,7 @@ const WorkflowCard = memo(function WorkflowCard({ data, selected }: NodeProps) {
               ? { top: `${((index + 1) / (all.length + 1)) * 100}%` }
               : undefined
           }
-          className="!h-2 !w-2 !border-2 !border-background !bg-primary"
+          className="h-2! w-2! border-2! border-background! bg-primary!"
         />
       ))}
       {/* Branch names live on the edges, where they say which path is which.
@@ -392,13 +392,13 @@ function Graph({
       deleteKeyCode={null}
       // React Flow puts focus on its own node wrapper, so the ring is drawn
       // there rather than on the card inside it.
-      className="bg-muted/20 [&_.react-flow__node:focus-visible]:outline-none [&_.react-flow__node:focus-visible]:ring-2 [&_.react-flow__node:focus-visible]:ring-primary/50 [&_.react-flow__node:focus-visible]:ring-offset-2 [&_.react-flow__node]:rounded-lg"
+      className="bg-muted/20 [&_.react-flow__node:focus-visible]:outline-hidden [&_.react-flow__node:focus-visible]:ring-2 [&_.react-flow__node:focus-visible]:ring-primary/50 [&_.react-flow__node:focus-visible]:ring-offset-2 [&_.react-flow__node]:rounded-lg"
       aria-label="Workflow canvas"
     >
       <Background variant={BackgroundVariant.Dots} gap={18} size={1} />
       <Controls
         showInteractive={false}
-        className="!bottom-3 !left-3 !shadow-sm [&>button]:!h-7 [&>button]:!w-7 [&>button]:!border-border [&>button]:!bg-card"
+        className="bottom-3! left-3! shadow-xs! [&>button]:h-7! [&>button]:w-7! [&>button]:border-border! [&>button]:bg-card!"
       />
       {/* Only once the graph outgrows a screen. On a four-node workflow the
           minimap is a second picture of something already fully visible. */}
@@ -406,7 +406,7 @@ function Graph({
         <MiniMap
           pannable
           zoomable
-          className="!bottom-3 !right-3 !h-24 !w-40 !rounded-md !border !border-border !bg-card"
+          className="bottom-3! right-3! h-24! w-40! rounded-md! border! border-border! bg-card!"
           // Literal colours, not CSS variables: React Flow writes these onto
           // SVG fill attributes, where `hsl(var(--…))` does not resolve and the
           // minimap renders as an empty box.

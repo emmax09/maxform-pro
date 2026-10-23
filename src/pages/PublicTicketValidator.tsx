@@ -164,7 +164,7 @@ export default function PublicTicketValidator() {
   if (!info || loadError) {
     return (
       <main className="flex min-h-dvh items-center justify-center bg-zinc-100 px-5 text-zinc-950">
-        <div className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 text-center shadow-sm">
+        <div className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 text-center shadow-xs">
           <LockKeyhole className="mx-auto h-8 w-8 text-zinc-500" />
           <h1 className="mt-5 text-xl font-semibold">Validator link unavailable</h1>
           <p className="mt-2 text-sm leading-6 text-zinc-600">
@@ -202,7 +202,7 @@ export default function PublicTicketValidator() {
       style={pageTheme}
     >
       <div className="mx-auto max-w-4xl">
-        <header className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm">
+        <header className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xs">
           <div className="h-1.5 w-full" style={{ backgroundColor: brandColor }} />
           <div className="flex flex-col gap-5 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
             <div className="flex min-w-0 items-center gap-4">
@@ -257,7 +257,7 @@ export default function PublicTicketValidator() {
         </div>
 
         <div className="mt-6 grid gap-5 lg:grid-cols-2">
-          <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+          <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-xs sm:p-6">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="font-semibold">Scan ticket</h2>
@@ -286,7 +286,7 @@ export default function PublicTicketValidator() {
             </Button>
           </section>
 
-          <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-6">
+          <section className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-xs sm:p-6">
             <h2 className="font-semibold">Enter ticket code</h2>
             <p className="mt-1 text-xs leading-5 text-zinc-500">
               Invalid codes are rejected and are never added to check-in records.
@@ -335,7 +335,7 @@ export default function PublicTicketValidator() {
           <section
             aria-live="polite"
             className={cn(
-              "mt-5 flex gap-4 rounded-2xl border bg-white p-5 shadow-sm",
+              "mt-5 flex gap-4 rounded-2xl border bg-white p-5 shadow-xs",
               accepted ? "border-emerald-300" : "border-red-300",
             )}
           >

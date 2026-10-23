@@ -194,7 +194,7 @@ export function NotificationCenter({ userId }: { userId?: string }) {
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="relative flex h-9 w-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+          className="relative flex h-9 w-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-accent focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30"
           aria-label={
             unreadCount
               ? `Notifications, ${unreadCount} unread`
@@ -287,7 +287,7 @@ export function NotificationCenter({ userId }: { userId?: string }) {
                   onClick={() => void openNotification(notification)}
                   className={cn(
                     "group relative flex w-full gap-3 rounded-md px-2.5 py-3 text-left transition-colors hover:bg-accent",
-                    unread && "bg-primary/[0.045]",
+                    unread && "bg-primary/4.5",
                   )}
                 >
                   <span

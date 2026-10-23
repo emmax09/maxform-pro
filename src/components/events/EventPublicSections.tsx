@@ -44,7 +44,7 @@ export function EventPublicSections({
   const enabled = (section: EventSectionKey) =>
     event.publicSections.includes(section);
   const sectionClass = cn(
-    "border-t border-[color:var(--event-border)]",
+    "border-t border-(--event-border)",
     compact ? "mt-8 pt-7" : "mt-12 pt-9",
   );
   const headingClass = compact
@@ -78,7 +78,7 @@ export function EventPublicSections({
           </h2>
           <p
             className={cn(
-              "mt-4 whitespace-pre-wrap text-[color:var(--event-muted)]",
+              "mt-4 whitespace-pre-wrap text-(--event-muted)",
               compact ? "text-[13px] leading-7" : bodyCopyClass,
             )}
           >
@@ -91,7 +91,7 @@ export function EventPublicSections({
         <section className={enabled("about") ? sectionClass : undefined}>
           <h2 className={headingClass} style={headingStyle}>Agenda</h2>
           {content.agenda.length ? (
-            <div className="mt-5 divide-y divide-[color:var(--event-border)] border-y border-[color:var(--event-border)]">
+            <div className="mt-5 divide-y divide-(--event-border) border-y border-(--event-border)">
               {content.agenda.map((item) => (
                 <div
                   key={item.id}
@@ -103,7 +103,7 @@ export function EventPublicSections({
                   )}
                 >
                   <p className="flex items-center gap-2 text-[12px] font-medium">
-                    <Clock3 className="h-3.5 w-3.5 text-[color:var(--event-muted)]" />
+                    <Clock3 className="h-3.5 w-3.5 text-(--event-muted)" />
                     {item.time || "Time TBA"}
                   </p>
                   <div>
@@ -111,7 +111,7 @@ export function EventPublicSections({
                       {item.title || "Session details coming soon"}
                     </h3>
                     {item.description && (
-                      <p className="mt-1 text-[12px] leading-6 text-[color:var(--event-muted)]">
+                      <p className="mt-1 text-[12px] leading-6 text-(--event-muted)">
                         {item.description}
                       </p>
                     )}
@@ -120,7 +120,7 @@ export function EventPublicSections({
               ))}
             </div>
           ) : (
-            <p className="mt-3 text-[13px] text-[color:var(--event-muted)]">
+            <p className="mt-3 text-[13px] text-(--event-muted)">
               {emptyCopy.agenda}
             </p>
           )}
@@ -144,14 +144,14 @@ export function EventPublicSections({
               {content.speakers.map((speaker) => (
                 <article
                   key={speaker.id}
-                  className="overflow-hidden border border-[color:var(--event-border)] bg-[color:var(--event-surface)]"
+                  className="overflow-hidden border border-(--event-border) bg-(--event-surface)"
                   style={{ borderRadius: event.branding.cornerRadius }}
                 >
                   {speaker.imageUrl && (
                     <img
                       src={speaker.imageUrl}
                       alt=""
-                      className="aspect-[4/3] w-full object-cover"
+                      className="aspect-4/3 w-full object-cover"
                     />
                   )}
                   <div className="p-4">
@@ -159,12 +159,12 @@ export function EventPublicSections({
                       {speaker.name || "Speaker"}
                     </h3>
                     {speaker.role && (
-                      <p className="mt-1 text-[11px] font-medium text-[color:var(--event-accent)]">
+                      <p className="mt-1 text-[11px] font-medium text-(--event-accent)">
                         {speaker.role}
                       </p>
                     )}
                     {speaker.bio && (
-                      <p className="mt-3 text-[12px] leading-6 text-[color:var(--event-muted)]">
+                      <p className="mt-3 text-[12px] leading-6 text-(--event-muted)">
                         {speaker.bio}
                       </p>
                     )}
@@ -173,7 +173,7 @@ export function EventPublicSections({
               ))}
             </div>
           ) : (
-            <p className="mt-3 text-[13px] text-[color:var(--event-muted)]">
+            <p className="mt-3 text-[13px] text-(--event-muted)">
               {emptyCopy.speakers}
             </p>
           )}
@@ -197,7 +197,7 @@ export function EventPublicSections({
                   <>
                     <span className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-start">
                       <span
-                        className="flex h-16 w-24 shrink-0 items-center justify-center overflow-hidden border border-[color:var(--event-border)] bg-white p-2.5"
+                        className="flex h-16 w-24 shrink-0 items-center justify-center overflow-hidden border border-(--event-border) bg-white p-2.5"
                         style={{ borderRadius: event.branding.cornerRadius }}
                       >
                         {sponsor.logoUrl ? (
@@ -207,17 +207,17 @@ export function EventPublicSections({
                             className="max-h-full max-w-full object-contain"
                           />
                         ) : (
-                          <span className="text-[12px] font-semibold text-[color:var(--event-muted)]">
+                          <span className="text-[12px] font-semibold text-(--event-muted)">
                             {sponsor.name?.slice(0, 2).toUpperCase() || "SP"}
                           </span>
                         )}
                       </span>
                       <span className="min-w-0">
-                        <span className="block break-words text-[14px] font-semibold leading-5">
+                        <span className="block wrap-break-word text-[14px] font-semibold leading-5">
                           {sponsor.name || "Sponsor"}
                         </span>
                         {href && (
-                          <span className="mt-1 inline-flex items-center gap-1 text-[11px] font-medium text-[color:var(--event-accent)]">
+                          <span className="mt-1 inline-flex items-center gap-1 text-[11px] font-medium text-(--event-accent)">
                             Visit sponsor
                             <ArrowUpRight className="h-3.5 w-3.5" />
                           </span>
@@ -225,7 +225,7 @@ export function EventPublicSections({
                       </span>
                     </span>
                     {sponsor.description && (
-                      <span className="mt-4 block whitespace-pre-wrap text-[12px] leading-6 text-[color:var(--event-muted)]">
+                      <span className="mt-4 block whitespace-pre-wrap text-[12px] leading-6 text-(--event-muted)">
                         {sponsor.description}
                       </span>
                     )}
@@ -237,7 +237,7 @@ export function EventPublicSections({
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="block h-full min-w-0 border border-[color:var(--event-border)] bg-[color:var(--event-surface)] p-4 transition duration-200 hover:-translate-y-0.5 hover:border-[color:var(--event-accent)] hover:shadow-sm"
+                    className="block h-full min-w-0 border border-(--event-border) bg-(--event-surface) p-4 transition duration-200 hover:-translate-y-0.5 hover:border-(--event-accent) hover:shadow-xs"
                     style={{ borderRadius: event.branding.cornerRadius }}
                   >
                     {contentNode}
@@ -245,7 +245,7 @@ export function EventPublicSections({
                 ) : (
                   <div
                     key={sponsor.id}
-                    className="h-full min-w-0 border border-[color:var(--event-border)] bg-[color:var(--event-surface)] p-4"
+                    className="h-full min-w-0 border border-(--event-border) bg-(--event-surface) p-4"
                     style={{ borderRadius: event.branding.cornerRadius }}
                   >
                     {contentNode}
@@ -254,7 +254,7 @@ export function EventPublicSections({
               })}
             </div>
           ) : (
-            <p className="mt-3 text-[13px] text-[color:var(--event-muted)]">
+            <p className="mt-3 text-[13px] text-(--event-muted)">
               {emptyCopy.sponsors}
             </p>
           )}
@@ -276,17 +276,17 @@ export function EventPublicSections({
             Frequently asked questions
           </h2>
           {content.faq.length ? (
-            <div className="mt-5 overflow-hidden border border-[color:var(--event-border)] bg-[color:var(--event-surface)]" style={{ borderRadius: event.branding.cornerRadius }}>
+            <div className="mt-5 overflow-hidden border border-(--event-border) bg-(--event-surface)" style={{ borderRadius: event.branding.cornerRadius }}>
               {content.faq.map((item, index) => {
                 const open = openFaqId === item.id;
                 return (
                   <div
                     key={item.id}
-                    className="border-b border-[color:var(--event-border)] last:border-b-0"
+                    className="border-b border-(--event-border) last:border-b-0"
                   >
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition hover:bg-[color:var(--event-accent)]/5"
+                      className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left transition hover:bg-(--event-accent)/5"
                       onClick={() => setOpenFaqId(open ? null : item.id)}
                       aria-expanded={open}
                     >
@@ -294,7 +294,7 @@ export function EventPublicSections({
                         {item.question || `Question ${index + 1}`}
                       </span>
                       <span
-                        className="grid h-7 w-7 shrink-0 place-items-center border border-[color:var(--event-border)] text-[color:var(--event-accent)]"
+                        className="grid h-7 w-7 shrink-0 place-items-center border border-(--event-border) text-(--event-accent)"
                         style={{ borderRadius: event.branding.cornerRadius }}
                       >
                         {open ? (
@@ -313,7 +313,7 @@ export function EventPublicSections({
                       )}
                     >
                       <div className="overflow-hidden">
-                        <p className="px-4 pb-4 whitespace-pre-wrap text-[12px] leading-6 text-[color:var(--event-muted)]">
+                        <p className="px-4 pb-4 whitespace-pre-wrap text-[12px] leading-6 text-(--event-muted)">
                           {item.answer || "An answer will be added soon."}
                         </p>
                       </div>
@@ -323,7 +323,7 @@ export function EventPublicSections({
               })}
             </div>
           ) : (
-            <p className="mt-3 text-[13px] text-[color:var(--event-muted)]">
+            <p className="mt-3 text-[13px] text-(--event-muted)">
               {emptyCopy.faq}
             </p>
           )}
@@ -361,13 +361,13 @@ export function EventPublicSections({
                 <h3 className="text-[14px] font-semibold">
                   {content.venue.name || event.venueName || "Event venue"}
                 </h3>
-                <p className="mt-1 text-[12px] text-[color:var(--event-muted)]">
+                <p className="mt-1 text-[12px] text-(--event-muted)">
                   {content.venue.address ||
                     event.address ||
                     "Address to be announced"}
                 </p>
                 {content.venue.directions && (
-                  <p className="mt-3 whitespace-pre-wrap text-[12px] leading-6 text-[color:var(--event-muted)]">
+                  <p className="mt-3 whitespace-pre-wrap text-[12px] leading-6 text-(--event-muted)">
                     {content.venue.directions}
                   </p>
                 )}
@@ -376,7 +376,7 @@ export function EventPublicSections({
                     href={content.venue.mapUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-[color:var(--event-accent)] hover:underline"
+                    className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-(--event-accent) hover:underline"
                   >
                     Open map
                     <ArrowUpRight className="h-3.5 w-3.5" />
@@ -385,7 +385,7 @@ export function EventPublicSections({
               </div>
             </div>
           ) : (
-            <p className="mt-3 text-[13px] text-[color:var(--event-muted)]">
+            <p className="mt-3 text-[13px] text-(--event-muted)">
               {emptyCopy.venue}
             </p>
           )}

@@ -113,7 +113,7 @@ export default function PublicDocumentSigning() {
       </header>
 
       <main className="mx-auto grid max-w-[1180px] gap-5 px-4 py-5 sm:px-7 sm:py-8 lg:grid-cols-[minmax(0,1fr)_360px]">
-        <section className="min-w-0 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+        <section className="min-w-0 overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
           <div className="border-b border-border px-5 py-5 sm:px-7">
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-primary">
               {activeSession.document.templateName || "Document"}
@@ -175,7 +175,7 @@ export default function PublicDocumentSigning() {
           )}
         </section>
 
-        <aside className="h-fit rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6 lg:sticky lg:top-6">
+        <aside className="h-fit rounded-2xl border border-border bg-card p-5 shadow-xs sm:p-6 lg:sticky lg:top-6">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
             {approving ? (
               <ShieldCheck className="h-4 w-4" />

@@ -215,7 +215,7 @@ function TicketMediaPlaceholder({
       className={cn(
         "flex w-full items-center justify-center rounded-[6px] border border-dashed px-[6%] text-center uppercase",
         CAPTION_CLASS,
-        element.type === "logo" ? "aspect-[3/1]" : "aspect-[4/3]",
+        element.type === "logo" ? "aspect-3/1" : "aspect-4/3",
       )}
       style={{
         borderColor: ticketRgba(theme.accent, 0.45),
@@ -371,7 +371,7 @@ function TicketLayer({
           "w-full",
           element.type === "logo"
             ? "object-contain object-left"
-            : "aspect-[4/3] object-cover",
+            : "aspect-4/3 object-cover",
         )}
         style={{
           maxHeight: element.type === "logo" ? "12cqw" : undefined,
@@ -525,11 +525,11 @@ export function TicketSurface({
       className={cn(
         // Type is sized in container units so one layout is faithful at
         // thumbnail size and at full canvas size.
-        "relative aspect-[2.6/1] w-full select-none overflow-hidden [container-type:inline-size]",
+        "relative aspect-[2.6/1] w-full select-none overflow-hidden @container",
         flat
           ? "rounded-none"
           : "rounded-2xl shadow-[0_18px_45px_-18px_rgba(15,23,42,0.45)]",
-        interactive && "outline-none",
+        interactive && "outline-hidden",
         className,
       )}
       style={{

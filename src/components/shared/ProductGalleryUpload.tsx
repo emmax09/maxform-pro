@@ -102,7 +102,7 @@ export function ProductGalleryUpload({
                 type="button"
                 variant="secondary"
                 size="icon"
-                className="absolute right-1 top-1 h-7 w-7 opacity-100 shadow-sm sm:opacity-0 sm:transition-opacity sm:group-hover:opacity-100"
+                className="absolute right-1 top-1 h-7 w-7 opacity-100 shadow-xs sm:opacity-0 sm:transition-opacity sm:group-hover:opacity-100"
                 onClick={() => remove(index)}
                 aria-label={`Remove gallery image ${index + 1}`}
               >

@@ -363,7 +363,7 @@ function TemplateDialog({
                   event.target.value as "sequential" | "parallel",
                 )
               }
-              className="h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-none focus:ring-2 focus:ring-primary/25"
+              className="h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-hidden focus:ring-2 focus:ring-primary/25"
             >
               <option value="sequential">Sequential</option>
               <option value="parallel">Parallel</option>
@@ -1326,7 +1326,7 @@ export function DocumentsModule({
           <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">
             E-signature workspace
           </p>
-          <h1 className="mt-2 text-[30px] font-semibold tracking-[-0.025em] text-foreground sm:text-[38px]">
+          <h1 className="mt-2 text-[30px] font-semibold tracking-tight text-foreground sm:text-[38px]">
             Documents
           </h1>
           <p className="mt-2 max-w-[660px] text-[13px] leading-6 text-muted-foreground">

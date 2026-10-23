@@ -399,7 +399,7 @@ function OverviewStat({
   detail: string;
 }) {
   return (
-    <section className="rounded-xl border border-border bg-card p-4 shadow-sm">
+    <section className="rounded-xl border border-border bg-card p-4 shadow-xs">
       <div className="flex items-start justify-between gap-3">
         <p className="text-[11px] font-medium text-muted-foreground">{label}</p>
         <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -481,7 +481,7 @@ function WorkflowOverview({
   return (
     <div className="space-y-5">
       {error && (
-        <section className="flex flex-wrap items-center gap-3 rounded-xl border border-destructive/25 bg-destructive/[0.05] p-4">
+        <section className="flex flex-wrap items-center gap-3 rounded-xl border border-destructive/25 bg-destructive/5 p-4">
           <AlertCircle className="h-4 w-4 shrink-0 text-destructive" />
           <div className="min-w-0 flex-1">
             <p className="text-[12px] font-semibold">Workflows could not be loaded</p>
@@ -501,7 +501,7 @@ function WorkflowOverview({
       </div>
 
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1.35fr)_minmax(300px,.65fr)]">
-        <section className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+        <section className="overflow-hidden rounded-xl border border-border bg-card shadow-xs">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-4">
             <div>
               <h2 className="text-[14px] font-semibold">Your workflows</h2>
@@ -567,7 +567,7 @@ function WorkflowOverview({
           {filteredWorkflows.length > pageSize && <div className="flex items-center justify-between border-t border-border px-5 py-3 text-[10px] text-muted-foreground"><span>Page {Math.min(page, pageCount)} of {pageCount}</span><div className="flex items-center gap-1"><Button type="button" variant="ghost" size="sm" onClick={() => setPage((current) => Math.max(1, current - 1))} disabled={page <= 1}>Previous</Button><Button type="button" variant="ghost" size="sm" onClick={() => setPage((current) => Math.min(pageCount, current + 1))} disabled={page >= pageCount}>Next <ChevronRight className="ml-1 h-3.5 w-3.5" /></Button></div></div>}
         </section>
 
-        <section className="rounded-xl border border-border bg-card p-5 shadow-sm">
+        <section className="rounded-xl border border-border bg-card p-5 shadow-xs">
           <div className="flex items-center gap-2">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-500/10 text-violet-500">
               <Zap className="h-4 w-4" />
@@ -594,7 +594,7 @@ function WorkflowOverview({
           )}
         </section>
       </div>
-      <section className="rounded-xl border border-border bg-card p-5 shadow-sm">
+      <section className="rounded-xl border border-border bg-card p-5 shadow-xs">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div><h2 className="text-[14px] font-semibold">Start from a template</h2><p className="mt-1 text-[11px] text-muted-foreground">Use a tested cross-module pattern, then customize it in the Editor.</p></div>
           <Badge variant="outline" className="rounded-full text-[10px]">{templates.length} available</Badge>
@@ -637,10 +637,10 @@ function WorkflowEmptyTab({
 function EmptyWorkflows({ onCreate, busy }: { onCreate: () => void; busy: boolean }) {
   return (
     <div className="flex min-h-[min(680px,calc(100vh-210px))] items-center justify-center px-4 py-12">
-      <div className="relative w-full max-w-[620px] overflow-hidden rounded-[28px] border border-border bg-card p-8 text-center shadow-sm sm:p-12">
+      <div className="relative w-full max-w-[620px] overflow-hidden rounded-[28px] border border-border bg-card p-8 text-center shadow-xs sm:p-12">
         <div className="pointer-events-none absolute -right-24 -top-28 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-28 -left-24 h-64 w-64 rounded-full bg-violet-500/10 blur-3xl" />
-        <span className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/[0.08] text-primary shadow-sm">
+        <span className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-primary/20 bg-primary/8 text-primary shadow-xs">
           <WorkflowIcon className="h-7 w-7" strokeWidth={1.7} />
         </span>
         <p className="relative mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
@@ -743,7 +743,7 @@ function NodePalette({
                       className="group flex w-full items-start gap-2.5 rounded-lg border border-transparent px-2.5 py-2 text-left transition hover:border-border hover:bg-background"
                     >
                       <span
-                        className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-white shadow-sm"
+                        className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-white shadow-xs"
                         style={{ backgroundColor: entry.color }}
                       >
                         <Icon className="h-3.5 w-3.5" strokeWidth={1.8} />
@@ -769,7 +769,7 @@ function NodePalette({
           <div className="mb-2 mt-6">
             <p className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Connected providers</p>
             {connectionsLoading && <div className="space-y-2 px-2"><div className="h-9 animate-pulse rounded-lg bg-muted/60" /><div className="h-9 animate-pulse rounded-lg bg-muted/60" /></div>}
-            {connectionsError && <p className="mx-2 rounded-lg border border-destructive/20 bg-destructive/[0.05] p-2 text-[11px] leading-4 text-destructive">{connectionsError}</p>}
+            {connectionsError && <p className="mx-2 rounded-lg border border-destructive/20 bg-destructive/5 p-2 text-[11px] leading-4 text-destructive">{connectionsError}</p>}
             {!connectionsLoading && !connectionsError && <div className="space-y-1">
               {connections.map((connection) => (
                 <button
@@ -982,7 +982,7 @@ function NodeConfigPanel({
             <option value="retry">Retry up to 3 times</option>
           </select>
         </div>
-        <div className="rounded-lg border border-primary/15 bg-primary/[0.06] p-3 text-[11px] leading-5 text-muted-foreground">
+        <div className="rounded-lg border border-primary/15 bg-primary/6 p-3 text-[11px] leading-5 text-muted-foreground">
           <div className="flex items-center gap-2 text-primary"><Settings2 className="h-3.5 w-3.5" /><span className="font-medium">Workspace-safe execution</span></div>
           <p className="mt-1.5">Use mapped payload values or a connected workspace integration. Secrets are never returned to this panel.</p>
         </div>
@@ -1854,7 +1854,7 @@ export function WorkflowsModule() {
         <div className="pb-2 text-[10px] text-muted-foreground">{saving ? "Saving changes…" : dirty ? "Unsaved changes — saving automatically" : `Updated ${formatDate(workflow.updatedAt)}`}</div>
       </div>}
 
-      {validation && <section aria-label="Workflow validation" className={cn("rounded-xl border p-4", validation.valid ? "border-emerald-500/25 bg-emerald-500/[0.06]" : "border-destructive/25 bg-destructive/[0.05]")}>
+      {validation && <section aria-label="Workflow validation" className={cn("rounded-xl border p-4", validation.valid ? "border-emerald-500/25 bg-emerald-500/6" : "border-destructive/25 bg-destructive/5")}>
         <div className="flex flex-wrap items-start gap-3"><span className={cn("mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg", validation.valid ? "bg-emerald-500/10 text-emerald-600" : "bg-destructive/10 text-destructive")}>{validation.valid ? <Check className="h-4 w-4" /> : <AlertCircle className="h-4 w-4" />}</span><div className="min-w-0 flex-1"><p className="text-[12px] font-semibold">{validation.valid ? "Workflow is ready to publish" : "Workflow needs attention"}</p>{validation.issues.length > 0 && <ul className="mt-2 space-y-1 text-[11px] text-muted-foreground">{validation.issues.slice(0, 6).map((issue) => <li key={`${issue.code}-${issue.nodeId || "workflow"}`} className="flex gap-2"><span aria-hidden="true">•</span><span>{issue.message}</span></li>)}</ul>}</div><button type="button" className="rounded-md p-1 text-muted-foreground hover:bg-background" onClick={() => setValidation(null)} aria-label="Dismiss workflow validation"><X className="h-3.5 w-3.5" /></button></div>
       </section>}
 
@@ -1896,7 +1896,7 @@ export function WorkflowsModule() {
                   if (event.target.value.trim() !== workflow.name) setDirty(true);
                 }}
                 onBlur={() => { void commitName(); }}
-                className="w-full max-w-[360px] rounded-md border border-transparent bg-transparent px-2 py-1 text-[14px] font-semibold outline-none transition-colors hover:border-border focus:border-primary focus:bg-background"
+                className="w-full max-w-[360px] rounded-md border border-transparent bg-transparent px-2 py-1 text-[14px] font-semibold outline-hidden transition-colors hover:border-border focus:border-primary focus:bg-background"
               />
               <div className="flex flex-wrap items-center gap-2 px-2">
                 <WorkflowSaveState

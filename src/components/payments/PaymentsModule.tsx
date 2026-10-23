@@ -1044,7 +1044,7 @@ function OrdersPanel({
                 }}
                 role="button"
                 tabIndex={0}
-                className="grid w-full grid-cols-[36px_minmax(0,1fr)] gap-3 px-3 py-4 text-left hover:bg-muted/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30 [&>*:not(:first-child)]:col-start-2 md:grid-cols-[36px_140px_minmax(0,1fr)_100px_110px_130px_32px] md:items-center md:gap-4 md:[&>*:not(:first-child)]:col-start-auto"
+                className="grid w-full grid-cols-[36px_minmax(0,1fr)] gap-3 px-3 py-4 text-left hover:bg-muted/30 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30 [&>*:not(:first-child)]:col-start-2 md:grid-cols-[36px_140px_minmax(0,1fr)_100px_110px_130px_32px] md:items-center md:gap-4 md:[&>*:not(:first-child)]:col-start-auto"
               >
                 <TableRowSelect
                   checked={selection.isSelected(order.id)}
@@ -2405,9 +2405,9 @@ function ProductDialog({
             <Label htmlFor="payment-product-image">Product image</Label>
             <div className="overflow-hidden rounded-lg border border-border bg-muted/20">
               {draft.imageUrl ? (
-                <div className="relative aspect-[16/9]">
+                <div className="relative aspect-video">
                   <img src={draft.imageUrl} alt="Product preview" className="h-full w-full object-cover" />
-                  <div className="absolute inset-x-0 bottom-0 flex justify-end gap-2 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8">
+                  <div className="absolute inset-x-0 bottom-0 flex justify-end gap-2 bg-linear-to-t from-black/70 to-transparent p-3 pt-8">
                     <Button type="button" variant="secondary" size="sm" asChild>
                       <label htmlFor="payment-product-image" className="cursor-pointer">Replace image</label>
                     </Button>

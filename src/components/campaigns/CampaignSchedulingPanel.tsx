@@ -124,7 +124,7 @@ export function CampaignSchedulingPanel({
   return (
     <div className="space-y-5">
       {locked && campaign ? (
-        <section className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-blue-500/30 bg-blue-500/[0.06] px-4 py-3">
+        <section className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-blue-500/30 bg-blue-500/6 px-4 py-3">
           <div>
             <p className="text-[12px] font-semibold capitalize">
               This campaign is {campaign.status}

@@ -719,7 +719,7 @@ function EventMetrics({
         return (
           <div
             key={item.label}
-            className="border-b border-border px-5 py-5 last:border-b-0 sm:border-r sm:[&:nth-child(2)]:border-r-0 xl:border-b-0 xl:[&:nth-child(2)]:border-r xl:last:border-r-0"
+            className="border-b border-border px-5 py-5 last:border-b-0 sm:border-r sm:nth-2:border-r-0 xl:border-b-0 xl:nth-2:border-r xl:last:border-r-0"
           >
             <div className="flex items-center gap-2 text-muted-foreground">
               <Icon className="h-4 w-4" />
@@ -1015,7 +1015,7 @@ function TemplateGallery({
             onClick={() => onUse(template)}
             className="group overflow-hidden rounded-md border border-border bg-card text-left transition hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg disabled:pointer-events-none disabled:opacity-60"
           >
-            <div className="aspect-[16/8] overflow-hidden bg-muted">
+            <div className="aspect-16/8 overflow-hidden bg-muted">
               <img
                 src={template.imagePath}
                 alt=""
@@ -1107,7 +1107,7 @@ function EventPreview({ event }: { event: EventRecord }) {
             {eventDate(event)}
           </p>
           <h1
-            className="mt-3 max-w-[760px] break-words text-[34px] leading-tight sm:text-[48px]"
+            className="mt-3 max-w-[760px] wrap-break-word text-[34px] leading-tight sm:text-[48px]"
             style={{
               fontFamily: event.branding.headingFontFamily,
               fontWeight: event.branding.headingWeight,
@@ -1185,7 +1185,7 @@ function EventEditorTransitionOverlay({
 }) {
   return (
     <div
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-background/75 px-6 backdrop-blur-sm"
+      className="fixed inset-0 z-80 flex items-center justify-center bg-background/75 px-6 backdrop-blur-xs"
       role="status"
       aria-live="polite"
     >
@@ -1213,7 +1213,7 @@ function TicketDesignerTransitionOverlay({
 }) {
   return (
     <div
-      className="fixed inset-0 z-[90] flex items-center justify-center bg-background/70 px-6 backdrop-blur-sm"
+      className="fixed inset-0 z-90 flex items-center justify-center bg-background/70 px-6 backdrop-blur-xs"
       role="status"
       aria-live="polite"
     >
@@ -4760,7 +4760,7 @@ function TicketStudio({
                         backLayout: structuredClone(template.backLayout),
                       })
                     }
-                    className="absolute inset-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                    className="absolute inset-0 rounded-md focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                   >
                     <span className="sr-only">
                       Apply the {template.name} template
@@ -4947,7 +4947,7 @@ function EventTicketTemplateGallery({
                 type="button"
                 variant="secondary"
                 size="icon"
-                className="absolute right-3 top-3 h-8 w-8 rounded-full bg-background/90 shadow-sm"
+                className="absolute right-3 top-3 h-8 w-8 rounded-full bg-background/90 shadow-xs"
                 aria-label={`${template.name} actions`}
               >
                 <MoreHorizontal className="h-4 w-4" />
@@ -5053,7 +5053,7 @@ function EventTicketTemplateGallery({
             {(["front", "back"] as const).map((side) => (
               <article
                 key={side}
-                className="min-w-0 border border-border/80 bg-card p-3 shadow-sm"
+                className="min-w-0 border border-border/80 bg-card p-3 shadow-xs"
               >
                 <div className="mb-2 flex items-center justify-between">
                   <p className="text-[11px] font-semibold capitalize">{side}</p>
@@ -5363,7 +5363,7 @@ function TicketTemplateThumb({
         <TicketTemplateCanvas density="thumbnail" side="back" template={template} />
       </div>
       <span
-        className="pointer-events-none absolute bottom-2 left-2 rounded px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider backdrop-blur-sm"
+        className="pointer-events-none absolute bottom-2 left-2 rounded px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider backdrop-blur-xs"
         style={{
           backgroundColor: ticketRgba(template.theme.background, 0.8),
           color: template.theme.muted,
@@ -5428,7 +5428,7 @@ function TicketTemplateLibrary({
             <button
               type="button"
               onClick={() => onSelect(template)}
-              className="absolute inset-0 z-10 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="absolute inset-0 z-10 rounded-lg focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               <span className="sr-only">Use the {template.name} template</span>
             </button>
@@ -5656,7 +5656,7 @@ function ModuleTicketWorkspace({
                   type="button"
                   variant="secondary"
                   size="icon"
-                  className="absolute right-3 top-3 z-20 h-8 w-8 shadow-sm"
+                  className="absolute right-3 top-3 z-20 h-8 w-8 shadow-xs"
                   aria-label={`${template.name} actions`}
                 >
                   <MoreHorizontal className="h-4 w-4" />
@@ -7007,7 +7007,7 @@ function AnalyticsPanel({
           ["Check-in rate", `${event.attendeeCount ? Math.round((event.checkedInCount / event.attendeeCount) * 100) : 0}%`],
           ["Capacity used", `${event.capacityTotal ? Math.round((event.attendeeCount / event.capacityTotal) * 100) : 0}%`],
         ].map(([label, value]) => (
-          <div key={label} className="border-b border-border px-5 py-5 last:border-b-0 sm:border-r sm:[&:nth-child(2)]:border-r-0 xl:border-b-0 xl:[&:nth-child(2)]:border-r xl:last:border-r-0">
+          <div key={label} className="border-b border-border px-5 py-5 last:border-b-0 sm:border-r sm:nth-2:border-r-0 xl:border-b-0 xl:nth-2:border-r xl:last:border-r-0">
             <p className="text-[11px] text-muted-foreground">{label}</p>
             <p className="mt-3 text-[22px] font-semibold">{value}</p>
           </div>

@@ -39,7 +39,7 @@ const TableFilterBar = React.forwardRef<HTMLDivElement, TableFilterBarProps>(
       role="search"
       aria-label={label}
       className={cn(
-        "flex w-full flex-col gap-2 rounded-xl border border-border/80 bg-card/70 p-2 shadow-sm sm:flex-row sm:items-center dark:bg-card/45",
+        "flex w-full flex-col gap-2 rounded-xl border border-border/80 bg-card/70 p-2 shadow-xs sm:flex-row sm:items-center dark:bg-card/45",
         className,
       )}
       {...props}
@@ -96,7 +96,7 @@ const TableSearchField = React.forwardRef<
         placeholder={placeholder}
         aria-label={ariaLabel}
         className={cn(
-          "h-10 rounded-lg border-0 bg-transparent pl-10 pr-10 text-[12px] shadow-none outline-none ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 [&::-webkit-search-cancel-button]:appearance-none",
+          "h-10 rounded-lg border-0 bg-transparent pl-10 pr-10 text-[12px] shadow-none outline-hidden ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 [&::-webkit-search-cancel-button]:appearance-none",
           className,
         )}
       />
@@ -105,7 +105,7 @@ const TableSearchField = React.forwardRef<
           type="button"
           onClick={() => onValueChange("")}
           disabled={disabled}
-          className="absolute right-1.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 disabled:pointer-events-none disabled:opacity-50"
+          className="absolute right-1.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-background hover:text-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 disabled:pointer-events-none disabled:opacity-50"
           aria-label={`Clear ${ariaLabel.toLowerCase()}`}
         >
           <X className="h-3.5 w-3.5" aria-hidden="true" />
@@ -219,7 +219,7 @@ function TableBulkActions({
           type="button"
           size="sm"
           variant="outline"
-          className="h-9 rounded-lg border-primary/25 bg-primary/[.06] px-2.5 text-primary shadow-sm transition-[background-color,border-color,box-shadow] hover:border-primary/40 hover:bg-primary/[.12] hover:text-primary focus-visible:ring-primary/30"
+          className="h-9 rounded-lg border-primary/25 bg-primary/6 px-2.5 text-primary shadow-xs transition-[background-color,border-color,box-shadow] hover:border-primary/40 hover:bg-primary/12 hover:text-primary focus-visible:ring-primary/30"
         >
           <span className="flex h-5 w-5 items-center justify-center rounded-md bg-primary/15">
             <ListChecks className="h-3.5 w-3.5" />
@@ -272,7 +272,7 @@ function TableSelectionBar({
       className={cn(
         "flex min-h-11 flex-col gap-2 rounded-xl border px-3 py-2 sm:flex-row sm:items-center sm:justify-between",
         selectedCount
-          ? "border-primary/30 bg-primary/[0.055]"
+          ? "border-primary/30 bg-primary/5.5"
           : "border-border/70 bg-muted/25",
         className,
       )}
@@ -299,7 +299,7 @@ function TableSelectionBar({
           <button
             type="button"
             onClick={onClear}
-            className="rounded-md px-2 py-1 text-[10px] font-medium text-muted-foreground transition-colors hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+            className="rounded-md px-2 py-1 text-[10px] font-medium text-muted-foreground transition-colors hover:bg-background hover:text-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30"
           >
             Clear
           </button>

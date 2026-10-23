@@ -138,7 +138,7 @@ export function DevPerformanceDashboard() {
   if (!enabled) return null;
 
   return (
-    <aside className="fixed bottom-4 right-4 z-[100] w-[340px] max-w-[calc(100vw-32px)] rounded-md border border-border bg-popover p-4 text-popover-foreground shadow-2xl">
+    <aside className="fixed bottom-4 right-4 z-100 w-[340px] max-w-[calc(100vw-32px)] rounded-md border border-border bg-popover p-4 text-popover-foreground shadow-2xl">
       <div className="flex items-center justify-between gap-3">
         <div>
           <p className="text-[12px] font-semibold">Performance</p>

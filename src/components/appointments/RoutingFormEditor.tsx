@@ -73,7 +73,7 @@ export function RoutingFormEditor({
   const previewPage = bookingPages.find((page) => page.id === preview.bookingPageId);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-sm sm:p-4 lg:p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-xs sm:p-4 lg:p-6">
       <div
         role="region"
         aria-label="Routing form editor"
@@ -119,7 +119,7 @@ export function RoutingFormEditor({
 
             <div className="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)_320px]">
               <section className="dashboard-scroll min-h-0 overflow-y-auto overscroll-contain border-b border-border p-4 lg:border-b-0 lg:border-r">
-                <p className="text-[11px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
                   Questions
                 </p>
                 <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
@@ -192,7 +192,7 @@ export function RoutingFormEditor({
               </section>
 
               <section className="dashboard-scroll min-h-0 overflow-y-auto overscroll-contain border-b border-border p-4 lg:border-b-0 lg:border-r">
-                <p className="text-[11px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
                   Routing rules
                 </p>
                 <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
@@ -332,7 +332,7 @@ export function RoutingFormEditor({
               </section>
 
               <aside className="dashboard-scroll min-h-0 overflow-y-auto overscroll-contain bg-muted/30 p-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
                   Test the routing
                 </p>
                 <p className="mt-1 text-[11px] leading-4 text-muted-foreground">
@@ -373,7 +373,7 @@ export function RoutingFormEditor({
                 <div
                   className={cn(
                     "mt-4 rounded-lg border p-3",
-                    previewPage ? "border-primary/30 bg-primary/[0.05]" : "border-border bg-background",
+                    previewPage ? "border-primary/30 bg-primary/5" : "border-border bg-background",
                   )}
                 >
                   <p className="text-[10px] uppercase tracking-[.08em] text-muted-foreground">Routes to</p>

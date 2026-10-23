@@ -163,7 +163,7 @@ function PlatformLogo({ platform, size = "md" }: { platform: CmsPlatform; size?:
   return (
     <span
       className={cn(
-        "flex shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-sm dark:bg-white",
+        "flex shrink-0 items-center justify-center overflow-hidden rounded-xl border bg-white shadow-xs dark:bg-white",
         size === "sm" ? "h-8 w-8 p-1.5" : size === "lg" ? "h-16 w-16 p-3" : "h-11 w-11 p-2",
       )}
     >
@@ -274,14 +274,14 @@ function OverviewTab({ workspace, onSites, onAdd }: { workspace: CmsWorkspace; o
   const recent = workspace.syncEvents.slice(0, 5);
   return (
     <div className="space-y-6">
-      <div className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/10 via-card to-card p-6 sm:p-8">
+      <div className="relative overflow-hidden rounded-2xl border border-border bg-linear-to-br from-primary/10 via-card to-card p-6 sm:p-8">
         <div className="relative z-10 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Commerce command center</p>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">Your connected stores, in sync.</h2>
           <p className="mt-2 max-w-xl text-sm leading-6 text-muted-foreground">Connect Shopify, WooCommerce, BigCommerce or Wix and manage the products, categories and orders your team already runs — from one workspace.</p>
           <div className="mt-5 flex flex-wrap gap-2"><Button onClick={onAdd}><Plus className="mr-2 h-4 w-4" />Connect a store</Button><Button variant="outline" onClick={onSites}>View connected sites</Button></div>
         </div>
-        <div className="pointer-events-none absolute -right-10 -top-12 hidden h-56 w-56 rounded-full border-[28px] border-primary/10 sm:block" />
+        <div className="pointer-events-none absolute -right-10 -top-12 hidden h-56 w-56 rounded-full border-28 border-primary/10 sm:block" />
         <div className="pointer-events-none absolute bottom-6 right-16 hidden h-16 w-16 rounded-2xl bg-primary/10 sm:block"><Store className="m-5 h-6 w-6 text-primary/60" /></div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -659,8 +659,8 @@ function ProductDialog({ open, onOpenChange, product, categories, connections, o
             <div className="space-y-2"><Label htmlFor="cms-product-compare-price">Compare-at price</Label><Input id="cms-product-compare-price" type="number" min="0" step="0.01" value={compareAtPrice} onChange={(event) => setCompareAtPrice(event.target.value)} placeholder="Optional" /></div>
             <div className="space-y-2"><Label htmlFor="cms-product-inventory">Inventory quantity</Label><Input id="cms-product-inventory" type="number" min="0" step="1" value={inventory} onChange={(event) => setInventory(event.target.value)} placeholder={inventoryManaged ? "0" : "Not tracked"} disabled={!inventoryManaged} /></div>
           </div>
-          <div className="flex flex-wrap items-center gap-5 rounded-xl border border-border bg-muted/20 p-4"><label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={inventoryManaged} onChange={(event) => setInventoryManaged(event.target.checked)} />Track inventory</label><div className="flex min-w-[12rem] flex-1 items-center gap-3"><Label htmlFor="cms-product-status">Status</Label><select id="cms-product-status" value={status} onChange={(event) => setStatus(event.target.value)} className="h-10 flex-1 rounded-md border border-input bg-background px-3 text-sm"><option value="draft">Draft</option><option value="publish">Published</option><option value="pending">Pending review</option><option value="private">Private</option><option value="active">Active</option></select></div></div>
-          {isWooCommerce && <div className="space-y-5 rounded-2xl border border-primary/20 bg-primary/[0.03] p-4">
+          <div className="flex flex-wrap items-center gap-5 rounded-xl border border-border bg-muted/20 p-4"><label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={inventoryManaged} onChange={(event) => setInventoryManaged(event.target.checked)} />Track inventory</label><div className="flex min-w-48 flex-1 items-center gap-3"><Label htmlFor="cms-product-status">Status</Label><select id="cms-product-status" value={status} onChange={(event) => setStatus(event.target.value)} className="h-10 flex-1 rounded-md border border-input bg-background px-3 text-sm"><option value="draft">Draft</option><option value="publish">Published</option><option value="pending">Pending review</option><option value="private">Private</option><option value="active">Active</option></select></div></div>
+          {isWooCommerce && <div className="space-y-5 rounded-2xl border border-primary/20 bg-primary/3 p-4">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2"><Label htmlFor="cms-product-type">WooCommerce product type</Label><select id="cms-product-type" value={productType} onChange={(event) => setProductType(event.target.value)} className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm"><option value="simple">Simple</option><option value="variable">Variable</option><option value="grouped">Grouped</option><option value="external">External / affiliate</option></select><p className="text-xs text-muted-foreground">Variable products keep the parent attributes and each variation in sync with WooCommerce.</p></div>
               <div className="space-y-2"><Label htmlFor="cms-product-categories">Categories</Label><select id="cms-product-categories" multiple value={categoryIds} onChange={(event) => setCategoryIds(Array.from(event.target.selectedOptions).map((option) => option.value))} className="min-h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-sm">{availableCategories.length ? availableCategories.map((category) => <option key={category.externalId} value={category.externalId}>{category.name}</option>) : <option value="" disabled>No synchronized categories for this site</option>}</select><p className="text-xs text-muted-foreground">Use Ctrl/Cmd-click to select multiple categories.</p></div>

@@ -228,7 +228,7 @@ export function CampaignAudiencePicker({
                     <label
                       className={cn(
                         "flex cursor-pointer items-center gap-3 px-4 py-3.5 text-left transition-colors hover:bg-muted/50",
-                        selected && "bg-primary/[0.04]",
+                        selected && "bg-primary/4",
                       )}
                     >
                       <Checkbox

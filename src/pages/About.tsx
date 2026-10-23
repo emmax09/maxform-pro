@@ -122,7 +122,7 @@ const About = () => {
           <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-16">
             <div>
               <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] py-1 pl-1 pr-3 text-[12.5px] text-white/70">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/6 py-1 pl-1 pr-3 text-[12.5px] text-white/70">
                   <span className="rounded-full bg-primary px-2 py-0.5 text-[11px] font-medium text-primary-foreground">
                     About
                   </span>

@@ -642,7 +642,7 @@ function DatePickerControl({
           <button
             id={id}
             type="button"
-            className="flex h-10 w-full items-center justify-between gap-3 rounded-md border px-3 py-2 text-left text-[14px] shadow-none transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--form-accent)] focus-visible:ring-offset-2"
+            className="flex h-10 w-full items-center justify-between gap-3 rounded-md border px-3 py-2 text-left text-[14px] shadow-none transition hover:opacity-90 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-(--form-accent) focus-visible:ring-offset-2"
             style={{
               backgroundColor:
                 "var(--form-field-input-bg, var(--form-control-bg))",
@@ -1178,9 +1178,9 @@ function ProductResponseField({
       ? "grid gap-4 sm:grid-cols-2"
       : `grid gap-3 ${columns >= 4 ? "sm:grid-cols-2 xl:grid-cols-4" : columns === 3 ? "sm:grid-cols-2 lg:grid-cols-3" : columns === 2 ? "sm:grid-cols-2" : ""}`;
   const cardImageClass = display.imageAspectRatio === "portrait"
-    ? "aspect-[3/4]"
+    ? "aspect-3/4"
     : display.imageAspectRatio === "landscape"
-      ? "aspect-[16/9]"
+      ? "aspect-video"
       : "aspect-square";
   const selectedTotal = selections.reduce((sum, selection) => {
     const product = products.find((item) => item.id === selection.productId);
@@ -1515,7 +1515,7 @@ function ResponseField({
           placeholder={field.placeholder}
           required={required}
           overlayTheme={themeMode}
-          className="[&_input]:border-[var(--form-border)] [&_input]:bg-transparent [&_button]:border-[var(--form-border)]"
+          className="[&_input]:border-(--form-border) [&_input]:bg-transparent [&_button]:border-(--form-border)"
         />
       </div>
     );
@@ -1558,7 +1558,7 @@ function ResponseField({
                 }
                 className={cn(
                   "relative flex min-h-[76px] items-start justify-between gap-4 rounded-lg border px-4 py-3 text-left text-[13px] transition",
-                  active && "border-current bg-current/5 shadow-sm",
+                  active && "border-current bg-current/5 shadow-xs",
                   unavailable && "cursor-not-allowed opacity-45",
                 )}
               >
@@ -1980,7 +1980,7 @@ function ResponseField({
               type="button"
               onClick={() => onChange(option)}
               className={cn(
-                "relative aspect-[4/3] overflow-hidden rounded-md border p-3 text-left text-[12px]",
+                "relative aspect-4/3 overflow-hidden rounded-md border p-3 text-left text-[12px]",
                 value === option && "border-current ring-1 ring-current",
               )}
             >

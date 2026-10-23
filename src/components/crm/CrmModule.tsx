@@ -898,7 +898,7 @@ function LeadCard({
     <article
       draggable
       onDragStart={(event) => event.dataTransfer.setData("lead-id", lead.id)}
-      className="rounded-xl border border-border bg-card p-3 shadow-sm transition-shadow hover:shadow-md"
+      className="rounded-xl border border-border bg-card p-3 shadow-xs transition-shadow hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
@@ -1285,7 +1285,7 @@ function DealCard({
       draggable
       onDragStart={(event) => event.dataTransfer.setData("deal-id", deal.id)}
       onClick={() => onOpen(deal)}
-      className="block w-full rounded-xl border border-border bg-card p-3 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+      className="block w-full rounded-xl border border-border bg-card p-3 text-left shadow-xs transition-all hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-3">
         <p className="line-clamp-2 text-[12px] font-semibold">{deal.name}</p>
@@ -2371,7 +2371,7 @@ function PipelinesPanel({
                   <button
                     type="button"
                     onClick={() => onCreateStage(pipeline)}
-                    className="flex w-full flex-col items-center justify-center rounded-lg border border-dashed border-border px-4 py-8 text-center transition-colors hover:border-primary/40 hover:bg-primary/[0.025]"
+                    className="flex w-full flex-col items-center justify-center rounded-lg border border-dashed border-border px-4 py-8 text-center transition-colors hover:border-primary/40 hover:bg-primary/2.5"
                   >
                     <Plus className="h-5 w-5 text-primary" />
                     <span className="mt-2 text-[11px] font-medium">
@@ -3303,9 +3303,9 @@ function IntelligencePanel({
   };
   const attentionTone = (severity: string) =>
     severity === "urgent" || severity === "high"
-      ? "border-rose-500/20 bg-rose-500/[0.04]"
+      ? "border-rose-500/20 bg-rose-500/4"
       : severity === "medium"
-        ? "border-amber-500/20 bg-amber-500/[0.04]"
+        ? "border-amber-500/20 bg-amber-500/4"
         : "border-border bg-muted/15";
 
   return (
@@ -3384,7 +3384,7 @@ function IntelligencePanel({
       <aside className="rounded-xl border border-primary/20 bg-primary/[0.035] p-5">
         <div className="flex items-center gap-2 text-primary">
           <SlidersHorizontal className="h-4 w-4" />
-          <p className="text-[11px] font-semibold uppercase tracking-[0.1em]">
+          <p className="text-[11px] font-semibold uppercase tracking-widest">
             Why this score?
           </p>
         </div>
@@ -4304,7 +4304,7 @@ export function CrmModule({
               CRM
             </p>
           </div>
-          <h1 className="mt-2 text-[30px] font-semibold tracking-[-0.025em] sm:text-[38px]">
+          <h1 className="mt-2 text-[30px] font-semibold tracking-tight sm:text-[38px]">
             {activeTitle}
           </h1>
           <p className="mt-2 max-w-2xl text-[13px] leading-6 text-muted-foreground">

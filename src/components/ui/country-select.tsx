@@ -94,7 +94,7 @@ const CountrySelect = React.forwardRef<HTMLButtonElement, CountrySelectProps>(
               placeholder="Search countries..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full h-8 px-2 text-[13px] rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+              className="w-full h-8 px-2 text-[13px] rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-ring"
             />
           </div>
           {filteredCountries.map((country) => {

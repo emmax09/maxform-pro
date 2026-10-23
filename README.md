@@ -14,6 +14,8 @@ MaxForm brings forms, events, ticketing, payments, email campaigns, customer man
 
 Requirements: Node.js 22 or later and npm.
 
+Tailwind CSS v4 targets Safari 16.4+, Chrome 111+, and Firefox 128+.
+
 ```sh
 git clone https://github.com/emmax09/maxform-pro.git
 cd maxform-pro

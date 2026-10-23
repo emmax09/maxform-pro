@@ -147,7 +147,7 @@ function MarketingNav() {
           "mx-auto flex h-14 w-full max-w-[1120px] items-center justify-between rounded-full border pl-5 pr-2 transition-all duration-300",
           scrolled
             ? "border-border/70 bg-background/75 shadow-[0_8px_30px_-12px_hsl(var(--shadow-color)/0.28)] backdrop-blur-xl"
-            : "border-white/10 bg-white/[0.04] backdrop-blur-md",
+            : "border-white/10 bg-white/4 backdrop-blur-md",
         )}
       >
         <Link to="/" className="shrink-0">
@@ -246,7 +246,7 @@ function MarketingNav() {
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent
           side="right"
-          className="public-theme flex h-[100dvh] max-h-[100dvh] w-[min(340px,calc(100vw-16px))] flex-col overflow-hidden bg-background p-0 sm:w-[340px]"
+          className="public-theme flex h-dvh max-h-dvh w-[min(340px,calc(100vw-16px))] flex-col overflow-hidden bg-background p-0 sm:w-[340px]"
         >
           <SheetHeader className="shrink-0 border-b border-border px-5 pb-4 pt-[calc(1.25rem+env(safe-area-inset-top))] sm:px-6 sm:pt-6">
             <div className="flex items-center justify-between">

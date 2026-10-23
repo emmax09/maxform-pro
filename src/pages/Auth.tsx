@@ -29,16 +29,16 @@ const getErrorMessage = (error: unknown, fallback: string) =>
   error instanceof Error ? error.message : fallback;
 
 const fieldClassName =
-  "h-11 rounded-xl border border-input bg-[hsl(var(--input-background))] text-[14px] shadow-sm transition-colors hover:border-[hsl(var(--input-border-hover))] focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:ring-offset-0 dark:border-white/10 dark:shadow-none dark:hover:border-white/20";
+  "h-11 rounded-xl border border-input bg-[hsl(var(--input-background))] text-[14px] shadow-xs transition-colors hover:border-[hsl(var(--input-border-hover))] focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/15 focus-visible:ring-offset-0 dark:border-white/10 dark:shadow-none dark:hover:border-white/20";
 
 const iconClassName =
   "pointer-events-none absolute left-3.5 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-muted-foreground";
 
 const visibilityButtonClassName =
-  "absolute right-1.5 top-1/2 z-20 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 dark:hover:bg-white/[0.06]";
+  "absolute right-1.5 top-1/2 z-20 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 dark:hover:bg-white/6";
 
 const tabsListClassName =
-  "grid h-11 w-full grid-cols-2 gap-1 rounded-xl border border-border bg-[hsl(var(--background-secondary))] p-1 dark:border-white/[0.08] dark:bg-white/[0.04]";
+  "grid h-11 w-full grid-cols-2 gap-1 rounded-xl border border-border bg-[hsl(var(--background-secondary))] p-1 dark:border-white/8 dark:bg-white/4";
 
 /*
  * The default trigger paints `bg-background` (#f8f8f7) on a `bg-muted` track
@@ -133,9 +133,9 @@ function PasswordField({
 function AuthBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <div className="absolute -left-36 -top-36 h-[28rem] w-[28rem] rounded-full bg-primary/10 blur-3xl dark:bg-primary/[0.025]" />
-      <div className="absolute -bottom-48 -right-32 h-[32rem] w-[32rem] rounded-full bg-primary/10 blur-3xl dark:bg-primary/[0.025]" />
-      <div className="absolute inset-0 opacity-[0.22] [background-image:radial-gradient(hsl(var(--border-strong))_1px,transparent_1px)] [background-size:24px_24px] dark:opacity-0" />
+      <div className="absolute -left-36 -top-36 h-112 w-md rounded-full bg-primary/10 blur-3xl dark:bg-primary/2.5" />
+      <div className="absolute -bottom-48 -right-32 h-128 w-lg rounded-full bg-primary/10 blur-3xl dark:bg-primary/2.5" />
+      <div className="absolute inset-0 opacity-[0.22] bg-[radial-gradient(hsl(var(--border-strong))_1px,transparent_1px)] bg-size-[24px_24px] dark:opacity-0" />
     </div>
   );
 }
@@ -181,7 +181,7 @@ function GoogleAuthButton({
       loadingLabel={
         mode === "signin" ? "Signing in with Google" : "Signing up with Google"
       }
-      className="h-11 w-full gap-3 rounded-xl border-input bg-[hsl(var(--input-background))] px-4 text-[13px] font-semibold text-foreground shadow-sm hover:border-[hsl(var(--input-border-hover))] hover:bg-muted/70 hover:text-foreground dark:border-white/10 dark:shadow-none dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
+      className="h-11 w-full gap-3 rounded-xl border-input bg-[hsl(var(--input-background))] px-4 text-[13px] font-semibold text-foreground shadow-xs hover:border-[hsl(var(--input-border-hover))] hover:bg-muted/70 hover:text-foreground dark:border-white/10 dark:shadow-none dark:hover:border-white/20 dark:hover:bg-white/6"
     >
       <GoogleIcon />
       {mode === "signin" ? "Continue with Google" : "Sign up with Google"}
@@ -191,21 +191,21 @@ function GoogleAuthButton({
 
 function AuthVisualPanel() {
   return (
-    <aside className="relative hidden min-h-[720px] overflow-hidden border-r border-white/[0.08] bg-[hsl(var(--brand-onyx))] text-white lg:block">
+    <aside className="relative hidden min-h-[720px] overflow-hidden border-r border-white/8 bg-[hsl(var(--brand-onyx))] text-white lg:block">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/[0.09] blur-3xl" />
-        <div className="absolute -bottom-40 -left-28 h-96 w-96 rounded-full bg-primary/[0.06] blur-3xl" />
+        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/9 blur-3xl" />
+        <div className="absolute -bottom-40 -left-28 h-96 w-96 rounded-full bg-primary/6 blur-3xl" />
       </div>
 
       <Link
         to="/"
         aria-label="MaxForm home"
-        className="absolute left-9 top-9 z-30 w-fit rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 [&_[data-brand-mark]]:!text-primary [&>span>span:last-child]:!text-white xl:left-11 xl:top-11"
+        className="absolute left-9 top-9 z-30 w-fit rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/60 **:data-brand-mark:text-primary! [&>span>span:last-child]:text-white! xl:left-11 xl:top-11"
       >
         <BrandLogo markSize={26} wordmarkClassName="text-[16px]" />
       </Link>
 
-      <div className="absolute left-9 top-[150px] z-10 w-[270px] rounded-[22px] border border-white/[0.08] bg-white/[0.045] p-5 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.7)] xl:left-11 xl:w-[292px]">
+      <div className="absolute left-9 top-[150px] z-10 w-[270px] rounded-[22px] border border-white/8 bg-white/4.5 p-5 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.7)] xl:left-11 xl:w-[292px]">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
@@ -220,13 +220,13 @@ function AuthVisualPanel() {
           </span>
         </div>
         <div className="mt-5 space-y-3">
-          <div className="rounded-xl border border-white/[0.08] bg-black/10 p-3">
+          <div className="rounded-xl border border-white/8 bg-black/10 p-3">
             <div className="h-1.5 w-14 rounded-full bg-white/30" />
-            <div className="mt-2.5 h-8 rounded-lg border border-white/[0.08] bg-white/[0.04]" />
+            <div className="mt-2.5 h-8 rounded-lg border border-white/8 bg-white/4" />
           </div>
-          <div className="rounded-xl border border-white/[0.08] bg-black/10 p-3">
+          <div className="rounded-xl border border-white/8 bg-black/10 p-3">
             <div className="h-1.5 w-20 rounded-full bg-white/30" />
-            <div className="mt-2.5 h-8 rounded-lg border border-white/[0.08] bg-white/[0.04]" />
+            <div className="mt-2.5 h-8 rounded-lg border border-white/8 bg-white/4" />
           </div>
           <div className="h-9 rounded-lg bg-primary" />
         </div>
@@ -238,7 +238,7 @@ function AuthVisualPanel() {
         className="absolute -bottom-4 -right-32 z-20 h-[530px] w-auto max-w-none object-contain object-bottom xl:-right-28 xl:h-[560px]"
       />
 
-      <div className="absolute bottom-9 left-9 z-30 rounded-2xl border border-white/[0.08] bg-black/25 px-4 py-3 shadow-xl xl:bottom-11 xl:left-11">
+      <div className="absolute bottom-9 left-9 z-30 rounded-2xl border border-white/8 bg-black/25 px-4 py-3 shadow-xl xl:bottom-11 xl:left-11">
         <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/45">
           Built into MaxForm
         </p>
@@ -299,7 +299,7 @@ export default function Auth() {
 
   if (loading) {
     return (
-      <div className="public-theme flex min-h-[100svh] items-center justify-center bg-background dark:bg-[hsl(var(--ls-ink))]">
+      <div className="public-theme flex min-h-svh items-center justify-center bg-background dark:bg-[hsl(var(--ls-ink))]">
         <Loader2 className="h-5 w-5 animate-spin text-primary" />
       </div>
     );
@@ -489,16 +489,16 @@ export default function Auth() {
 
   if (showPasswordReset) {
     return (
-      <div className="public-theme relative min-h-[100svh] overflow-x-hidden bg-background dark:bg-[hsl(var(--ls-ink))]">
+      <div className="public-theme relative min-h-svh overflow-x-hidden bg-background dark:bg-[hsl(var(--ls-ink))]">
         <AuthBackground />
 
-        <main className="relative flex min-h-[100svh] items-start justify-center px-3 py-4 sm:px-6 sm:py-8">
-          <section className="my-auto w-full max-w-[480px] rounded-[24px] border border-border/80 bg-card/95 p-5 shadow-[0_24px_80px_-30px_rgba(18,18,20,0.28)] backdrop-blur dark:border-white/[0.08] dark:bg-card dark:shadow-[0_24px_70px_-32px_rgba(0,0,0,0.6)] dark:backdrop-blur-none sm:rounded-[28px] sm:p-8">
+        <main className="relative flex min-h-svh items-start justify-center px-3 py-4 sm:px-6 sm:py-8">
+          <section className="my-auto w-full max-w-[480px] rounded-[24px] border border-border/80 bg-card/95 p-5 shadow-[0_24px_80px_-30px_rgba(18,18,20,0.28)] backdrop-blur-sm dark:border-white/8 dark:bg-card dark:shadow-[0_24px_70px_-32px_rgba(0,0,0,0.6)] dark:backdrop-blur-none sm:rounded-[28px] sm:p-8">
             <div className="mb-7 flex items-center justify-between gap-4">
               <button
                 type="button"
                 onClick={handleBackToLogin}
-                className="inline-flex h-9 items-center gap-2 rounded-lg px-2 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 dark:hover:bg-white/[0.06]"
+                className="inline-flex h-9 items-center gap-2 rounded-lg px-2 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 dark:hover:bg-white/6"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Sign in
@@ -506,7 +506,7 @@ export default function Auth() {
               <Link
                 to="/"
                 aria-label="MaxForm home"
-                className="rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                className="rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30"
               >
                 <BrandLogo markSize={22} wordmarkClassName="text-[15px]" />
               </Link>
@@ -516,7 +516,7 @@ export default function Auth() {
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <Lock className="h-5 w-5" />
               </div>
-              <h1 className="text-[26px] font-semibold tracking-[-0.025em] text-foreground sm:text-[30px]">
+              <h1 className="text-[26px] font-semibold tracking-tight text-foreground sm:text-[30px]">
                 {resetStep === "success"
                   ? "Password updated"
                   : "Reset your password"}
@@ -560,7 +560,7 @@ export default function Auth() {
                 <Button
                   type="submit"
                   variant="brand"
-                  className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-sm"
+                  className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-xs"
                   loading={isSubmitting}
                   loadingLabel="Sending reset token"
                 >
@@ -626,7 +626,7 @@ export default function Auth() {
                   <Button
                     type="submit"
                     variant="brand"
-                    className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-sm"
+                    className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-xs"
                     loading={isSubmitting}
                     loadingLabel="Resetting password"
                   >
@@ -661,11 +661,11 @@ export default function Auth() {
   }
 
   return (
-    <div className="public-theme relative min-h-[100svh] overflow-x-hidden bg-background dark:bg-[hsl(var(--ls-ink))]">
+    <div className="public-theme relative min-h-svh overflow-x-hidden bg-background dark:bg-[hsl(var(--ls-ink))]">
       <AuthBackground />
 
-      <main className="relative flex min-h-[100svh] items-start justify-center px-3 py-3 sm:px-6 sm:py-6 lg:px-8 lg:py-4">
-        <section className="my-auto grid w-full max-w-[980px] overflow-hidden rounded-[24px] border border-border/80 bg-card/95 shadow-[0_28px_90px_-32px_rgba(18,18,20,0.30)] backdrop-blur dark:border-white/[0.08] dark:bg-card dark:shadow-[0_28px_80px_-36px_rgba(0,0,0,0.65)] dark:backdrop-blur-none sm:rounded-[30px] lg:grid-cols-[0.9fr_1.1fr]">
+      <main className="relative flex min-h-svh items-start justify-center px-3 py-3 sm:px-6 sm:py-6 lg:px-8 lg:py-4">
+        <section className="my-auto grid w-full max-w-[980px] overflow-hidden rounded-[24px] border border-border/80 bg-card/95 shadow-[0_28px_90px_-32px_rgba(18,18,20,0.30)] backdrop-blur-sm dark:border-white/8 dark:bg-card dark:shadow-[0_28px_80px_-36px_rgba(0,0,0,0.65)] dark:backdrop-blur-none sm:rounded-[30px] lg:grid-cols-[0.9fr_1.1fr]">
           <AuthVisualPanel />
 
           <div className="flex min-w-0 flex-col p-5 sm:p-8 lg:p-8 xl:px-12 xl:py-10">
@@ -673,7 +673,7 @@ export default function Auth() {
               <button
                 type="button"
                 onClick={() => navigate("/")}
-                className="inline-flex h-9 items-center gap-2 rounded-lg px-2 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 dark:hover:bg-white/[0.06]"
+                className="inline-flex h-9 items-center gap-2 rounded-lg px-2 text-[13px] font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 dark:hover:bg-white/6"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Home
@@ -681,7 +681,7 @@ export default function Auth() {
               <Link
                 to="/"
                 aria-label="MaxForm home"
-                className="rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 lg:hidden"
+                className="rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 lg:hidden"
               >
                 <BrandLogo markSize={22} wordmarkClassName="text-[14px]" />
               </Link>
@@ -727,11 +727,11 @@ export default function Auth() {
                     onClick={() => void handleGoogleAuth("signin")}
                   />
                   <div className="my-4 flex items-center gap-3">
-                    <span className="h-px flex-1 bg-border dark:bg-white/[0.08]" />
+                    <span className="h-px flex-1 bg-border dark:bg-white/8" />
                     <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground">
                       or use email
                     </span>
-                    <span className="h-px flex-1 bg-border dark:bg-white/[0.08]" />
+                    <span className="h-px flex-1 bg-border dark:bg-white/8" />
                   </div>
                   <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-1.5">
@@ -769,7 +769,7 @@ export default function Auth() {
                         <button
                           type="button"
                           onClick={() => setShowPasswordReset(true)}
-                          className="rounded text-[12px] font-medium text-[hsl(var(--primary-text))] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                          className="rounded text-[12px] font-medium text-[hsl(var(--primary-text))] underline-offset-4 hover:underline focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30"
                         >
                           Forgot password?
                         </button>
@@ -794,7 +794,7 @@ export default function Auth() {
                     <Button
                       type="submit"
                       variant="brand"
-                      className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-sm"
+                      className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-xs"
                       loading={isSubmitting}
                       loadingLabel="Signing in"
                     >
@@ -810,11 +810,11 @@ export default function Auth() {
                     onClick={() => void handleGoogleAuth("signup")}
                   />
                   <div className="my-3.5 flex items-center gap-3">
-                    <span className="h-px flex-1 bg-border dark:bg-white/[0.08]" />
+                    <span className="h-px flex-1 bg-border dark:bg-white/8" />
                     <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-muted-foreground">
                       or use email
                     </span>
-                    <span className="h-px flex-1 bg-border dark:bg-white/[0.08]" />
+                    <span className="h-px flex-1 bg-border dark:bg-white/8" />
                   </div>
                   <form onSubmit={handleSignup} className="space-y-3.5">
                     <div className="grid gap-3.5 sm:grid-cols-2">
@@ -881,7 +881,7 @@ export default function Auth() {
                           value={signupCountry}
                           onChange={setSignupCountry}
                           placeholder="Select your country"
-                          className="h-11 rounded-xl border-input bg-[hsl(var(--input-background))] text-[14px] shadow-sm hover:border-[hsl(var(--input-border-hover))] focus:ring-primary/20 dark:border-white/10 dark:shadow-none dark:hover:border-white/20"
+                          className="h-11 rounded-xl border-input bg-[hsl(var(--input-background))] text-[14px] shadow-xs hover:border-[hsl(var(--input-border-hover))] focus:ring-primary/20 dark:border-white/10 dark:shadow-none dark:hover:border-white/20"
                         />
                       </div>
 
@@ -956,7 +956,7 @@ export default function Auth() {
                     <Button
                       type="submit"
                       variant="brand"
-                      className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-sm"
+                      className="h-11 w-full rounded-xl text-[14px] font-semibold shadow-xs"
                       loading={isSubmitting}
                       loadingLabel="Creating account"
                     >

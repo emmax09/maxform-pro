@@ -1166,7 +1166,7 @@ export default function PaymentVerification() {
                   <p className="mt-2 font-medium">
                     {displayName(result.order.billingDetails, result.order.customerName)}
                   </p>
-                  <p className="mt-0.5 break-words" style={{ color: "var(--muted-foreground)" }}>
+                  <p className="mt-0.5 wrap-break-word" style={{ color: "var(--muted-foreground)" }}>
                     {result.order.customerEmail}
                   </p>
                 </div>

@@ -234,7 +234,7 @@ function ChoiceTile({
       className={cn(
         "flex min-h-[62px] w-full items-start gap-2.5 rounded-xl border p-3.5 text-left transition-all",
         selected
-          ? "border-primary bg-primary/5 shadow-sm"
+          ? "border-primary bg-primary/5 shadow-xs"
           : "border-border hover:border-muted-foreground/40 hover:bg-accent/40",
       )}
     >
@@ -410,7 +410,7 @@ export function OnboardingFlow({
           <StepRail activeIndex={stepIndex} />
         </div>
 
-        <section className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-7">
+        <section className="rounded-2xl border border-border bg-card p-5 shadow-xs sm:p-7">
           <div className="mb-5">
             <h1 className="text-[20px] font-semibold tracking-tight sm:text-[23px]">
               {stepIndex === 0 && fullName

@@ -1149,10 +1149,10 @@ function WorkspaceSection({
               <Label htmlFor="brand-color-picker">Color</Label>
               <label
                 htmlFor="brand-color-picker"
-                className="relative mt-2 flex h-12 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-md border border-border shadow-sm"
+                className="relative mt-2 flex h-12 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-md border border-border shadow-xs"
                 style={{ backgroundColor: normalizeBrandColor(localSettings.brandColor) }}
               >
-                <Pipette className="h-4 w-4 text-white drop-shadow" />
+                <Pipette className="h-4 w-4 text-white drop-shadow-sm" />
                 <input
                   id="brand-color-picker"
                   type="color"
@@ -1231,7 +1231,7 @@ function WorkspaceSection({
                 title={color}
               >
                 {selected && (
-                  <Check className="absolute inset-0 m-auto h-4 w-4 text-white drop-shadow" />
+                  <Check className="absolute inset-0 m-auto h-4 w-4 text-white drop-shadow-sm" />
                 )}
               </button>
                 );
@@ -1672,7 +1672,7 @@ function MemberActivityDialog({
                     {event.actorLabel ? ` · by ${event.actorLabel}` : ""}
                   </p>
                   {Object.keys(event.detail).length > 0 && (
-                    <p className="mt-0.5 break-words text-[12px] text-muted-foreground">
+                    <p className="mt-0.5 wrap-break-word text-[12px] text-muted-foreground">
                       {describeEventDetail(event.detail)}
                     </p>
                   )}

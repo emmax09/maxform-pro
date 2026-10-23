@@ -150,7 +150,7 @@ function Leaderboard({
               <button
                 type="button"
                 onClick={() => onOpen(row.id)}
-                className="min-w-0 truncate rounded text-left text-[12.5px] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                className="min-w-0 truncate rounded text-left text-[12.5px] hover:underline focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30"
               >
                 {row.name}
               </button>
@@ -459,7 +459,7 @@ export function WorkflowsAnalytics({
                 <button
                   type="button"
                   onClick={() => onOpen(run.workflowId)}
-                  className="min-w-0 rounded text-left hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30"
+                  className="min-w-0 rounded text-left hover:underline focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30"
                 >
                   <span className="block truncate text-[12.5px] font-medium">
                     {run.workflowName}

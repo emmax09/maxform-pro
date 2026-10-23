@@ -200,7 +200,7 @@ const Landing = () => {
               <Reveal>
                 <Link
                   to="/auth"
-                  className="group inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] py-1 pl-1 pr-3 text-[11.5px] text-white/70 transition-colors hover:border-white/30 sm:text-[12.5px]"
+                  className="group inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/6 py-1 pl-1 pr-3 text-[11.5px] text-white/70 transition-colors hover:border-white/30 sm:text-[12.5px]"
                 >
                   <span className="rounded-full bg-primary px-2 py-0.5 text-[11px] font-medium text-primary-foreground">
                     New
@@ -441,7 +441,7 @@ const Landing = () => {
                 </div>
 
                 {/* Brand-matched, full-body portrait with a transparent edge-safe cutout. */}
-                <div className="pointer-events-none absolute -bottom-[430px] -right-[150px] z-10 hidden w-[560px] select-none lg:block xl:-bottom-[560px] xl:-right-[200px] xl:w-[745px]">
+                <div className="pointer-events-none absolute bottom-[-430px] right-[-150px] z-10 hidden w-[560px] select-none lg:block xl:bottom-[-560px] xl:right-[-200px] xl:w-[745px]">
                   <img
                     src="/images/home-person-brand.png"
                     alt=""
@@ -456,7 +456,7 @@ const Landing = () => {
                   reference. Built in markup so it themes with the brand
                   instead of shipping a flat image.
                 */}
-                <div className="relative z-20 mx-auto mt-3 flex min-h-[52px] w-[calc(100%-1rem)] max-w-[320px] items-center gap-2.5 rounded-xl border border-border bg-card/95 py-2 pl-3.5 pr-2 shadow-sm backdrop-blur-md sm:absolute sm:-left-6 sm:bottom-28 sm:mx-0 sm:mt-0 sm:min-h-[62px] sm:w-[min(330px,86%)] sm:max-w-none sm:gap-3 sm:rounded-full sm:border-primary/35 sm:bg-[hsl(var(--primary-subtle))]/95 sm:py-2.5 sm:pl-4 sm:shadow-[0_10px_30px_-7px_rgba(0,0,0,0.42)] lg:left-28 lg:bottom-36">
+                <div className="relative z-20 mx-auto mt-3 flex min-h-[52px] w-[calc(100%-1rem)] max-w-[320px] items-center gap-2.5 rounded-xl border border-border bg-card/95 py-2 pl-3.5 pr-2 shadow-xs backdrop-blur-md sm:absolute sm:-left-6 sm:bottom-28 sm:mx-0 sm:mt-0 sm:min-h-[62px] sm:w-[min(330px,86%)] sm:max-w-none sm:gap-3 sm:rounded-full sm:border-primary/35 sm:bg-[hsl(var(--primary-subtle))]/95 sm:py-2.5 sm:pl-4 sm:shadow-[0_10px_30px_-7px_rgba(0,0,0,0.42)] lg:left-28 lg:bottom-36">
                   <span className="flex min-w-0 flex-1 items-center gap-2.5" aria-live="polite">
                     <span className="relative flex h-2.5 w-2.5 shrink-0">
                       {workflowDemoIndex === 1 && (
@@ -501,7 +501,7 @@ const Landing = () => {
                 role="region"
                 aria-label="Supported payment providers"
                 tabIndex={0}
-                className="-mx-5 flex snap-x snap-mandatory items-center gap-7 overflow-x-auto px-5 pb-2 scroll-px-5 [scrollbar-width:none] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:justify-center sm:gap-x-10 sm:gap-y-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:gap-x-12"
+                className="-mx-5 flex snap-x snap-mandatory items-center gap-7 overflow-x-auto px-5 pb-2 scroll-px-5 scrollbar-none focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:justify-center sm:gap-x-10 sm:gap-y-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:gap-x-12"
               >
                 {PAYMENT_RAILS.map((rail) => (
                   <div key={rail.name} className="group/rail flex min-w-max snap-start items-center gap-2.5">
@@ -547,7 +547,7 @@ const Landing = () => {
             role="region"
             aria-label="MaxForm features"
             tabIndex={0}
-            className="-mx-5 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 scroll-px-5 [scrollbar-width:none] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden sm:mx-0 sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-hidden sm:rounded-2xl sm:border sm:border-border sm:bg-border sm:px-0 sm:pb-0 lg:mt-16 lg:grid-cols-3"
+            className="-mx-5 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 scroll-px-5 scrollbar-none focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden sm:mx-0 sm:mt-12 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-hidden sm:rounded-2xl sm:border sm:border-border sm:bg-border sm:px-0 sm:pb-0 lg:mt-16 lg:grid-cols-3"
           >
             {[
               {
@@ -721,7 +721,7 @@ const Landing = () => {
             role="region"
             aria-label="MaxForm use cases"
             tabIndex={0}
-            className="-mx-5 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 scroll-px-5 [scrollbar-width:none] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden md:mx-0 md:mt-12 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:mt-16"
+            className="-mx-5 mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 scroll-px-5 scrollbar-none focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden md:mx-0 md:mt-12 md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:px-0 md:pb-0 lg:mt-16"
           >
             {[
               {
@@ -800,7 +800,7 @@ const Landing = () => {
 
             <Reveal delay={100}>
               <figure className="ls-elevate-sm rounded-2xl border border-border bg-card p-6 sm:p-10">
-                <blockquote className="text-[clamp(1.125rem,2.2vw,1.375rem)] font-medium leading-[1.5] tracking-tight text-foreground">
+                <blockquote className="text-[clamp(1.125rem,2.2vw,1.375rem)] font-medium leading-normal tracking-tight text-foreground">
                   “{testimonials[activeTestimonial].quote}”
                 </blockquote>
                 <figcaption className="mt-8 flex items-center gap-3 border-t border-border pt-6">
@@ -907,7 +907,7 @@ const Landing = () => {
             role="region"
             aria-label="MaxForm pricing plans"
             tabIndex={0}
-            className="-mx-5 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 pt-3 scroll-px-5 [scrollbar-width:none] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden lg:mx-0 lg:mt-14 lg:grid lg:grid-cols-4 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 lg:pt-0"
+            className="-mx-5 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 pt-3 scroll-px-5 scrollbar-none focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary/30 [&::-webkit-scrollbar]:hidden lg:mx-0 lg:mt-14 lg:grid lg:grid-cols-4 lg:gap-5 lg:overflow-visible lg:px-0 lg:pb-0 lg:pt-0"
           >
             {[planById("trial"), ...PAID_PLANS].map((plan, i) => (
               <Reveal
@@ -924,14 +924,14 @@ const Landing = () => {
                   )}
                 >
                   {plan.featured && (
-                    <span className="absolute -top-2.5 left-6 rounded bg-primary px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.1em] text-primary-foreground">
+                    <span className="absolute -top-2.5 left-6 rounded bg-primary px-2 py-0.5 text-[10px] font-medium uppercase tracking-widest text-primary-foreground">
                       Most popular
                     </span>
                   )}
                   <h3 className="text-[14px] font-medium text-foreground">
                     {plan.name}
                   </h3>
-                  <p className="mt-1 min-h-9 text-[12px] leading-[1.5] text-muted-foreground">
+                  <p className="mt-1 min-h-9 text-[12px] leading-normal text-muted-foreground">
                     {plan.tagline}
                   </p>
                   <div className="mt-4 flex items-baseline gap-1">
@@ -1036,7 +1036,7 @@ const Landing = () => {
                     <h3 className="text-[14px] font-medium text-foreground">
                       What spends an AI credit
                     </h3>
-                    <p className="mt-0.5 text-[12px] leading-[1.5] text-muted-foreground">
+                    <p className="mt-0.5 text-[12px] leading-normal text-muted-foreground">
                       AI actions only. Forms, contacts, documents, events, and
                       automations never cost credits.
                     </p>
@@ -1076,7 +1076,7 @@ const Landing = () => {
                     <h3 className="text-[14px] font-medium text-foreground">
                       Top-up packs
                     </h3>
-                    <p className="mt-0.5 text-[12px] leading-[1.5] text-muted-foreground">
+                    <p className="mt-0.5 text-[12px] leading-normal text-muted-foreground">
                       Buy more of one allowance without moving up a plan
                     </p>
                   </div>

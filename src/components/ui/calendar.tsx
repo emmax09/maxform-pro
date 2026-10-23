@@ -132,7 +132,7 @@ function ModernCalendarCaption({ displayIndex, displayMonth, id }: CaptionProps)
             aria-label="Previous month"
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "absolute left-0 h-8 w-8 bg-background p-0 shadow-sm",
+              "absolute left-0 h-8 w-8 bg-background p-0 shadow-xs",
             )}
             disabled={!previousMonth}
             onClick={() => previousMonth && goToMonth(previousMonth)}
@@ -150,7 +150,7 @@ function ModernCalendarCaption({ displayIndex, displayMonth, id }: CaptionProps)
             aria-label={monthButtonLabel}
             className={cn(
               "inline-flex h-8 items-center gap-1 rounded-sm px-3 text-sm font-medium transition-colors hover:bg-background hover:text-foreground",
-              panel === "month" && "bg-background text-foreground shadow-sm",
+              panel === "month" && "bg-background text-foreground shadow-xs",
             )}
             onClick={() =>
               setPanel((current) => (current === "month" ? null : "month"))
@@ -165,7 +165,7 @@ function ModernCalendarCaption({ displayIndex, displayMonth, id }: CaptionProps)
             aria-label={yearButtonLabel}
             className={cn(
               "inline-flex h-8 items-center gap-1 rounded-sm px-3 text-sm font-medium tabular-nums transition-colors hover:bg-background hover:text-foreground",
-              panel === "year" && "bg-background text-foreground shadow-sm",
+              panel === "year" && "bg-background text-foreground shadow-xs",
             )}
             onClick={() =>
               setPanel((current) => (current === "year" ? null : "year"))
@@ -182,7 +182,7 @@ function ModernCalendarCaption({ displayIndex, displayMonth, id }: CaptionProps)
             aria-label="Next month"
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "absolute right-0 h-8 w-8 bg-background p-0 shadow-sm",
+              "absolute right-0 h-8 w-8 bg-background p-0 shadow-xs",
             )}
             disabled={!nextMonth}
             onClick={() => nextMonth && goToMonth(nextMonth)}
@@ -330,7 +330,7 @@ function Calendar({
         nav: "flex items-center gap-1",
         nav_button: cn(
           buttonVariants({ variant: "outline" }),
-          "h-8 w-8 bg-background p-0 opacity-80 shadow-sm hover:opacity-100",
+          "h-8 w-8 bg-background p-0 opacity-80 shadow-xs hover:opacity-100",
         ),
         nav_button_previous: "absolute left-0",
         nav_button_next: "absolute right-0",
@@ -338,7 +338,7 @@ function Calendar({
         head_row: "flex",
         head_cell: "text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]",
         row: "flex w-full mt-2",
-        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+        cell: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 has-aria-[selected]:bg-accent first:has-aria-[selected]:rounded-l-md last:has-aria-[selected]:rounded-r-md focus-within:relative focus-within:z-20",
         day: cn(buttonVariants({ variant: "ghost" }), "h-9 w-9 p-0 font-normal aria-selected:opacity-100"),
         day_range_end: "day-range-end",
         day_selected:

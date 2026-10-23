@@ -415,7 +415,7 @@ export function PublicCheckoutPanel({
                           type="button"
                           onClick={onCouponValidate}
                           disabled={!couponCanValidate}
-                          className="min-[420px]:shrink-0 gap-2 shadow-sm transition hover:opacity-95 disabled:opacity-55"
+                          className="min-[420px]:shrink-0 gap-2 shadow-xs transition hover:opacity-95 disabled:opacity-55"
                           style={submitButtonStyle}
                         >
                           {couponValidationStatus === "checking" ? (
@@ -445,7 +445,7 @@ export function PublicCheckoutPanel({
                             ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-700"
                             : couponValidationStatus === "invalid"
                               ? "border-red-500/30 bg-red-500/10 text-red-700"
-                              : "text-[color:var(--form-muted)]",
+                              : "text-(--form-muted)",
                         )}
                       >
                         {couponValidationStatus === "checking" ? (
@@ -603,7 +603,7 @@ export function PublicCheckoutPanel({
                       }}
                       options={stateOptions}
                       disabled={!selectedCountry || addressOptionsLoading.states}
-                      className="border-[var(--form-border)] bg-transparent text-[13px] shadow-none hover:bg-[color-mix(in_srgb,var(--checkout-accent)_6%,transparent)] hover:text-inherit"
+                      className="border-(--form-border) bg-transparent text-[13px] shadow-none hover:bg-[color-mix(in_srgb,var(--checkout-accent)_6%,transparent)] hover:text-inherit"
                       placeholder={
                         addressOptionsLoading.states
                           ? "Loading states..."
@@ -646,7 +646,7 @@ export function PublicCheckoutPanel({
                         (!selectedStateCode && stateOptions.length > 0) ||
                         cityOptions.length === 0
                       }
-                      className="border-[var(--form-border)] bg-transparent text-[13px] shadow-none hover:bg-[color-mix(in_srgb,var(--checkout-accent)_6%,transparent)] hover:text-inherit"
+                      className="border-(--form-border) bg-transparent text-[13px] shadow-none hover:bg-[color-mix(in_srgb,var(--checkout-accent)_6%,transparent)] hover:text-inherit"
                       placeholder={
                         addressOptionsLoading.cities
                           ? "Loading cities..."
@@ -738,7 +738,7 @@ export function PublicCheckoutPanel({
                 <div className="mt-3 grid gap-2">
                   {couponCoversTotal ? (
                     <div
-                      className="flex min-h-16 items-center gap-3 border bg-emerald-500/10 px-3 py-2 text-left shadow-sm"
+                      className="flex min-h-16 items-center gap-3 border bg-emerald-500/10 px-3 py-2 text-left shadow-xs"
                       style={{
                         borderColor: "rgba(16,185,129,0.35)",
                         borderRadius: "var(--form-radius)",
@@ -769,9 +769,9 @@ export function PublicCheckoutPanel({
                     type="button"
                     onClick={() => onProviderChange(provider.id)}
                     className={cn(
-                          "flex min-h-16 items-center gap-3 border bg-[color-mix(in_srgb,var(--form-surface)_96%,transparent)] px-3 py-2 text-left shadow-sm transition hover:text-inherit",
+                          "flex min-h-16 items-center gap-3 border bg-[color-mix(in_srgb,var(--form-surface)_96%,transparent)] px-3 py-2 text-left shadow-xs transition hover:text-inherit",
                           selected
-                            ? "border-[var(--checkout-accent)] ring-2 ring-[color-mix(in_srgb,var(--checkout-accent)_18%,transparent)]"
+                            ? "border-(--checkout-accent) ring-2 ring-[color-mix(in_srgb,var(--checkout-accent)_18%,transparent)]"
                             : "hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--checkout-accent)_5%,transparent)]",
                         )}
                         style={{ borderRadius: "var(--form-radius)" }}
@@ -847,7 +847,7 @@ export function PublicCheckoutPanel({
               </section>
 
               <section
-                className="border p-4 shadow-sm"
+                className="border p-4 shadow-xs"
                 style={{
                   backgroundColor: "var(--form-surface)",
                   borderColor: "var(--form-border)",
@@ -975,7 +975,7 @@ export function PublicCheckoutPanel({
                   >
                     <div className="flex items-start justify-between gap-4">
                       <p style={{ color: "var(--form-muted)" }}>Contact</p>
-                      <p className="min-w-0 break-words text-right font-medium">
+                      <p className="min-w-0 wrap-break-word text-right font-medium">
                         {customer.email || "Required"}
                       </p>
                     </div>

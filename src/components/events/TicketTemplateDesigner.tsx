@@ -786,7 +786,7 @@ export function TicketTemplateDesigner({
                       );
                     }}
                     onClick={() => addElement("ticket_type")}
-                    className="group w-full rounded-xl border border-primary/25 bg-primary/[0.04] p-3 text-left transition hover:border-primary/50 hover:bg-primary/[0.07]"
+                    className="group w-full rounded-xl border border-primary/25 bg-primary/4 p-3 text-left transition hover:border-primary/50 hover:bg-primary/[0.07]"
                   >
                     <span className="flex items-center gap-2.5">
                       <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary/10 text-primary">
@@ -896,7 +896,7 @@ export function TicketTemplateDesigner({
             ref={stageRef}
             tabIndex={0}
             onKeyDown={onStageKeyDown}
-            className="rounded-xl bg-muted/30 p-4 outline-none focus-visible:ring-2 focus-visible:ring-primary/40 sm:p-5"
+            className="rounded-xl bg-muted/30 p-4 outline-hidden focus-visible:ring-2 focus-visible:ring-primary/40 sm:p-5"
           >
             <div className="mx-auto w-full max-w-[980px]">
               <TicketSurface
@@ -948,7 +948,7 @@ export function TicketTemplateDesigner({
           </p>
         </section>
 
-        <aside className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+        <aside className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs">
           <div className="border-b border-border bg-muted/25 p-2">
             <div className="grid grid-cols-2 gap-1 rounded-xl border border-border/70 bg-background/70 p-1">
             {(
@@ -964,7 +964,7 @@ export function TicketTemplateDesigner({
                 className={cn(
                   "h-9 rounded-lg px-2 text-[11px] font-medium transition",
                   panel === value
-                    ? "bg-foreground text-background shadow-sm"
+                    ? "bg-foreground text-background shadow-xs"
                     : "text-muted-foreground hover:text-foreground",
                 )}
               >
@@ -1246,7 +1246,7 @@ function CanvasOverlay({
               role="presentation"
               onPointerDown={(event) => onResizePointerDown(event, mode)}
               className={cn(
-                "pointer-events-auto absolute top-1/2 h-4 w-2.5 -translate-y-1/2 cursor-ew-resize rounded-sm border border-primary bg-background shadow-sm",
+                "pointer-events-auto absolute top-1/2 h-4 w-2.5 -translate-y-1/2 cursor-ew-resize rounded-sm border border-primary bg-background shadow-xs",
                 mode === "resize-left" ? "-left-1.5" : "-right-1.5",
               )}
             />
@@ -1437,8 +1437,8 @@ function ElementInspector({
 
   return (
     <div>
-      <header className="sticky top-0 z-10 flex items-center gap-3 border-b border-border bg-card/95 px-5 py-4 backdrop-blur">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border bg-muted/60 text-foreground shadow-sm">
+      <header className="sticky top-0 z-10 flex items-center gap-3 border-b border-border bg-card/95 px-5 py-4 backdrop-blur-sm">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-border bg-muted/60 text-foreground shadow-xs">
           <Icon className="h-4 w-4" />
         </span>
         <div className="min-w-0">
@@ -1469,7 +1469,7 @@ function ElementInspector({
         <div className="space-y-4">
           {element.type === "ticket_type" ? (
             <div className="space-y-4">
-              <div className="rounded-xl border border-primary/25 bg-primary/[0.05] p-3">
+              <div className="rounded-xl border border-primary/25 bg-primary/5 p-3">
                 <div className="flex items-start gap-2.5">
                   <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
                     <Ticket className="h-4 w-4" />

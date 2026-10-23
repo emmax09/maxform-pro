@@ -392,7 +392,7 @@ function BlockPalette({
 
       {groups.map((group) => (
         <div key={group.group} className="mb-4 last:mb-0">
-          <p className="mb-1.5 text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+          <p className="mb-1.5 text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
             {group.group}
           </p>
           <div
@@ -414,7 +414,7 @@ function BlockPalette({
                   }}
                   onClick={() => onAdd(type)}
                   title={campaignBlockDescriptions[type]}
-                  className="group flex aspect-square cursor-grab flex-col items-center justify-center gap-1.5 rounded-lg border border-border bg-background p-1.5 text-center transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:bg-accent hover:shadow-sm active:cursor-grabbing"
+                  className="group flex aspect-square cursor-grab flex-col items-center justify-center gap-1.5 rounded-lg border border-border bg-background p-1.5 text-center transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:bg-accent hover:shadow-xs active:cursor-grabbing"
                 >
                   <Icon className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
                   <span className="w-full truncate text-[9.5px] font-medium leading-tight text-muted-foreground transition-colors group-hover:text-foreground">
@@ -517,7 +517,7 @@ function CanvasBlock({
         }
       }}
       className={cn(
-        "group relative cursor-pointer rounded-[6px] outline-none transition-shadow",
+        "group relative cursor-pointer rounded-[6px] outline-hidden transition-shadow",
         selected
           ? "shadow-[0_0_0_2px_hsl(var(--primary))]"
           : "hover:shadow-[0_0_0_1px_hsl(var(--primary)/0.35)] focus-visible:shadow-[0_0_0_2px_hsl(var(--primary)/0.5)]",
@@ -526,7 +526,7 @@ function CanvasBlock({
       {/* Floating toolbar, hidden until the block is approached. */}
       <div
         className={cn(
-          "absolute -top-3.5 right-1.5 z-10 flex items-center gap-0.5 rounded-md border border-border bg-popover px-0.5 py-0.5 shadow-sm transition-opacity",
+          "absolute -top-3.5 right-1.5 z-10 flex items-center gap-0.5 rounded-md border border-border bg-popover px-0.5 py-0.5 shadow-xs transition-opacity",
           selected
             ? "opacity-100"
             : "opacity-0 group-hover:opacity-100 group-focus-within:opacity-100",
@@ -623,7 +623,7 @@ function InsertPoint({
         aria-label="Add a block here"
         onClick={onInsert}
         className={cn(
-          "relative z-10 flex h-5 w-5 items-center justify-center rounded-full border border-primary bg-background text-primary shadow-sm transition-opacity",
+          "relative z-10 flex h-5 w-5 items-center justify-center rounded-full border border-primary bg-background text-primary shadow-xs transition-opacity",
           active
             ? "opacity-100"
             : "opacity-0 group-hover/insert:opacity-100 focus-visible:opacity-100",
@@ -922,7 +922,7 @@ function StepperField({
           onChange={(event) =>
             onChange(event.target.value ? Number(event.target.value) : undefined)
           }
-          className="h-7 min-w-0 flex-1 border-0 bg-transparent text-center text-[11px] outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
+          className="h-7 min-w-0 flex-1 border-0 bg-transparent text-center text-[11px] outline-hidden [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none"
         />
         {suffix ? (
           <span className="shrink-0 pr-1 text-[9px] text-muted-foreground">
@@ -1883,7 +1883,7 @@ function BlockAdvancedPanel({
   return (
     <div className="space-y-4">
       <section className="space-y-2.5">
-        <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+        <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
           Identifiers
         </p>
         <div className="space-y-1.5">
@@ -1920,7 +1920,7 @@ function BlockAdvancedPanel({
       </section>
 
       <section className="space-y-2.5 border-t border-border pt-3.5">
-        <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+        <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
           Visibility
         </p>
         {(
@@ -1960,7 +1960,7 @@ function BlockAdvancedPanel({
       </section>
 
       <section className="space-y-2 border-t border-border pt-3.5">
-        <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+        <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
           Custom CSS
         </p>
         <Textarea
@@ -2028,7 +2028,7 @@ function ContainerPanel({
     return (
       <div className="space-y-4">
         <section className="space-y-2.5">
-          <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+          <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
             Header
           </p>
           <div className="grid grid-cols-[56px_minmax(0,1fr)] gap-2">
@@ -2088,7 +2088,7 @@ function ContainerPanel({
         {/* Container-scoped colours only. Changing any of these paints the
             sheet the message sits on and nothing inside it. */}
         <section className="space-y-2.5">
-          <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+          <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
             Container colours
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -2154,7 +2154,7 @@ function ContainerPanel({
         {/* Kept apart from the container colours above, and labelled for what
             it actually does: this one reaches into the message. */}
         <section className="space-y-2 border-t border-border pt-3.5">
-          <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+          <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
             Block defaults
           </p>
           <div className="flex items-center gap-2.5 rounded-lg border border-border p-2.5">
@@ -2178,7 +2178,7 @@ function ContainerPanel({
         </section>
 
         <section className="space-y-2.5 border-t border-border pt-3.5">
-          <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+          <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
             Layout
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -2190,7 +2190,7 @@ function ContainerPanel({
         </section>
 
         <section className="space-y-1.5 border-t border-border pt-3.5">
-          <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+          <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
             Typography
           </p>
           <FontFamilyField
@@ -2207,7 +2207,7 @@ function ContainerPanel({
   return (
     <div className="space-y-4">
       <section className="space-y-1.5">
-        <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+        <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
           Preheader text
         </p>
         <p className="text-[10px] leading-4 text-muted-foreground">
@@ -2216,7 +2216,7 @@ function ContainerPanel({
         </p>
       </section>
       <section className="space-y-1.5 border-t border-border pt-3.5">
-        <p className="text-[9.5px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+        <p className="text-[9.5px] font-semibold uppercase tracking-widest text-muted-foreground">
           Export
         </p>
         <p className="text-[10px] leading-4 text-muted-foreground">
@@ -3470,7 +3470,7 @@ export function CampaignBuilder({
             className={cn(
               "mx-auto",
               immersive &&
-                "overflow-hidden rounded-lg border border-border/60 shadow-sm",
+                "overflow-hidden rounded-lg border border-border/60 shadow-xs",
             )}
             style={{
               maxWidth:
@@ -3720,7 +3720,7 @@ export function CampaignBuilder({
         <aside className="dashboard-scroll min-h-0 max-h-[calc(100dvh-260px)] overflow-y-auto overscroll-contain border-t border-border bg-card p-4 xl:border-l xl:border-t-0">
         <div className="space-y-4">
           <div className="space-y-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
               Message
             </p>
             <div className="space-y-1.5">

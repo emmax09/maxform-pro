@@ -209,7 +209,7 @@ const Contact = () => {
           <div className="grid items-start gap-14 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
             <div className="lg:pt-6">
               <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] py-1 pl-1 pr-3 text-[12.5px] text-white/70">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/6 py-1 pl-1 pr-3 text-[12.5px] text-white/70">
                   <span className="rounded-full bg-primary px-2 py-0.5 text-[11px] font-medium text-primary-foreground">
                     Contact
                   </span>
@@ -238,7 +238,7 @@ const Contact = () => {
                       key={fact.label}
                       className="flex items-center gap-4 border-b border-white/10 py-4"
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-white/70">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70">
                         <fact.icon className="h-4 w-4" strokeWidth={1.75} />
                       </span>
                       <span className="min-w-0">

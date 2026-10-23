@@ -238,7 +238,7 @@ export function Customer360Panel({ userId, contacts, currency }: Customer360Pane
               onClick={() => setSelectedId(contact.id)}
               className={cn(
                 "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-muted/50",
-                selectedId === contact.id && "bg-primary/[0.08] text-primary",
+                selectedId === contact.id && "bg-primary/8 text-primary",
               )}
             >
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted text-[11px] font-semibold">
@@ -484,7 +484,7 @@ function CustomerProfile({
           </section>
 
           {detail.duplicateCandidates.length ? (
-            <section className="rounded-xl border border-amber-500/20 bg-amber-500/[0.04] p-5">
+            <section className="rounded-xl border border-amber-500/20 bg-amber-500/4 p-5">
               <h3 className="text-[13px] font-semibold">Possible duplicates</h3>
               <p className="mt-1 text-[10px] leading-5 text-muted-foreground">
                 Review these matches before creating a new relationship record.

@@ -904,7 +904,7 @@ function InternalCalendar({ data }: { data: AppointmentsWorkspace }) {
                 key={key}
                 className={cn(
                   "min-h-[340px] rounded-lg border p-2",
-                  isToday ? "border-primary/40 bg-primary/[0.04]" : "border-border",
+                  isToday ? "border-primary/40 bg-primary/4" : "border-border",
                 )}
               >
                 <p className="text-[10px] uppercase tracking-[.06em] text-muted-foreground">

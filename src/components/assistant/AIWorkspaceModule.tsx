@@ -436,7 +436,7 @@ const ProviderLogo = ({
 }) => (
   <span
     className={cn(
-      "inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-[13px] bg-white shadow-sm ring-1 ring-black/5 dark:ring-white/10",
+      "inline-flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-[13px] bg-white shadow-xs ring-1 ring-black/5 dark:ring-white/10",
       className,
     )}
   >
@@ -656,7 +656,7 @@ function QuickGenerators({ onStart }: { onStart: (generator: QuickGenerator) => 
               onClick={() => onStart(generator)}
               className={cn(
                 "flex flex-col items-start gap-2 rounded-xl border border-border bg-card p-3 text-left transition",
-                "hover:border-primary/40 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "hover:border-primary/40 hover:bg-accent focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring",
               )}
             >
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -704,7 +704,7 @@ function ConversationHistory({
               <button
                 type="button"
                 onClick={() => onOpen(conversation.id)}
-                className="flex w-full items-center gap-3 px-3 py-2.5 text-left transition hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+                className="flex w-full items-center gap-3 px-3 py-2.5 text-left transition hover:bg-accent focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
               >
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
                   <MessageSquare className="h-3.5 w-3.5" />
@@ -954,26 +954,26 @@ function WorkspaceChatPane({
 
   return (
     <section className="flex min-h-[580px] flex-col overflow-hidden rounded-[26px] border border-border/80 bg-background shadow-[0_20px_60px_-34px_rgba(15,23,42,0.42)]" aria-label="Workspace chat">
-      <header className="flex shrink-0 items-center gap-3 border-b border-border/80 bg-gradient-to-r from-primary/[0.08] via-background/95 to-background/95 px-4 py-3.5">
-        <span className="flex h-10 w-10 items-center justify-center rounded-[15px] border border-primary/20 bg-background/80 text-primary shadow-sm"><BrandLogo markSize={21} showWordmark={false} /></span>
+      <header className="flex shrink-0 items-center gap-3 border-b border-border/80 bg-linear-to-r from-primary/8 via-background/95 to-background/95 px-4 py-3.5">
+        <span className="flex h-10 w-10 items-center justify-center rounded-[15px] border border-primary/20 bg-background/80 text-primary shadow-xs"><BrandLogo markSize={21} showWordmark={false} /></span>
         <div className="min-w-0 flex-1">
           <p className="text-[13.5px] font-semibold tracking-[-0.01em] text-foreground">MaxAI workspace chat</p>
           <p className="truncate text-[11px] text-muted-foreground">Context: {moduleLabels[module]}{canvas ? ` · ${canvas.title}` : ""}</p>
         </div>
-        <span className="hidden items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/[0.06] px-2 py-1 text-[10px] font-medium text-emerald-700 dark:text-emerald-300 sm:flex"><ShieldCheck className="h-3.5 w-3.5" /> Workspace scoped</span>
+        <span className="hidden items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/6 px-2 py-1 text-[10px] font-medium text-emerald-700 dark:text-emerald-300 sm:flex"><ShieldCheck className="h-3.5 w-3.5" /> Workspace scoped</span>
       </header>
-      <div className="min-h-0 flex-1 space-y-4 overflow-y-auto bg-gradient-to-b from-muted/[0.16] via-background to-background px-4 py-5" aria-busy={checking || thinking}>
+      <div className="min-h-0 flex-1 space-y-4 overflow-y-auto bg-linear-to-b from-muted/16 via-background to-background px-4 py-5" aria-busy={checking || thinking}>
         {checking ? (
-          <div className="rounded-[20px] border border-primary/20 bg-card/80 p-4 text-[12px] text-muted-foreground shadow-sm">
+          <div className="rounded-[20px] border border-primary/20 bg-card/80 p-4 text-[12px] text-muted-foreground shadow-xs">
             <div className="flex items-center gap-2 font-medium text-foreground"><Loader2 className="h-4 w-4 animate-spin text-primary" /> Connecting to MaxAI…</div>
             <p className="mt-1 pl-6">Checking the workspace AI connection.</p>
           </div>
         ) : unavailable ? (
-          <div className="rounded-[20px] border border-amber-500/30 bg-amber-500/[0.06] p-4 text-[12px] text-muted-foreground shadow-sm">
+          <div className="rounded-[20px] border border-amber-500/30 bg-amber-500/6 p-4 text-[12px] text-muted-foreground shadow-xs">
             <div className="flex items-start gap-2"><AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" /><div><p className="font-medium text-foreground">MaxAI needs a provider connection.</p><p className="mt-1">{availabilityReason || "Connect an AI provider in MaxAI Settings. Your API key stays server-side."}</p><div className="mt-3 flex flex-wrap items-center gap-1.5"><Button type="button" size="sm" className="h-7 px-2 text-[11.5px]" onClick={onConfigure}><Settings2 className="mr-1.5 h-3.5 w-3.5" /> Open AI settings</Button><Button type="button" variant="ghost" size="sm" className="h-7 px-2 text-[11.5px]" onClick={onRetry}><RefreshCw className="mr-1.5 h-3.5 w-3.5" /> Retry connection</Button></div></div></div>
           </div>
         ) : turns.length === 0 ? (
-          <div className="rounded-[20px] border border-border/80 bg-card/75 p-5 text-[12px] text-muted-foreground shadow-sm">
+          <div className="rounded-[20px] border border-border/80 bg-card/75 p-5 text-[12px] text-muted-foreground shadow-xs">
             <p className="font-medium text-foreground">Describe what you want to change.</p>
             <p className="mt-1 leading-relaxed">MaxAI can inspect the selected module, explain the data it used, and help refine the draft on the right.</p>
           </div>
@@ -998,7 +998,7 @@ function WorkspaceChatPane({
         {thinking ? (
           <div className="flex items-start gap-2.5" role="status">
             <AssistantMessageAvatar role="assistant" />
-            <div className="rounded-[18px] rounded-bl-[6px] border border-border/90 bg-card px-3.5 py-2.5 shadow-sm">
+            <div className="rounded-[18px] rounded-bl-[6px] border border-border/90 bg-card px-3.5 py-2.5 shadow-xs">
               <div className="flex items-center gap-2 text-[11.5px] font-medium text-muted-foreground">
                 <span className="flex gap-1" aria-hidden="true">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
@@ -1035,7 +1035,7 @@ function WorkspaceChatPane({
         </div>
         <div className="flex items-end gap-2 rounded-[22px] border border-border bg-card p-2 shadow-[0_8px_24px_-18px_rgba(15,23,42,0.55)] focus-within:border-primary/45 focus-within:ring-2 focus-within:ring-primary/10">
           <Textarea value={draft} onChange={(event) => setDraft(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter" && !event.shiftKey) { event.preventDefault(); void send(); } }} placeholder={checking ? "Connecting to MaxAI…" : unavailable ? "Open AI settings to connect MaxAI" : "Ask MaxAI to refine this draft…"} aria-label="Message workspace MaxAI" rows={2} className="max-h-32 min-h-[46px] resize-none border-0 bg-transparent px-2 py-2.5 text-[13px] leading-relaxed shadow-none focus-visible:ring-0" disabled={thinking || unavailable} />
-          <Button type="submit" size="icon" className="h-10 w-10 shrink-0 rounded-[14px] shadow-sm" disabled={!draft.trim() || thinking || unavailable} aria-label="Send message">
+          <Button type="submit" size="icon" className="h-10 w-10 shrink-0 rounded-[14px] shadow-xs" disabled={!draft.trim() || thinking || unavailable} aria-label="Send message">
             {thinking ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowUp className="h-4 w-4" />}
           </Button>
         </div>
@@ -1052,7 +1052,7 @@ function EventDraftEditor({ state, onChange }: { state: Record<string, unknown>;
       <div className="rounded-xl border border-primary/20 bg-primary/[0.035] p-3 text-[12px] text-muted-foreground">This is a real event draft. Edit the brief here, then create it in Events when the details are ready.</div>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="space-y-1.5 text-[12px] font-medium text-foreground sm:col-span-2">Event name<Input value={String(state.title || "")} onChange={(event) => update("title", event.target.value)} placeholder="Product launch" /></label>
-        <label className="space-y-1.5 text-[12px] font-medium text-foreground sm:col-span-2">Description<textarea className="min-h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-[13px] outline-none focus-visible:ring-2 focus-visible:ring-ring" value={String(state.description || "")} onChange={(event) => update("description", event.target.value)} placeholder="What should attendees know?" /></label>
+        <label className="space-y-1.5 text-[12px] font-medium text-foreground sm:col-span-2">Description<textarea className="min-h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-[13px] outline-hidden focus-visible:ring-2 focus-visible:ring-ring" value={String(state.description || "")} onChange={(event) => update("description", event.target.value)} placeholder="What should attendees know?" /></label>
         <label className="space-y-1.5 text-[12px] font-medium text-foreground">Date<Input type="date" value={String(state.eventDate || "")} onChange={(event) => update("eventDate", event.target.value)} /></label>
         <label className="space-y-1.5 text-[12px] font-medium text-foreground">Timezone<Input value={String(state.timezone || "UTC")} onChange={(event) => update("timezone", event.target.value)} /></label>
         <label className="space-y-1.5 text-[12px] font-medium text-foreground">Start time<Input type="time" value={String(state.startTime || "")} onChange={(event) => update("startTime", event.target.value)} /></label>
@@ -1072,7 +1072,7 @@ function AppointmentDraftEditor({ state, onChange }: { state: Record<string, unk
       <div className="rounded-xl border border-primary/20 bg-primary/[0.035] p-3 text-[12px] text-muted-foreground">This draft uses the same booking-page fields as Appointments. You can save it into the live booking-page list when it is ready.</div>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="space-y-1.5 text-[12px] font-medium text-foreground sm:col-span-2">Booking page name<Input value={String(page.name || "")} onChange={(event) => update("name", event.target.value)} placeholder="30-minute consultation" /></label>
-        <label className="space-y-1.5 text-[12px] font-medium text-foreground sm:col-span-2">Description<textarea className="min-h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-[13px] outline-none focus-visible:ring-2 focus-visible:ring-ring" value={String(page.description || "")} onChange={(event) => update("description", event.target.value)} placeholder="What will this appointment cover?" /></label>
+        <label className="space-y-1.5 text-[12px] font-medium text-foreground sm:col-span-2">Description<textarea className="min-h-24 w-full rounded-md border border-input bg-background px-3 py-2 text-[13px] outline-hidden focus-visible:ring-2 focus-visible:ring-ring" value={String(page.description || "")} onChange={(event) => update("description", event.target.value)} placeholder="What will this appointment cover?" /></label>
         <label className="space-y-1.5 text-[12px] font-medium text-foreground">Duration in minutes<Input type="number" min={5} value={Number(page.durationMinutes || 30)} onChange={(event) => update("durationMinutes", Number(event.target.value) || 30)} /></label>
         <label className="space-y-1.5 text-[12px] font-medium text-foreground">Location<Input value={String(page.locationDetail || "")} onChange={(event) => update("locationDetail", event.target.value)} placeholder="Video link or address" /></label>
         <label className="space-y-1.5 text-[12px] font-medium text-foreground">Price in cents<Input type="number" min={0} value={Number(page.priceCents || 0)} onChange={(event) => update("priceCents", Number(event.target.value) || 0)} /></label>
@@ -1435,7 +1435,7 @@ function SettingsPanel({
 
   return (
     <div className="space-y-6">
-      <section className="overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/[0.08] via-card to-card p-4 shadow-sm sm:p-5">
+      <section className="overflow-hidden rounded-2xl border border-primary/20 bg-linear-to-br from-primary/8 via-card to-card p-4 shadow-xs sm:p-5">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex min-w-0 items-start gap-3"><ProviderLogo card={selectedActiveCard} className="h-11 w-11 rounded-xl" /><div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><p className="text-[13px] font-semibold text-foreground">Active AI provider</p>{activeConnection ? <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:text-emerald-300">{activeConnection.label || activeCard.name} is active</span> : <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-medium text-amber-700 dark:text-amber-300">No active provider</span>}</div><p className="mt-1 max-w-2xl text-[11.5px] leading-5 text-muted-foreground">Choose the single provider MaxAI uses for this workspace. Connecting a provider does not activate it automatically.</p></div></div>
           <div className="flex w-full flex-col gap-2 lg:w-[500px]">
@@ -1461,7 +1461,7 @@ function SettingsPanel({
           {aiProviderCards.map((card) => {
             const matches = cardConnections(card, connections);
             const hasActive = matches.some((connection) => connection.isActive);
-            return <article key={card.id} className={cn("flex min-h-[286px] flex-col rounded-2xl border bg-card p-4 transition-all", hasActive ? "border-primary/45 shadow-md shadow-primary/5" : "border-border hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-sm")}>
+            return <article key={card.id} className={cn("flex min-h-[286px] flex-col rounded-2xl border bg-card p-4 transition-all", hasActive ? "border-primary/45 shadow-md shadow-primary/5" : "border-border hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-xs")}>
               <button type="button" aria-label={card.name} aria-pressed={hasActive} disabled={!settings.canManage || savingProvider} onClick={() => { const current = matches.find((connection) => connection.isActive) || matches[0]; if (current) openExistingConnection(current); else openNewConnection(card); }} className="flex items-start gap-3 text-left disabled:cursor-not-allowed disabled:opacity-60"><ProviderLogo card={card} className="h-10 w-10 rounded-xl" /><span className="min-w-0 flex-1"><span className="flex items-center gap-2"><span className="truncate text-[13px] font-semibold text-foreground">{card.name}</span>{hasActive ? <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-primary" /> : null}</span><span className="mt-1 block text-[10.5px] leading-4 text-muted-foreground">{card.description}</span></span></button>
               <div className="mt-4 space-y-2 border-t border-border pt-3 text-[10.5px] leading-4 text-muted-foreground"><p><span className="font-medium text-foreground">Best for:</span> {card.bestFor}</p><div className="flex items-start gap-2"><span className="shrink-0 font-medium text-foreground">Base URL</span><code className="min-w-0 break-all rounded-md bg-muted px-1.5 py-1 text-[9.5px]">{card.defaultBaseUrl || "Set in the custom connection form"}</code></div><a href={card.setupUrl} target="_blank" rel="noopener noreferrer" aria-label={card.setupLabel} className="group inline-flex items-center gap-1 font-medium text-primary hover:underline">{card.setupLabel}<ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" /></a></div>
               <div className="mt-auto space-y-2 pt-4">{matches.length ? matches.map((connection) => <div key={connection.id} className="rounded-xl border border-border bg-background/70 p-2.5"><div className="flex items-start gap-2"><span className={cn("mt-1 h-2 w-2 shrink-0 rounded-full", connection.configured ? "bg-emerald-500" : "bg-amber-500")} /><div className="min-w-0 flex-1"><p className="truncate text-[10.5px] font-medium text-foreground">{connection.label || card.name}</p><p className="mt-0.5 truncate text-[9.5px] text-muted-foreground">{connection.model || "Model not configured"}{connection.apiKeyHint ? ` · ${connection.apiKeyHint}` : ""}</p></div>{connection.isActive ? <span className="shrink-0 rounded-full bg-primary/10 px-1.5 py-0.5 text-[9px] font-medium text-primary">Active</span> : null}</div><div className="mt-2 flex items-center justify-end gap-1.5">{!connection.isActive ? <Button type="button" variant="outline" size="sm" className="h-7 px-2 text-[10px]" disabled={!settings.canManage || savingProvider || !connection.configured} onClick={() => void onProviderActivate(connection.id)}>Set active</Button> : null}<Button type="button" variant="ghost" size="sm" className="h-7 px-2 text-[10px]" disabled={!settings.canManage || savingProvider} onClick={() => openExistingConnection(connection)}>Manage</Button><Button type="button" variant="ghost" size="sm" className="h-7 px-2 text-[10px]" disabled={!settings.canManage || savingProvider || testingProvider || testingId === connection.id} onClick={() => void testConnection(connection)}>{testingId === connection.id ? <Loader2 className="h-3 w-3 animate-spin" /> : <RefreshCw className="h-3 w-3" />} Check</Button></div></div>) : <Button type="button" className="w-full" size="sm" disabled={!settings.canManage || savingProvider} onClick={() => openNewConnection(card)}><Plus className="mr-1.5 h-3.5 w-3.5" /> Connect</Button>}{card.customEndpoint ? <Button type="button" variant="outline" className="w-full" size="sm" disabled={!settings.canManage || savingProvider} onClick={() => openNewConnection(card)}><Plus className="mr-1.5 h-3.5 w-3.5" /> Add another endpoint</Button> : null}</div>
@@ -1861,10 +1861,10 @@ export function AIWorkspaceModule({
 
   return (
     <div className="min-h-[calc(100vh-8rem)] space-y-6 pb-8">
-      <header className="overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/[0.08] via-card to-card p-5">
+      <header className="overflow-hidden rounded-2xl border border-border bg-linear-to-br from-primary/8 via-card to-card p-5">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/[0.08] text-primary ring-1 ring-inset ring-primary/15"><BrandLogo markSize={23} showWordmark={false} /></span>
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/8 text-primary ring-1 ring-inset ring-primary/15"><BrandLogo markSize={23} showWordmark={false} /></span>
             <h1 className="mt-3 text-[21px] font-semibold text-foreground">MaxAI workspace</h1>
             <p className="mt-1 max-w-[720px] text-[13px] leading-relaxed text-muted-foreground">Build alongside your real workspace modules. MaxAI can inspect Forms, Events, Appointments, CRM, Payments, Campaigns, Workflows, Files, Documents, and Email — and it asks before anything consequential happens.</p>
           </div>

@@ -379,9 +379,9 @@ export function FloatingAssistant({
               setOpen(true);
             }}
             aria-label="Ask MaxAI about this screen"
-            className="group relative flex max-w-[244px] items-center gap-2 rounded-[14px] border border-primary/20 bg-background/95 px-2.5 py-2 text-left shadow-lg shadow-black/10 backdrop-blur transition hover:-translate-y-0.5 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="group relative flex max-w-[244px] items-center gap-2 rounded-[14px] border border-primary/20 bg-background/95 px-2.5 py-2 text-left shadow-lg shadow-black/10 backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-primary/40 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-xs">
               <StackedLogo size={15} color="currentColor" />
             </span>
             <span className="min-w-0">
@@ -413,7 +413,7 @@ export function FloatingAssistant({
           aria-label={open ? "Close MaxAI" : "Open MaxAI"}
           className={cn(
             "flex h-11 w-11 items-center justify-center rounded-[14px] bg-primary text-primary-foreground shadow-md shadow-primary/25 ring-2 ring-background/80 transition",
-            "hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            "hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
           )}
         >
           {open ? (

@@ -286,7 +286,7 @@ export function CampaignSuppressionsPanel({ userId }: { userId: string }) {
 
   return (
     <section className="space-y-5">
-      <header className="flex flex-col gap-4 rounded-2xl border border-border bg-card px-5 py-5 shadow-sm sm:flex-row sm:items-end sm:justify-between">
+      <header className="flex flex-col gap-4 rounded-2xl border border-border bg-card px-5 py-5 shadow-xs sm:flex-row sm:items-end sm:justify-between">
         <div className="min-w-0">
           <div className="flex items-center gap-2 text-primary">
             <ShieldOff className="h-4 w-4" />
@@ -319,7 +319,7 @@ export function CampaignSuppressionsPanel({ userId }: { userId: string }) {
             )}
             {exporting ? "Preparing…" : "Export CSV"}
           </Button>
-          <div className="flex items-center gap-2 rounded-xl border border-primary/15 bg-primary/[.05] px-3 py-2 text-[11px] text-muted-foreground">
+          <div className="flex items-center gap-2 rounded-xl border border-primary/15 bg-primary/5 px-3 py-2 text-[11px] text-muted-foreground">
             <CheckCircle2 className="h-4 w-4 text-primary" />
             <span>Sending checks this list automatically</span>
           </div>
@@ -341,8 +341,8 @@ export function CampaignSuppressionsPanel({ userId }: { userId: string }) {
             type="button"
             onClick={() => setReason(key)}
             className={cn(
-              "rounded-xl border bg-card px-4 py-3 text-left transition-colors hover:border-primary/35 hover:bg-primary/[.03]",
-              reason === key && "border-primary/45 bg-primary/[.06]",
+              "rounded-xl border bg-card px-4 py-3 text-left transition-colors hover:border-primary/35 hover:bg-primary/3",
+              reason === key && "border-primary/45 bg-primary/6",
             )}
           >
             <p className="text-[10px] font-medium text-muted-foreground">
@@ -412,7 +412,7 @@ export function CampaignSuppressionsPanel({ userId }: { userId: string }) {
       </TableSelectionBar>
 
       {query.isError ? (
-        <div className="flex items-start gap-3 rounded-xl border border-destructive/25 bg-destructive/[.04] px-4 py-4 text-[12px] text-destructive">
+        <div className="flex items-start gap-3 rounded-xl border border-destructive/25 bg-destructive/4 px-4 py-4 text-[12px] text-destructive">
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
           <div>
             <p className="font-semibold">Suppression records could not load</p>
@@ -447,7 +447,7 @@ export function CampaignSuppressionsPanel({ userId }: { userId: string }) {
         </div>
       ) : (
         <>
-          <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-sm">
+          <div className="overflow-x-auto rounded-2xl border border-border bg-card shadow-xs">
             <table className="min-w-[900px] w-full text-left">
               <thead className="border-b border-border bg-muted/25">
                 <tr className="text-[10px] font-semibold uppercase tracking-[.08em] text-muted-foreground">
@@ -630,7 +630,7 @@ export function CampaignSuppressionsPanel({ userId }: { userId: string }) {
               memberships and suppression record. This cannot be undone.
             </DialogDescription>
           </DialogHeader>
-          <div className="rounded-xl border border-destructive/25 bg-destructive/[.05] px-3 py-3 text-[11px] leading-5 text-destructive">
+          <div className="rounded-xl border border-destructive/25 bg-destructive/5 px-3 py-3 text-[11px] leading-5 text-destructive">
             Campaign delivery history and analytics are kept for reporting, but
             the contact profile itself will no longer exist in the CRM.
           </div>

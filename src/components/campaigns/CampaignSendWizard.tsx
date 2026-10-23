@@ -328,7 +328,7 @@ export function CampaignSendWizard({
   return (
     // Same frame as the builder it follows: a large centred workspace rather
     // than a second, differently-shaped full-screen takeover.
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-sm sm:p-4 lg:p-6">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-xs sm:p-4 lg:p-6">
       <div
         role="region"
         aria-label="Campaign send wizard"

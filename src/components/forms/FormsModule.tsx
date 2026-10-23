@@ -659,7 +659,7 @@ function TemplateGallery({
         {loading && templates.length === 0 && (
           <CardGrid>
             {Array.from({ length: 6 }).map((_, index) => (
-              <Skeleton key={index} className="aspect-[3/2] rounded-md" />
+              <Skeleton key={index} className="aspect-3/2 rounded-md" />
             ))}
           </CardGrid>
         )}
@@ -688,7 +688,7 @@ function TemplateGallery({
                   <div
                     className="group flex min-h-[310px] flex-col overflow-hidden rounded-md border border-border bg-card transition-[border-color,transform] hover:-translate-y-0.5 hover:border-muted-foreground/50"
                   >
-                    <div className="relative aspect-[3/2] overflow-hidden border-b border-border bg-muted">
+                    <div className="relative aspect-3/2 overflow-hidden border-b border-border bg-muted">
                       <img
                         src={
                           template.imageUrl ||
@@ -699,7 +699,7 @@ function TemplateGallery({
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.025]"
                       />
                       {template.payment?.enabled && (
-                        <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded bg-background/90 px-2 py-1 text-[9px] font-semibold uppercase text-emerald-700 shadow-sm backdrop-blur-sm dark:text-emerald-400">
+                        <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded bg-background/90 px-2 py-1 text-[9px] font-semibold uppercase text-emerald-700 shadow-xs backdrop-blur-xs dark:text-emerald-400">
                           <CircleDollarSign className="h-3 w-3" />
                           Payment
                         </span>
@@ -2883,7 +2883,7 @@ function FormTransitionOverlay({ message }: { message: string | null }) {
 
   return (
     <div
-      className="absolute inset-0 z-[70] flex items-center justify-center bg-background/85 px-5 backdrop-blur-sm"
+      className="absolute inset-0 z-70 flex items-center justify-center bg-background/85 px-5 backdrop-blur-xs"
       role="status"
       aria-live="polite"
     >

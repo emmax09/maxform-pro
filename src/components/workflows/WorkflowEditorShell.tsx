@@ -66,7 +66,7 @@ export function WorkflowSaveState({
           <button
             type="button"
             onClick={onRetry}
-            className="rounded underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive/30"
+            className="rounded underline underline-offset-2 hover:no-underline focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-destructive/30"
           >
             Retry
           </button>

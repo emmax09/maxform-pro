@@ -64,8 +64,8 @@ export function CampaignSettingsPanel({
       <section
         className={
           addressReady
-            ? "flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/[0.06] p-4"
-            : "flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/[0.05] p-4"
+            ? "flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/6 p-4"
+            : "flex items-start gap-3 rounded-xl border border-destructive/30 bg-destructive/5 p-4"
         }
       >
         {addressReady ? (

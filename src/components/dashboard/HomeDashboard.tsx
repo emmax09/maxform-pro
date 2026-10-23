@@ -829,7 +829,7 @@ function QuickActions({
               }}
               onKeyDown={(event) => handleKeyboardReorder(event, action.id)}
               className={cn(
-                "group relative min-w-0 bg-card p-4 outline-none transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
+                "group relative min-w-0 bg-card p-4 outline-hidden transition-colors hover:bg-accent focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring",
                 draggedId === action.id && "opacity-50",
               )}
             >

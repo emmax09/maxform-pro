@@ -1294,14 +1294,14 @@ function ContactImportDialog({
               className={cn(
                 "flex min-h-[260px] w-full flex-col items-center justify-center rounded-2xl border border-dashed px-6 py-10 text-center transition-colors",
                 dragging
-                  ? "border-primary bg-primary/[0.06]"
-                  : "border-border bg-muted/20 hover:border-primary/40 hover:bg-primary/[0.025]",
+                  ? "border-primary bg-primary/6"
+                  : "border-border bg-muted/20 hover:border-primary/40 hover:bg-primary/2.5",
               )}
             >
               {reading ? (
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
               ) : (
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-background shadow-sm">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-background shadow-xs">
                   <Upload className="h-6 w-6 text-primary" />
                 </span>
               )}
@@ -1701,7 +1701,7 @@ function ContactExportDialog({
           </div>
 
           {availableLists.length === 0 ? (
-            <div className="rounded-xl border border-amber-500/25 bg-amber-500/[0.06] px-4 py-3 text-[11px] text-amber-800 dark:text-amber-200">
+            <div className="rounded-xl border border-amber-500/25 bg-amber-500/6 px-4 py-3 text-[11px] text-amber-800 dark:text-amber-200">
               Create a static contact list before exporting contacts.
             </div>
           ) : selectedList ? (

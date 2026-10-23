@@ -348,7 +348,7 @@ export function CampaignBuilderScreen({
       // than one surface going dark against light chrome.
       className={cn(
         theme,
-        "fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-sm transition-opacity duration-200 sm:p-4 lg:p-6",
+        "fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-xs transition-opacity duration-200 sm:p-4 lg:p-6",
         leaving ? "opacity-0" : "opacity-100",
       )}
     >
@@ -395,7 +395,7 @@ export function CampaignBuilderScreen({
               changeDraft({ ...draft, name: event.target.value })
             }
             placeholder="Untitled campaign"
-            className="w-full max-w-[420px] rounded-md border border-transparent bg-transparent px-2 py-1 text-[15px] font-semibold outline-none transition-colors hover:border-border focus:border-primary focus:bg-background"
+            className="w-full max-w-[420px] rounded-md border border-transparent bg-transparent px-2 py-1 text-[15px] font-semibold outline-hidden transition-colors hover:border-border focus:border-primary focus:bg-background"
           />
           <p className="px-2 text-[10px] text-muted-foreground" aria-live="polite">
             {saving
@@ -506,7 +506,7 @@ export function CampaignBuilderScreen({
         className={cn(
           "shrink-0 border-b px-4 py-3 transition-colors",
           missingInboxFields.length
-            ? "border-amber-500/40 bg-amber-500/[0.06]"
+            ? "border-amber-500/40 bg-amber-500/6"
             : "border-border bg-card",
         )}
       >

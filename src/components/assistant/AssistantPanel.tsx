@@ -74,7 +74,7 @@ export function AssistantMessageAvatar({
 
   return (
     <span
-      className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-primary/[0.08] text-primary ring-1 ring-inset ring-primary/15"
+      className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-primary/8 text-primary ring-1 ring-inset ring-primary/15"
       role="img"
       aria-label="MaxAI"
     >
@@ -114,7 +114,7 @@ export function ContextChip({ context }: { context: AssistantScreenContext }) {
 
   return (
     <div className="flex flex-wrap items-center gap-1.5 px-4 py-2.5 text-[10.5px] text-muted-foreground">
-      <span className="inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/[0.06] px-2 py-0.5 font-medium text-primary">
+      <span className="inline-flex items-center gap-1 rounded-full border border-primary/20 bg-primary/6 px-2 py-0.5 font-medium text-primary">
         <CheckCircle2 className="h-3 w-3" />
         Workspace only
       </span>
@@ -286,9 +286,9 @@ export function AssistantPanel({
     <div
       role="dialog"
       aria-label="MaxAI workspace assistant"
-      className="flex h-[min(720px,calc(100vh-4.5rem))] w-[min(460px,calc(100vw-2rem))] flex-col overflow-hidden rounded-[28px] border border-border/80 bg-background/95 shadow-[0_28px_80px_-28px_rgba(15,23,42,0.42)] backdrop-blur"
+      className="flex h-[min(720px,calc(100vh-4.5rem))] w-[min(460px,calc(100vw-2rem))] flex-col overflow-hidden rounded-[28px] border border-border/80 bg-background/95 shadow-[0_28px_80px_-28px_rgba(15,23,42,0.42)] backdrop-blur-sm"
     >
-      <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border/80 bg-gradient-to-r from-primary/[0.08] via-background/95 to-background/95 px-4 py-3.5">
+      <header className="flex shrink-0 items-center justify-between gap-3 border-b border-border/80 bg-linear-to-r from-primary/8 via-background/95 to-background/95 px-4 py-3.5">
         <div className="flex min-w-0 items-center gap-2.5">
           {view === "chat" ? (
             <Button
@@ -302,7 +302,7 @@ export function AssistantPanel({
               <ArrowLeft className="h-4 w-4" />
             </Button>
           ) : null}
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[14px] border border-primary/20 bg-background/80 text-primary shadow-sm">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[14px] border border-primary/20 bg-background/80 text-primary shadow-xs">
             <BrandLogo markSize={19} showWordmark={false} />
           </span>
           <div className="min-w-0">
@@ -318,7 +318,7 @@ export function AssistantPanel({
         </div>
 
         <div className="flex shrink-0 items-center gap-1.5">
-          <span className="hidden items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/[0.06] px-2 py-1 text-[10px] font-medium text-emerald-700 dark:text-emerald-300 sm:inline-flex">
+          <span className="hidden items-center gap-1 rounded-full border border-emerald-500/20 bg-emerald-500/6 px-2 py-1 text-[10px] font-medium text-emerald-700 dark:text-emerald-300 sm:inline-flex">
             <ShieldCheck className="h-3 w-3" />
             Workspace scoped
           </span>
@@ -352,11 +352,11 @@ export function AssistantPanel({
       </div>
 
       <div
-        className="flex-1 space-y-4 overflow-y-auto bg-gradient-to-b from-muted/[0.18] via-background to-background px-3.5 py-4 sm:px-5 sm:py-5"
+        className="flex-1 space-y-4 overflow-y-auto bg-linear-to-b from-muted/18 via-background to-background px-3.5 py-4 sm:px-5 sm:py-5"
         aria-busy={checking || thinking}
       >
         {checking ? (
-          <div className="rounded-[20px] border border-primary/20 bg-card/80 p-4 text-[12px] text-muted-foreground shadow-sm">
+          <div className="rounded-[20px] border border-primary/20 bg-card/80 p-4 text-[12px] text-muted-foreground shadow-xs">
             <div className="flex items-center gap-2 font-semibold text-foreground">
               <Loader2 className="h-4 w-4 animate-spin text-primary" />
               Connecting to MaxAI...
@@ -364,7 +364,7 @@ export function AssistantPanel({
             <p className="mt-1 pl-6">Checking this workspace connection.</p>
           </div>
         ) : unavailable ? (
-          <div className="rounded-[20px] border border-amber-500/30 bg-amber-500/[0.06] p-4 text-[12px] text-muted-foreground shadow-sm">
+          <div className="rounded-[20px] border border-amber-500/30 bg-amber-500/6 p-4 text-[12px] text-muted-foreground shadow-xs">
             <div className="flex items-start gap-2.5">
               <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
               <div>
@@ -418,8 +418,8 @@ export function AssistantPanel({
         ) : (
           <>
             {!checking && !unavailable && turns.length === 0 ? (
-              <div className="flex min-h-[270px] flex-col items-center justify-center rounded-[24px] border border-border/80 bg-card/75 px-6 text-center shadow-sm">
-                <span className="flex h-14 w-14 items-center justify-center rounded-[18px] border border-primary/20 bg-primary/[0.07] text-primary shadow-sm">
+              <div className="flex min-h-[270px] flex-col items-center justify-center rounded-[24px] border border-border/80 bg-card/75 px-6 text-center shadow-xs">
+                <span className="flex h-14 w-14 items-center justify-center rounded-[18px] border border-primary/20 bg-primary/[0.07] text-primary shadow-xs">
                   <BrandLogo markSize={24} showWordmark={false} />
                 </span>
                 <p className="mt-4 text-[14px] font-semibold tracking-[-0.01em] text-foreground">
@@ -453,7 +453,7 @@ export function AssistantPanel({
                 role="status"
               >
                 <AssistantMessageAvatar role="assistant" />
-                <div className="rounded-[18px] rounded-bl-[6px] border border-border/90 bg-card px-3.5 py-2.5 shadow-sm">
+                <div className="rounded-[18px] rounded-bl-[6px] border border-border/90 bg-card px-3.5 py-2.5 shadow-xs">
                   <div className="flex items-center gap-2 text-[11.5px] font-medium text-muted-foreground">
                     <span className="flex gap-1" aria-hidden="true">
                       <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-primary" />
@@ -543,7 +543,7 @@ export function AssistantPanel({
               />
               <Button
                 size="icon"
-                className="h-10 w-10 shrink-0 rounded-[14px] shadow-sm"
+                className="h-10 w-10 shrink-0 rounded-[14px] shadow-xs"
                 onClick={submit}
                 disabled={!draft.trim() || thinking || blocked}
                 aria-label="Send message"

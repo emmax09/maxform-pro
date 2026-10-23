@@ -303,7 +303,7 @@ describe("background and effects", () => {
     expect(campaignContainerStyle(full).opacity).toBeUndefined();
   });
 
-  it("maps each shadow step to a real box-shadow, and none to nothing", () => {
+  it("maps each shadow-sm step to a real box-shadow, and none to nothing", () => {
     for (const shadow of ["sm", "md", "lg"] as const) {
       const block = {
         ...createCampaignBlock("text"),

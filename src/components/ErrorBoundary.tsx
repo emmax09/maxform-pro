@@ -53,7 +53,7 @@ export class ErrorBoundary extends Component<Props, State> {
             This section hit an unexpected error. The rest of your workspace is
             still working — you can try again or switch to another section.
           </p>
-          <p className="mt-3 break-words rounded-md bg-background/70 p-2 text-left font-mono text-[10px] leading-4 text-muted-foreground">
+          <p className="mt-3 wrap-break-word rounded-md bg-background/70 p-2 text-left font-mono text-[10px] leading-4 text-muted-foreground">
             {error.message || String(error)}
           </p>
           <div className="mt-4 flex justify-center gap-2">

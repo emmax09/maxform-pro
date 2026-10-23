@@ -475,7 +475,7 @@ function SettingsStep({
               )}
             </div>
             <div className="divide-y divide-border">
-              <div className="flex items-center gap-3 bg-primary/[0.04] px-3 py-3">
+              <div className="flex items-center gap-3 bg-primary/4 px-3 py-3">
                 <span className="h-3.5 w-3.5 shrink-0 rounded-[3px] border border-muted-foreground/40" />
                 <span className="w-[110px] shrink-0 truncate text-[12px] font-semibold">
                   {senderName || "Your sender"}
@@ -586,7 +586,7 @@ function DesignStep({
               className={cn(
                 "flex items-center gap-2 rounded-lg border px-3.5 py-2.5 text-[12.5px] font-medium transition-colors",
                 active
-                  ? "border-primary bg-primary/[0.06] text-foreground"
+                  ? "border-primary bg-primary/6 text-foreground"
                   : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground",
               )}
             >
@@ -625,7 +625,7 @@ function DesignStep({
                     className={cn(
                       "w-full rounded-md px-3 py-2 text-left text-[12px] transition-colors",
                       category === value
-                        ? "bg-primary/[0.08] font-medium text-foreground"
+                        ? "bg-primary/8 font-medium text-foreground"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground",
                     )}
                   >
@@ -1146,7 +1146,7 @@ function ReviewStep({
       <div className="mt-5 grid gap-5 lg:grid-cols-2">
         <div className="space-y-5">
           {blockers.length ? (
-            <section className="rounded-xl border border-destructive/40 bg-destructive/[0.04] p-5">
+            <section className="rounded-xl border border-destructive/40 bg-destructive/4 p-5">
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="text-[14px] font-semibold text-destructive">Errors</h3>
                 <span className="text-[12px] font-medium text-destructive">
@@ -1174,7 +1174,7 @@ function ReviewStep({
               Running the pre-send checks…
             </section>
           ) : (
-            <section className="flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/[0.05] p-5">
+            <section className="flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-5">
               <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
               <div>
                 <p className="text-[13px] font-semibold">Ready to send</p>

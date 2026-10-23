@@ -76,7 +76,7 @@ export function CardGridPagination({
     <nav
       aria-label={`${itemLabel} pagination`}
       className={cn(
-        "flex flex-col gap-3 rounded-2xl border border-border/80 bg-card/75 px-4 py-3 shadow-sm sm:flex-row sm:items-center sm:justify-between",
+        "flex flex-col gap-3 rounded-2xl border border-border/80 bg-card/75 px-4 py-3 shadow-xs sm:flex-row sm:items-center sm:justify-between",
         className,
       )}
     >

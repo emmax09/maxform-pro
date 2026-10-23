@@ -202,7 +202,7 @@ function TypeSettingsPanel({
           </div>
         </div>
 
-        <p className="flex items-start gap-2 rounded-md bg-amber-500/[0.08] p-2.5 text-[10.5px] leading-4 text-muted-foreground">
+        <p className="flex items-start gap-2 rounded-md bg-amber-500/8 p-2.5 text-[10.5px] leading-4 text-muted-foreground">
           <TriangleAlert className="mt-px h-3.5 w-3.5 shrink-0 text-amber-500" />
           <span>
             Few email clients support custom web fonts. A similar web-safe font is
@@ -317,7 +317,7 @@ function SimpleLivePreview({
       aria-label="Campaign live preview"
       className={cn("mx-auto w-full space-y-3", previewSurface)}
     >
-      <div className="rounded-lg border border-border bg-card p-3.5 shadow-sm">
+      <div className="rounded-lg border border-border bg-card p-3.5 shadow-xs">
         <div className="mb-2 flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <Eye className="h-3.5 w-3.5 text-primary" />
@@ -351,7 +351,7 @@ function SimpleLivePreview({
           />
         ) : body.trim() ? (
           <div
-            className="mx-auto w-full overflow-hidden rounded-lg border border-border bg-white shadow-sm"
+            className="mx-auto w-full overflow-hidden rounded-lg border border-border bg-white shadow-xs"
             style={{ maxWidth: width }}
           >
             <iframe
@@ -534,7 +534,7 @@ export function CampaignSimpleBuilder({
     <div
       className={cn(
         theme,
-        "fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-sm transition-opacity duration-200 sm:p-4 lg:p-6",
+        "fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-xs transition-opacity duration-200 sm:p-4 lg:p-6",
       )}
     >
       <div
@@ -572,7 +572,7 @@ export function CampaignSimpleBuilder({
                     changeDraft({ ...draft, name: event.target.value })
                   }
                   placeholder="Untitled campaign"
-                  className="w-full max-w-[420px] rounded-md border border-transparent bg-transparent px-2 py-1 text-[15px] font-semibold outline-none transition-colors hover:border-border focus:border-primary focus:bg-background"
+                  className="w-full max-w-[420px] rounded-md border border-transparent bg-transparent px-2 py-1 text-[15px] font-semibold outline-hidden transition-colors hover:border-border focus:border-primary focus:bg-background"
                 />
                 <p className="px-2 text-[10px] text-muted-foreground" aria-live="polite">
                   {isSaving
@@ -705,7 +705,7 @@ export function CampaignSimpleBuilder({
               className={cn(
                 "shrink-0 border-b px-4 py-3 transition-colors",
                 missingInboxFields.length
-                  ? "border-amber-500/40 bg-amber-500/[0.06]"
+                  ? "border-amber-500/40 bg-amber-500/6"
                   : "border-border bg-card",
               )}
             >
@@ -771,7 +771,7 @@ export function CampaignSimpleBuilder({
                 ) : (
                   <div
                     className={cn(
-                      "mx-auto flex min-h-[420px] flex-col overflow-hidden rounded-lg border border-border bg-card shadow-sm",
+                      "mx-auto flex min-h-[420px] flex-col overflow-hidden rounded-lg border border-border bg-card shadow-xs",
                       device === "mobile"
                         ? "max-w-[400px]"
                         : device === "tablet"
@@ -796,7 +796,7 @@ export function CampaignSimpleBuilder({
                         </div>
                       </div>
                       <div className="dashboard-scroll min-h-0 flex-1 overflow-y-auto bg-muted/20 p-5 sm:p-7">
-                        <div className="mx-auto w-full max-w-[680px] rounded-lg border border-border bg-background p-5 shadow-sm sm:p-7">
+                        <div className="mx-auto w-full max-w-[680px] rounded-lg border border-border bg-background p-5 shadow-xs sm:p-7">
                           <Label htmlFor="simple-body" className="sr-only">
                             Plain text body
                           </Label>
@@ -810,7 +810,7 @@ export function CampaignSimpleBuilder({
                               fontFamily: typography.fontFamily,
                               fontSize: typography.fontSize + "px",
                             }}
-                            className="dashboard-scroll h-[min(56dvh,620px)] min-h-[380px] max-h-[calc(100dvh-360px)] resize-y overflow-y-auto border-border bg-card leading-relaxed shadow-sm"
+                            className="dashboard-scroll h-[min(56dvh,620px)] min-h-[380px] max-h-[calc(100dvh-360px)] resize-y overflow-y-auto border-border bg-card leading-relaxed shadow-xs"
                           />
                           <p className="mt-3 text-[11px] leading-5 text-muted-foreground">
                             Plain text stays lightweight and keeps line breaks. The

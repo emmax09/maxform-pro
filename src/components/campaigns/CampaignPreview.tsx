@@ -115,10 +115,10 @@ function ProductGridPreview({ block }: { block: CampaignBlock }) {
             <img
               src={item.imageSrc}
               alt={item.title}
-              className="mb-2.5 aspect-[4/3] w-full rounded-[10px] object-cover"
+              className="mb-2.5 aspect-4/3 w-full rounded-[10px] object-cover"
             />
           ) : (
-            <div className="mb-2.5 aspect-[4/3] w-full rounded-[10px] bg-slate-100" />
+            <div className="mb-2.5 aspect-4/3 w-full rounded-[10px] bg-slate-100" />
           )}
           <p className="text-[14px] font-semibold leading-tight text-slate-900">
             {item.title}
@@ -225,7 +225,7 @@ export function EditableText({
         event.stopPropagation()
       }
       className={cn(
-        "outline-none focus:ring-1 focus:ring-primary/40 focus:ring-offset-1",
+        "outline-hidden focus:ring-1 focus:ring-primary/40 focus:ring-offset-1",
         className,
       )}
       style={style}
@@ -1031,7 +1031,7 @@ export function CampaignPreview({
                     }
                   }}
                   className={cn(
-                    "cursor-pointer rounded-md p-1 outline-none transition-shadow",
+                    "cursor-pointer rounded-md p-1 outline-hidden transition-shadow",
                     selectedBlockId === block.id
                       ? "shadow-[0_0_0_2px_rgb(99,91,255)]"
                       : "hover:shadow-[0_0_0_1px_rgb(148,163,184)]",

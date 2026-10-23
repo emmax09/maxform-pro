@@ -56,9 +56,9 @@ const priorityClass = (priority: string) => {
 };
 
 const insightClass = (type: string) => {
-  if (type === "risk") return "border-rose-500/20 bg-rose-500/[0.04]";
-  if (type === "momentum") return "border-emerald-500/20 bg-emerald-500/[0.04]";
-  return "border-primary/20 bg-primary/[0.04]";
+  if (type === "risk") return "border-rose-500/20 bg-rose-500/4";
+  if (type === "momentum") return "border-emerald-500/20 bg-emerald-500/4";
+  return "border-primary/20 bg-primary/4";
 };
 
 const resultIcon = (resultType: CrmSearchResult["resultType"]) => {
@@ -162,7 +162,7 @@ export function CommandCenterPanel({
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/[0.08] via-card to-card p-5 sm:p-6">
+      <section className="rounded-2xl border border-primary/20 bg-linear-to-br from-primary/8 via-card to-card p-5 sm:p-6">
         <div className="flex flex-col gap-5 xl:flex-row xl:items-end xl:justify-between">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-primary">

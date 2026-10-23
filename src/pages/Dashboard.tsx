@@ -2499,7 +2499,7 @@ function Dashboard() {
                 <>
                   <div className="flex min-h-[78px] items-start justify-between gap-5">
                 <div>
-                  <h1 className="max-w-[760px] text-[34px] font-[500] leading-[1.06] text-foreground sm:text-[44px]">
+                  <h1 className="max-w-[760px] text-[34px] font-medium leading-[1.06] text-foreground sm:text-[44px]">
                     {activeModule.title}
                   </h1>
                   <p className="mt-2 text-[16px] text-muted-foreground">{activeModule.subtitle}</p>

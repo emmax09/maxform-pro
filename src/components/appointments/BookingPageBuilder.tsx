@@ -149,7 +149,7 @@ export function BookingPageBuilder({
   return (
     <div
       className={cn(
-        "fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-sm transition-opacity duration-200 sm:p-4 lg:p-6",
+        "fixed inset-0 z-50 flex items-center justify-center bg-foreground/40 p-2 backdrop-blur-xs transition-opacity duration-200 sm:p-4 lg:p-6",
         leaving ? "opacity-0" : "opacity-100",
       )}
     >
@@ -633,7 +633,7 @@ export function BookingPageBuilder({
                     value={draft.priceCents ? money(draft.priceCents, draft.currency) : "Free"}
                   />
                   <div className="rounded-lg border border-border p-4">
-                    <p className="text-[11px] font-semibold uppercase tracking-[.1em] text-muted-foreground">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
                       Booking form
                     </p>
                     {questions.length ? (
@@ -665,7 +665,7 @@ export function BookingPageBuilder({
                   <p className="text-[11px] font-semibold">Live preview</p>
                   <Badge variant="outline" className="text-[9px]">Public page</Badge>
                 </div>
-                <div className="overflow-hidden rounded-xl border border-border bg-background shadow-sm">
+                <div className="overflow-hidden rounded-xl border border-border bg-background shadow-xs">
                   {draft.branding?.coverImage ? (
                     <img
                       src={draft.branding.coverImage}

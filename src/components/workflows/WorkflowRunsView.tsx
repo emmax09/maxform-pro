@@ -94,7 +94,7 @@ function RunsSkeleton() {
 function DetailFigure({ label, value }: { label: string; value: string }) {
   return (
     <div className="min-w-0 rounded-md border border-border px-2.5 py-2">
-      <p className="text-[9.5px] uppercase tracking-[0.1em] text-muted-foreground">
+      <p className="text-[9.5px] uppercase tracking-widest text-muted-foreground">
         {label}
       </p>
       <p className="mt-0.5 truncate text-[12px] font-medium">{value}</p>
@@ -340,8 +340,8 @@ export function WorkflowRunsView({
                     onClick={() => onSelect(execution)}
                     aria-current={selected?.id === execution.id ? "true" : undefined}
                     className={cn(
-                      "flex w-full items-center gap-3 px-3.5 py-2.5 text-left transition-colors hover:bg-muted/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30",
-                      selected?.id === execution.id && "bg-primary/[0.05]",
+                      "flex w-full items-center gap-3 px-3.5 py-2.5 text-left transition-colors hover:bg-muted/50 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary/30",
+                      selected?.id === execution.id && "bg-primary/5",
                     )}
                   >
                     <span

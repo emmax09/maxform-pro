@@ -47,7 +47,7 @@ export function AssistantHome({
 
   return (
     <div className="flex flex-col gap-3.5" aria-label="Assistant home">
-      <section className="relative overflow-hidden rounded-[24px] border border-primary/20 bg-gradient-to-br from-primary/[0.14] via-background to-background shadow-sm">
+      <section className="relative overflow-hidden rounded-[24px] border border-primary/20 bg-linear-to-br from-primary/[0.14] via-background to-background shadow-xs">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-12 -top-14 h-36 w-36 rounded-full bg-primary/10 blur-3xl"
@@ -55,7 +55,7 @@ export function AssistantHome({
         <div className="relative p-4">
           <div className="flex items-start justify-between gap-3">
             <div className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-[14px] border border-primary/20 bg-background/90 text-primary shadow-sm">
+              <span className="flex h-10 w-10 items-center justify-center rounded-[14px] border border-primary/20 bg-background/90 text-primary shadow-xs">
                 <BrandLogo markSize={23} showWordmark={false} />
               </span>
               <div>
@@ -72,7 +72,7 @@ export function AssistantHome({
                 "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2 py-1 text-[10px] font-medium",
                 unavailable
                   ? "border-amber-500/30 bg-amber-500/[0.07] text-amber-700 dark:text-amber-300"
-                  : "border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-700 dark:text-emerald-300",
+                  : "border-emerald-500/20 bg-emerald-500/6 text-emerald-700 dark:text-emerald-300",
               )}
             >
               <span
@@ -89,7 +89,7 @@ export function AssistantHome({
             </span>
           </div>
 
-          <h2 className="mt-5 text-[21px] font-semibold leading-tight tracking-[-0.025em] text-foreground">
+          <h2 className="mt-5 text-[21px] font-semibold leading-tight tracking-tight text-foreground">
             {greeting
               ? `Hi ${greeting}, how can I help you build today?`
               : "How can I help you build today?"}
@@ -102,7 +102,7 @@ export function AssistantHome({
           <Button
             type="button"
             onClick={onOpenChat}
-            className="mt-4 h-10 w-full justify-between rounded-xl px-3.5 text-[12.5px] shadow-sm"
+            className="mt-4 h-10 w-full justify-between rounded-xl px-3.5 text-[12.5px] shadow-xs"
           >
             <span className="inline-flex items-center gap-2">
               <MessageCircle className="h-4 w-4" />
@@ -123,7 +123,7 @@ export function AssistantHome({
               Live context available to MaxAI right now
             </p>
           </div>
-          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/[0.08] text-primary">
+          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/8 text-primary">
             <CheckCircle2 className="h-4 w-4" />
           </span>
         </div>
@@ -175,7 +175,7 @@ export function AssistantHome({
           type="button"
           onClick={() => onPick("Give me a live overview of this workspace")}
           disabled={disabled}
-          className="group mb-1.5 flex w-full items-center gap-2 rounded-xl border border-primary/20 bg-primary/[0.05] px-3 py-2.5 text-left text-[12.5px] text-foreground transition hover:border-primary/40 hover:bg-primary/[0.09] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60"
+          className="group mb-1.5 flex w-full items-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-3 py-2.5 text-left text-[12.5px] text-foreground transition hover:border-primary/40 hover:bg-primary/9 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60"
         >
           <span className="min-w-0 flex-1">
             <span className="block font-semibold">Give me a live workspace overview</span>
@@ -192,7 +192,7 @@ export function AssistantHome({
               disabled={disabled}
               className={cn(
                 "group flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2.5 text-left text-[12.5px] text-foreground transition",
-                "hover:border-primary/40 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60",
+                "hover:border-primary/40 hover:bg-accent focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60",
               )}
             >
               <span className="min-w-0 flex-1 truncate">{suggestion}</span>

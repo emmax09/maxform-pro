@@ -407,7 +407,7 @@ function ConfirmationScreen({
                   {answer.label}
                 </span>
                 <span
-                  className="break-words text-[12px]"
+                  className="wrap-break-word text-[12px]"
                   style={{ color: shell.text }}
                 >
                   {answer.value}
@@ -1312,7 +1312,7 @@ export default function PublicForm() {
               <Button
                 type="button"
                 variant="outline"
-                className="mb-6 h-12 gap-3 rounded-full bg-transparent px-5 text-[14px] font-semibold shadow-sm transition hover:bg-[color-mix(in_srgb,var(--form-fg)_6%,transparent)] hover:text-inherit"
+                className="mb-6 h-12 gap-3 rounded-full bg-transparent px-5 text-[14px] font-semibold shadow-xs transition hover:bg-[color-mix(in_srgb,var(--form-fg)_6%,transparent)] hover:text-inherit"
                 onClick={() => {
                   setCheckoutActive(false);
                   setCheckoutKey("");

@@ -121,7 +121,7 @@ export function PublicPreloader({
         </div>
         {preloader.title && (
           <h1
-            className="mt-5 break-words font-semibold leading-tight"
+            className="mt-5 wrap-break-word font-semibold leading-tight"
             style={{
               color: preloader.titleColor,
               fontSize: `min(${preloader.titleFontSize}px, 7vw)`,
@@ -132,7 +132,7 @@ export function PublicPreloader({
         )}
         {preloader.description && (
           <p
-            className="mx-auto mt-2 max-w-[34ch] break-words leading-6"
+            className="mx-auto mt-2 max-w-[34ch] wrap-break-word leading-6"
             style={{
               color: preloader.descriptionColor,
               fontSize: `min(${preloader.descriptionFontSize}px, 5vw)`,
@@ -431,7 +431,7 @@ export function PreloaderSettingsEditor({
             Preview animation
           </Button>
         </div>
-        <div className="overflow-hidden rounded-lg border border-border shadow-sm">
+        <div className="overflow-hidden rounded-lg border border-border shadow-xs">
           <PublicPreloader settings={preloader} preview />
         </div>
       </div>

@@ -308,7 +308,7 @@ function FileCardPreview({
           </span>
         )}
         {file.fileKind === "signature" && (
-          <span className="absolute bottom-1.5 left-1.5 rounded bg-background/90 px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-[0.08em] text-foreground shadow-sm">
+          <span className="absolute bottom-1.5 left-1.5 rounded bg-background/90 px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-[0.08em] text-foreground shadow-xs">
             Signature
           </span>
         )}
@@ -331,7 +331,7 @@ function FileCardPreview({
           className,
         )}
       >
-        <span className="relative flex h-[88%] w-[68%] max-w-[74px] flex-col rounded-[4px] border border-border bg-background p-2 shadow-sm">
+        <span className="relative flex h-[88%] w-[68%] max-w-[74px] flex-col rounded-[4px] border border-border bg-background p-2 shadow-xs">
           <FileText className="h-4 w-4 text-primary" />
           <span className="mt-2 h-1 w-full rounded bg-muted" />
           <span className="mt-1 h-1 w-4/5 rounded bg-muted" />
@@ -572,7 +572,7 @@ function FileSettingsPanel({
                   defaultView: event.target.value as "grid" | "list",
                 }))
               }
-              className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-none focus:ring-2 focus:ring-primary/25"
+              className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-hidden focus:ring-2 focus:ring-primary/25"
             >
               <option value="grid">Grid</option>
               <option value="list">List</option>
@@ -592,7 +592,7 @@ function FileSettingsPanel({
                     retentionDays: Number(event.target.value),
                   }))
                 }
-                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-none focus:ring-2 focus:ring-primary/25"
+                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-hidden focus:ring-2 focus:ring-primary/25"
               >
                 {[7, 14, 30, 60, 90].map((days) => (
                   <option key={days} value={days}>
@@ -613,7 +613,7 @@ function FileSettingsPanel({
                     shareExpiryDays: Number(event.target.value),
                   }))
                 }
-                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-none focus:ring-2 focus:ring-primary/25"
+                className="mt-2 h-10 w-full rounded-md border border-input bg-background px-3 text-[12px] text-foreground outline-hidden focus:ring-2 focus:ring-primary/25"
               >
                 {[1, 3, 7, 14, 30, 90].map((days) => (
                   <option key={days} value={days}>
@@ -1161,7 +1161,7 @@ function FileActions({
           <select
             value={folderId}
             onChange={(event) => setFolderId(event.target.value)}
-            className="h-10 rounded-md border border-input bg-background px-3 text-[13px] text-foreground outline-none focus:ring-2 focus:ring-primary/25"
+            className="h-10 rounded-md border border-input bg-background px-3 text-[13px] text-foreground outline-hidden focus:ring-2 focus:ring-primary/25"
           >
             <option value="">Home</option>
             {folders.map((folder) => (
@@ -1275,7 +1275,7 @@ function FileGridListing({
                 : "border-border hover:border-primary/60",
             )}
           >
-            <span className="absolute left-4 top-4 z-10 flex rounded bg-background/90 p-1 shadow-sm">
+            <span className="absolute left-4 top-4 z-10 flex rounded bg-background/90 p-1 shadow-xs">
               <Checkbox
                 checked={selected}
                 onCheckedChange={(checked) =>
@@ -2095,7 +2095,7 @@ export function FilesModule({
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">
                 Workspace library
               </p>
-              <h1 className="mt-2 text-[30px] font-semibold tracking-[-0.025em] text-foreground sm:text-[38px]">
+              <h1 className="mt-2 text-[30px] font-semibold tracking-tight text-foreground sm:text-[38px]">
                 Files
               </h1>
               <p className="mt-2 max-w-[620px] text-[13px] leading-6 text-muted-foreground">
@@ -2735,7 +2735,7 @@ export function FilesModule({
           <select
             value={bulkFolderId}
             onChange={(event) => setBulkFolderId(event.target.value)}
-            className="h-10 rounded-md border border-input bg-background px-3 text-[13px] text-foreground outline-none focus:ring-2 focus:ring-primary/25"
+            className="h-10 rounded-md border border-input bg-background px-3 text-[13px] text-foreground outline-hidden focus:ring-2 focus:ring-primary/25"
           >
             <option value="">Home</option>
             {folders.map((folder) => (

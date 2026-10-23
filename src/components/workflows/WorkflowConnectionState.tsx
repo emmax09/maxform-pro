@@ -70,7 +70,7 @@ export function WorkflowConnectionState({
         "space-y-1.5 rounded-md border p-2.5",
         standing === "not_chosen"
           ? "border-border bg-muted/40"
-          : "border-amber-500/30 bg-amber-500/[0.08]",
+          : "border-amber-500/30 bg-amber-500/8",
       )}
     >
       <p
