@@ -1,0 +1,17 @@
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="24" height="24" rx="5.5" fill="#0F766E"/>
+  <rect width="24" height="24" rx="5.5" fill="url(#tosend-mark-sheen)" fill-opacity="0.18"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 7L5.5 12.0264C8.064 13.0924 10.087 14.018 11.57 14.7975C13.781 15.9621 14.789 16.81 14.593 17.3392L18.5 7Z" fill="url(#tosend-mark-plane)"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.2985 15.4045L8.8273 17.9044C12.0818 18.1188 13.8125 17.9727 14.023 17.4644C14.1961 17.0357 13.2879 16.3491 11.2985 15.4064" fill="url(#tosend-mark-plane)"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M18.4995 7.0016L11.5695 14.7991C13.7802 15.9637 14.7883 16.8116 14.592 17.3408" fill="url(#tosend-mark-plane)"/>
+  <defs>
+    <linearGradient id="tosend-mark-sheen" x1="12" y1="0" x2="12" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="tosend-mark-plane" x1="18.5" y1="6.5" x2="7" y2="19" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+</svg>

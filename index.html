@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaxForm | Forms, Events, Payments, CRM &amp; Automation</title>
+    <meta name="description" content="Build forms, launch events, sell tickets, collect payments, automate follow-ups, and manage customer relationships with MaxForm.">
+    <meta name="author" content="MaxForm" />
+
+    <!-- Theme initialization script - MUST BE BEFORE ANY STYLES -->
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+          // Light is the default. Dark only applies when the user picked it, or
+          // picked "System" on a machine that prefers dark.
+          if (theme === 'dark' || (theme === 'system' && systemPrefersDark)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+          }
+
+          // Ensure visibility
+          document.documentElement.style.visibility = 'visible';
+        } catch (e) {
+          console.error('Theme init error:', e);
+          // Fallback to showing light content
+          document.documentElement.classList.add('light');
+          document.documentElement.classList.remove('dark');
+          document.documentElement.style.visibility = 'visible';
+        }
+      })();
+    </script>
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/placeholder.svg">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@MaxForm" />
+    <meta name="twitter:image" content="/placeholder.svg">
+    
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#ff5a1f">
+  <meta property="og:title" content="MaxForm | Forms, Events, Payments, CRM &amp; Automation">
+  <meta name="twitter:title" content="MaxForm | Forms, Events, Payments, CRM &amp; Automation">
+  <meta property="og:description" content="Build forms, launch events, sell tickets, collect payments, automate follow-ups, and manage customer relationships with MaxForm.">
+  <meta name="twitter:description" content="Build forms, launch events, sell tickets, collect payments, automate follow-ups, and manage customer relationships with MaxForm.">
+</head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

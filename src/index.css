@@ -1,0 +1,853 @@
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("@fontsource-variable/geist/files/geist-latin-wght-normal.woff2")
+    format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("@fontsource-variable/inter/files/inter-latin-wght-normal.woff2")
+    format("woff2-variations");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+
+    --primary: 215 16% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 345 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 215 16% 47%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 40%;
+    --sidebar-primary: 215 16% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 215 16% 47%;
+
+    --severity-critical: 345 72% 51%;
+    --severity-high: 25 95% 53%;
+    --severity-medium: 38 92% 50%;
+    --severity-low: 142 70% 40%;
+  }
+
+  .dark {
+    --background: 240 6% 6%;
+    --foreground: 0 0% 90%;
+
+    --card: 240 5% 9%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 240 5% 9%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 215 14% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 14%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 240 4% 14%;
+    --muted-foreground: 0 0% 50%;
+
+    --accent: 240 4% 14%;
+    --accent-foreground: 0 0% 90%;
+
+    --destructive: 345 90% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 100% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 100% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 199 100% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 240 4% 26%;
+    --input: 240 4% 26%;
+    --ring: 215 14% 55%;
+
+    --sidebar-background: 240 6% 5%;
+    --sidebar-foreground: 0 0% 55%;
+    --sidebar-primary: 215 14% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 10%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 240 4% 26%;
+    --sidebar-ring: 215 14% 55%;
+
+    --severity-critical: 345 90% 60%;
+    --severity-high: 25 100% 58%;
+    --severity-medium: 38 100% 55%;
+    --severity-low: 145 100% 50%;
+  }
+
+  /*
+   * ============================================================
+   * PUBLIC THEME - "Onyx + Signal Orange"
+   * ============================================================
+   * The colour system for every public / unauthenticated surface:
+   * marketing pages, auth (login, register, forgot password), 404,
+   * and payment verification.
+   *
+   * Scoped to a class rather than :root on purpose. In the signed-in app
+   * --primary is a per-workspace brand colour written at runtime (see
+   * UserPreferencesSync / Settings), so putting brand orange on :root would
+   * bleed into every customer's dashboard. Nearest-ancestor wins for CSS
+   * custom properties, so these override whatever is inherited above.
+   *
+   * Values are stored as "H S% L%" triplets (not hex) because the whole
+   * codebase consumes them through Tailwind as hsl(var(--token)). Keeping
+   * that contract means the palette swaps with zero className churn and the
+   * existing light/dark implementation is preserved as-is.
+   *
+   * Each token is published under BOTH names: the shadcn name the components
+   * already use, and the semantic brand-system name, so new code can use
+   * either without duplicating a value.
+   */
+  .public-theme {
+    color-scheme: light;
+
+    /* - brand constants (identical in both themes) - */
+    --brand-primary: 15.8 100% 56.1%;         /* #ff5a1f Signal Orange */
+    --brand-primary-hover: 15.4 85.4% 48.4%;  /* #e54812 */
+    --brand-primary-active: 13.3 88.7% 41.8%; /* #c9360c */
+    --brand-primary-soft: 17.2 100% 67.8%;    /* #ff8a5b */
+    --brand-primary-subtle: 18 100% 96.1%;    /* #fff1eb */
+    --brand-on-primary: 0 0% 100%;            /* #ffffff */
+    --brand-onyx: 240 5.3% 7.5%;              /* #121214 */
+
+    /* - surfaces - */
+    --background: 60 6.7% 97.1%;              /* #f8f8f7 */
+    --background-secondary: 60 7.7% 94.9%;    /* #f3f3f1 */
+    --surface: 0 0% 100%;                     /* #ffffff */
+    --surface-elevated: 0 0% 100%;            /* #ffffff */
+    --surface-muted: 60 4.3% 95.5%;           /* #f4f4f3 */
+    --surface-selected: 18 100% 96.1%;        /* #fff1eb */
+    --sidebar-background: 60 6.7% 94.1%;      /* #f1f1ef */
+
+    /* - text - */
+    --text-primary: 240 4.2% 9.4%;            /* #171719 */
+    --text-secondary: 240 3.7% 32.2%;         /* #4f4f55 */
+    --text-muted: 240 3.1% 44.1%;             /* #6d6d74 - nudged from #707077; AA on every light surface */
+    --text-placeholder: 240 3.6% 61.8%;       /* #9a9aa1 */
+    --text-disabled: 240 3.8% 69%;            /* #adadb3 */
+    --text-inverse: 0 0% 100%;                /* #ffffff */
+
+    /* - borders - */
+    --border-default: 60 5.1% 88.4%;          /* #e3e3e0 */
+    --border-strong: 60 1.9% 79.6%;           /* #ccccca */
+    --border-hover: 60 2.8% 71.8%;            /* #b9b9b5 */
+
+    /* - inputs - */
+    --input-background: 0 0% 100%;            /* #ffffff */
+    --input-border: 60 3.7% 84.1%;            /* #d8d8d5 */
+    --input-border-hover: 60 2.8% 71.8%;      /* #b9b9b5 */
+    --input-border-focus: 15.8 100% 56.1%;    /* #ff5a1f */
+
+    /* - primary - */
+    --primary: 15.8 100% 56.1%;               /* #ff5a1f */
+    --primary-hover: 15.4 85.4% 48.4%;        /* #e54812 */
+    --primary-active: 13.3 88.7% 41.8%;       /* #c9360c */
+    --primary-subtle: 18 100% 96.1%;          /* #fff1eb */
+    --primary-subtle-hover: 18 100% 92.2%;    /* #ffe3d7 */
+    /*
+     * Accessible orange for SMALL TEXT on light surfaces. #ff5a1f only
+     * reaches 2.93:1 on --background, which the brand spec itself rules out
+     * ("orange text is not used on white for small body copy unless the
+     * contrast ratio passes"). #c9360c measures 5.23:1 → passes AA.
+     * Fills, icons and large display text still use --primary.
+     */
+    --primary-text: 13.3 88.7% 41.8%;         /* #c9360c */
+
+    --focus-ring: 15.8 100% 56.1%;
+    --focus-ring-alpha: 0.18;
+    --shadow-color: 240 5.3% 7.5%;
+    --shadow-opacity: 0.08;
+
+    /* - semantic status (never orange) - */
+    --success: 152.8 73% 29%;                 /* #14804f - nudged from #168a55 for AA on white */
+    --success-background: 150 50% 94.5%;      /* #eaf8f1 */
+    --success-border: 150.6 50.5% 81.8%;      /* #b9e8d1 */
+    --warning: 36.5 100% 36.1%;               /* #b87000 */
+    --warning-background: 45 100% 93.7%;      /* #fff7df */
+    --warning-border: 42.3 82.7% 75.1%;       /* #f4d58b */
+    --error: 0 66.7% 52.9%;                   /* #d73737 */
+    --error-background: 0 100% 97.1%;         /* #fff0f0 */
+    --error-border: 0 67.5% 84.3%;            /* #f2bcbc */
+    --info: 240 4.3% 41%;                     /* #64646d */
+    --info-background: 240 7.7% 94.9%;        /* #f1f1f3 */
+    --info-border: 240 5.6% 85.9%;            /* #d9d9dd */
+
+    /* - aliases onto the shadcn names the components already consume - */
+    --foreground: var(--text-primary);
+    --card: var(--surface);
+    --card-foreground: var(--text-primary);
+    --popover: var(--surface-elevated);
+    --popover-foreground: var(--text-primary);
+    --muted: var(--surface-muted);
+    --muted-foreground: var(--text-muted);
+    --accent: var(--surface-muted);
+    --accent-foreground: var(--text-primary);
+    --secondary: var(--background-secondary);
+    --secondary-foreground: var(--text-primary);
+    --border: var(--border-default);
+    --input: var(--input-border);
+    --ring: var(--focus-ring);
+    --primary-foreground: var(--brand-on-primary);
+    --destructive: var(--error);
+    --destructive-foreground: 0 0% 100%;
+    --success-foreground: 0 0% 100%;
+    --warning-foreground: 0 0% 100%;
+    --info-foreground: 0 0% 100%;
+
+    /* - landing section surfaces - */
+    --ls-ink: var(--brand-onyx);
+    --ls-ink-soft: 240 5.3% 12%;
+    --ls-hairline: var(--border-default);
+    --ls-tint: var(--background-secondary);
+  }
+
+  .dark .public-theme {
+    color-scheme: dark;
+
+    --brand-primary: 15.8 100% 56.1%;         /* #ff5a1f Signal Orange */
+    --brand-primary-hover: 15.8 100% 62%;      /* brighter hover on dark */
+    --brand-primary-active: 15.4 85.4% 48.4%; /* #e54812 */
+    --brand-primary-subtle: 15.6 45.8% 11.6%; /* #2b1710 */
+
+    --background: 240 6.7% 5.9%;              /* #0e0e10 */
+    --background-secondary: 240 5.3% 7.5%;    /* #121214 brand onyx */
+    --surface: 240 5.7% 10.3%;                /* #19191c */
+    --surface-elevated: 240 5.7% 13.7%;       /* #212126 */
+    --surface-muted: 240 5.9% 16.7%;          /* #28282d */
+    --surface-selected: 15.6 45.8% 11.6%;     /* #2b1710 */
+    --sidebar-background: 240 5.3% 7.5%;      /* #121214 */
+
+    --text-primary: 60 9.1% 97.8%;            /* #fafaf9 */
+    --text-secondary: 240 5.6% 82.5%;         /* #d0d0d5 */
+    --text-muted: 240 4.2% 72.2%;             /* #b5b5bb */
+    --text-placeholder: 240 3.3% 53.5%;       /* #83838a */
+    --text-disabled: 240 4% 38.8%;            /* #5f5f67 */
+    --text-inverse: 240 4.2% 9.4%;            /* #171719 */
+
+    --border-default: 240 5.2% 22.5%;         /* #36363c */
+    --border-strong: 240 5.1% 30%;            /* #484850 */
+    --border-hover: 240 4.2% 32.7%;           /* #505057 */
+
+    --input-background: 240 5.7% 12.1%;       /* #1d1d21 */
+    --input-border: 240 5.1% 26.9%;           /* #414148 */
+    --input-border-hover: 240 4.2% 32.7%;     /* #505057 */
+    --input-border-focus: 15.8 100% 56.1%;    /* #ff5a1f */
+
+    --primary: 15.8 100% 56.1%;               /* #ff5a1f */
+    --primary-hover: 15.8 100% 62%;
+    --primary-active: 15.4 85.4% 48.4%;       /* #e54812 */
+    --primary-subtle: 15.6 45.8% 11.6%;       /* #2b1710 */
+    --primary-subtle-hover: 15 52.6% 14.9%;   /* #3a1c12 */
+    /* Signal Orange remains high-contrast on the onyx surfaces. */
+    --primary-text: 15.8 100% 56.1%;
+
+    --focus-ring: 15.8 100% 56.1%;
+    --focus-ring-alpha: 0.24;
+    --shadow-color: 0 0% 0%;
+    --shadow-opacity: 0.35;
+
+    --success: 152.6 58.9% 49.6%;             /* #34c985 */
+    --success-background: 156 43.9% 11.2%;    /* #10291f */
+    --success-border: 153.9 49.2% 24.7%;      /* #205e43 */
+    --warning: 39.6 89.2% 60%;                /* #f4b63e */
+    --warning-background: 40.7 45.2% 12.2%;   /* #2d2411 */
+    --warning-border: 41.9 55.7% 25.7%;       /* #66501d */
+    --error: 0 100% 69.2%;                    /* #ff6262 */
+    --error-background: 0 37.1% 13.7%;        /* #301616 */
+    --error-border: 0 40.4% 31.6%;            /* #713030 */
+    --info: 240 4.1% 66.9%;                   /* #a7a7ae */
+    --info-background: 240 6.8% 14.3%;        /* #222227 */
+    --info-border: 240 5.1% 26.9%;            /* #414148 */
+
+    --destructive-foreground: 0 0% 100%;
+
+    /* Brand-led landing bands: exact onyx, orange, and distinct card layers. */
+    --ls-ink: var(--brand-onyx);
+    --ls-ink-soft: var(--surface-elevated);
+    --ls-tint: var(--surface);
+  }
+
+  /* Same typeface as the app shell - Geist, tightened for display sizes. */
+  .public-theme {
+    font-family: "Geist", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  .public-theme h1,
+  .public-theme h2,
+  .public-theme h3,
+  .public-theme h4 {
+    font-family: inherit;
+    letter-spacing: -0.032em;
+    font-feature-settings: "ss01" 1, "cv01" 1;
+  }
+
+  /*
+   * Layered elevation. Light mode stacks four soft neutral shadows for real
+   * depth; dark mode swaps to a hairline ring plus one deep ambient shadow,
+   * since blur-only shadows read as mud on dark. Tinted from --shadow-color
+   * so shadows stay neutral - never orange.
+   */
+  .ls-elevate {
+    box-shadow:
+      0 1px 2px hsl(var(--shadow-color) / 0.04),
+      0 4px 10px -2px hsl(var(--shadow-color) / 0.05),
+      0 18px 36px -10px hsl(var(--shadow-color) / 0.09),
+      0 48px 80px -24px hsl(var(--shadow-color) / 0.12);
+  }
+
+  .dark .ls-elevate {
+    box-shadow:
+      0 0 0 1px hsl(var(--border-strong) / 0.7),
+      0 32px 72px -28px hsl(0 0% 0% / 0.9);
+  }
+
+  .ls-elevate-sm {
+    box-shadow:
+      0 1px 2px hsl(var(--shadow-color) / 0.04),
+      0 10px 24px -8px hsl(var(--shadow-color) / 0.09);
+  }
+
+  .dark .ls-elevate-sm {
+    box-shadow: 0 0 0 1px hsl(var(--border-default) / 0.9);
+  }
+
+  /*
+   * Sections painted on Onyx stay dark in BOTH themes, so within light mode
+   * they must use the DARK semantic ramp - a light-mode success/warning/error
+   * on a near-black band fails contrast. Applied via .on-ink on those bands.
+   */
+  .public-theme .on-ink {
+    --success: 152.6 58.9% 49.6%;             /* #34c985  8.77:1 on Onyx */
+    --warning: 39.6 89.2% 60%;                /* #f4b63e 10.34:1 */
+    --error: 0 100% 69.2%;                    /* #ff6262  6.39:1 */
+    --destructive: 0 100% 69.2%;
+    --muted-foreground: 240 4.1% 66.9%;       /* #a7a7ae  7.82:1 */
+    --border: 240 5.1% 26.9%;
+  }
+
+  /*
+   * Counterpart to .on-ink: a LIGHT card nested inside a dark band inherits
+   * the dark semantic ramp, which then lands dark-mode muted text on a white
+   * surface. .on-surface restores the ramp that matches the card it sits on.
+   */
+  .public-theme .on-surface {
+    --muted-foreground: 240 3.1% 44.1%;
+    --border: 60 5.1% 88.4%;
+    --success: 152.8 73% 29%;
+    --warning: 36.5 100% 36.1%;
+    --error: 0 66.7% 52.9%;
+    --destructive: 0 66.7% 52.9%;
+  }
+
+  .dark .public-theme .on-surface {
+    --muted-foreground: 240 4.1% 66.9%;
+    --border: 240 5.3% 18.6%;
+    --success: 152.6 58.9% 49.6%;
+    --warning: 39.6 89.2% 60%;
+    --error: 0 100% 69.2%;
+    --destructive: 0 100% 69.2%;
+  }
+
+  /*
+   * Focus states for public surfaces.
+   *
+   * Form controls get the brand focus border + soft ring described by the
+   * brand system. This is applied directly rather than via a blanket
+   * :focus-visible outline, because the shadcn primitives already set
+   * `focus-visible:outline-none` and would cancel an outline - and stacking
+   * both would double-ring the control.
+   */
+  .public-theme input:focus-visible,
+  .public-theme textarea:focus-visible,
+  .public-theme select:focus-visible,
+  .public-theme [role="combobox"]:focus-visible {
+    border-color: hsl(var(--input-border-focus));
+    box-shadow: 0 0 0 3px hsl(var(--focus-ring) / var(--focus-ring-alpha));
+    outline: none;
+  }
+
+  /*
+   * Anything that isn't a form control (links, custom buttons, tabs) keeps a
+   * real outline so focus stays visible in both themes. Elements that already
+   * paint their own ring via Tailwind's focus-visible:ring-* opt out.
+   */
+  .public-theme
+    a:focus-visible,
+  .public-theme button:focus-visible:not([class*="focus-visible:ring"]),
+  .public-theme [tabindex]:focus-visible {
+    outline: 2px solid hsl(var(--focus-ring));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    background-color: hsl(0 0% 100%);
+    color-scheme: light;
+  }
+
+  html.dark {
+    background-color: hsl(240 6% 4%);
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /*
+   * The marketing page begins and ends on Onyx. Keep the browser canvas the
+   * same colour while keeping the vertical browser scroll chain intact for
+   * native mobile pull-to-refresh. The class is mounted only by Landing,
+   * leaving dashboard and public-builder backgrounds untouched.
+   */
+  html.landing-page-active,
+  html.landing-page-active body,
+  html.landing-page-active #root {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    background-color: #121214;
+  }
+
+  html.landing-page-active,
+  html.landing-page-active body {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: auto;
+  }
+
+  @supports (overflow: clip) {
+    html.landing-page-active,
+    html.landing-page-active body {
+      overflow-x: clip;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  /* Hide browser default password reveal button (Edge, IE) */
+  input[type="password"]::-ms-reveal,
+  input[type="password"]::-ms-clear {
+    display: none;
+  }
+
+  /* Hide browser default password reveal button (Chrome, Safari, newer Edge) */
+  input[type="password"]::-webkit-contacts-auto-fill-button,
+  input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+
+  /* Prevent FOUC (Flash of Unstyled Content) */
+  html:not(.dark):not(.light) {
+    visibility: hidden;
+  }
+
+  html.dark,
+  html.light {
+    visibility: visible;
+  }
+
+  /* Keep scroll behaviour, but never show a browser scrollbar, thumb, or rail. */
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .dashboard-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Reusable class for any custom scrollable panel that is added later. */
+  .modern-scroll {
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dashboard-viewport {
+    overscroll-behavior-y: auto;
+    scroll-padding-top: 1.5rem;
+    touch-action: pan-y;
+  }
+
+  .dashboard-scroll-x {
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
+    touch-action: pan-x pan-y;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .maxform-renderer input,
+  .maxform-renderer textarea,
+  .maxform-renderer select,
+  .maxform-renderer button,
+  .maxform-renderer label {
+    font-family: inherit;
+    letter-spacing: 0;
+  }
+
+  .maxform-renderer input,
+  .maxform-renderer textarea,
+  .maxform-renderer select {
+    font-size: var(--form-font-size) !important;
+    line-height: var(--form-line-height);
+  }
+
+  /*
+   * Field styling is scoped to the field block. The form theme owns the
+   * page/container surface; these variables let each field override its
+   * label, copy, typography, and actual control without affecting siblings.
+   */
+  .maxform-renderer .maxform-field {
+    color: var(--form-field-text, var(--form-fg));
+    font-family: var(--form-field-font-family, inherit);
+    font-size: var(--form-field-font-size, var(--form-font-size)) !important;
+    font-weight: var(--form-field-font-weight, var(--form-font-weight));
+    line-height: var(--form-field-line-height, var(--form-line-height));
+  }
+
+  .maxform-renderer .maxform-field .maxform-field-label {
+    color: var(--form-field-label, var(--form-field-text, var(--form-fg))) !important;
+    font-size: inherit !important;
+    font-weight: inherit;
+  }
+
+  .maxform-renderer .maxform-field .maxform-field-help {
+    color: var(--form-field-help, var(--form-muted)) !important;
+    font-size: 0.86em !important;
+  }
+
+  .maxform-builder-field-preview {
+    color: var(--form-field-text, inherit);
+    font-family: var(--form-field-font-family, inherit);
+    font-size: var(--form-field-font-size, inherit);
+    font-weight: var(--form-field-font-weight, inherit);
+    line-height: var(--form-field-line-height, inherit);
+  }
+
+  .maxform-builder-field-preview .maxform-preview-label {
+    color: var(--form-field-label, inherit);
+    font-size: inherit;
+  }
+
+  .maxform-builder-field-preview .maxform-preview-help {
+    color: var(--form-field-help, inherit);
+  }
+
+  .maxform-builder-field-preview .maxform-preview-control {
+    background-color: var(--form-field-input-bg, var(--form-surface, #fff));
+    border-color: var(--form-field-input-border, currentColor);
+    border-radius: var(--form-field-input-radius, 6px);
+    border-style: var(--form-field-input-border-style, solid);
+    border-width: var(--form-field-input-border-width, 1px);
+    color: var(--form-field-input-text, currentColor);
+    font-size: var(--form-field-font-size, inherit);
+  }
+
+  .maxform-renderer input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="file"]),
+  .maxform-renderer textarea,
+  .maxform-renderer button[role="combobox"] {
+    background-color: var(--form-field-input-bg, var(--form-control-bg, #fff)) !important;
+    background-image: none !important;
+    border-color: var(--form-field-input-border, var(--form-control-border, #e0e2e7)) !important;
+    border-radius: var(--form-field-input-radius, var(--form-radius)) !important;
+    border-style: var(--form-field-input-border-style, solid) !important;
+    border-width: var(--form-field-input-border-width, 1px) !important;
+    color: var(--form-field-input-text, var(--form-control-fg, #17181a)) !important;
+    font-family: var(--form-field-font-family, inherit) !important;
+    font-size: var(--form-field-font-size, var(--form-font-size)) !important;
+    font-weight: var(--form-field-font-weight, var(--form-font-weight));
+    line-height: var(--form-field-line-height, var(--form-line-height));
+    caret-color: var(--form-field-input-text, var(--form-control-fg, #17181a));
+  }
+
+  .maxform-renderer .maxform-field input::placeholder,
+  .maxform-renderer .maxform-field textarea::placeholder {
+    color: var(--form-field-placeholder, var(--form-control-placeholder)) !important;
+  }
+
+  .maxform-renderer input:-webkit-autofill,
+  .maxform-renderer input:-webkit-autofill:hover,
+  .maxform-renderer input:-webkit-autofill:focus,
+  .maxform-renderer textarea:-webkit-autofill,
+  .maxform-renderer textarea:-webkit-autofill:hover,
+  .maxform-renderer textarea:-webkit-autofill:focus {
+    box-shadow: 0 0 0 1000px var(--form-field-input-bg, var(--form-control-bg)) inset !important;
+    -webkit-text-fill-color: var(--form-field-input-text, var(--form-control-fg)) !important;
+    caret-color: var(--form-field-input-text, var(--form-control-fg));
+    transition: background-color 9999s ease-in-out 0s;
+  }
+
+  /*
+   * Browser autofill paints its own opaque background directly on the
+   * input, ignoring the page's background-color entirely. Left alone, it
+   * combines with a themed (e.g. dark) text color to render unreadable
+   * washed-out text. This keeps the field's own colors on autofill instead
+   * of the browser's. Lower specificity than the .maxform-renderer rule
+   * above, so that more specific rule still wins there; this covers every
+   * other input across the app (checkout, settings, contacts, auth, etc).
+   */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: currentColor !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+
+  .country-flag > svg {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  html[data-reduce-motion="true"] *,
+  html[data-reduce-motion="true"] *::before,
+  html[data-reduce-motion="true"] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  @keyframes success-pop {
+    0% {
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.08);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes success-ring {
+    0% {
+      transform: scale(0.85);
+      opacity: 0.55;
+    }
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+
+  @keyframes success-fade-up {
+    0% {
+      transform: translateY(6px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-success-pop {
+    animation: success-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .animate-success-ring {
+    animation: success-ring 1.2s ease-out 0.2s 2 both;
+  }
+
+  .animate-success-fade-up {
+    animation: success-fade-up 0.45s ease-out both;
+  }
+}
+
+/* Phone Input Styles */
+.PhoneInput {
+  @apply flex gap-2 items-start;
+}
+
+.PhoneInputCountry {
+  @apply flex items-center justify-center rounded-md border-2 border-input bg-background h-10 px-2 min-w-[3rem];
+  @apply hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer;
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+}
+
+.PhoneInputCountryIcon {
+  @apply w-6 h-4 object-contain;
+}
+
+.PhoneInputCountryIconImg {
+  @apply w-full h-full object-contain;
+}
+
+.PhoneInputCountrySelect {
+  @apply absolute opacity-0 cursor-pointer inset-0;
+}
+
+.PhoneInputCountrySelectArrow {
+  @apply ml-1 h-3 w-3 text-muted-foreground;
+}
+
+.PhoneInputInput {
+  @apply flex-1 min-w-0;
+}
+
+/* Ensure flags are displayed correctly */
+.PhoneInputCountry--focus {
+  @apply ring-2 ring-ring ring-offset-2;
+}
+
+/* Dark mode adjustments */
+.dark .PhoneInputCountry {
+  @apply border-input bg-background;
+}
+
+.dark .PhoneInputCountry:hover {
+  @apply bg-accent;
+}
+
+/* Country Select in dropdown */
+.PhoneInputCountrySelect option {
+  @apply py-2 px-3 text-sm;
+}
+
+@media print {
+  @page {
+    margin: 10mm;
+    size: auto;
+  }
+
+  html,
+  body,
+  #root,
+  .dashboard-shell,
+  .dashboard-shell > div,
+  .dashboard-shell section,
+  .dashboard-viewport {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .dashboard-shell > div > aside,
+  .dashboard-app-header,
+  [data-analytics-controls] {
+    display: none !important;
+  }
+
+  .dashboard-viewport {
+    padding: 0 !important;
+  }
+
+  [data-analytics-report] {
+    color: #111827 !important;
+  }
+
+  [data-analytics-report] .bg-card,
+  [data-analytics-report] .bg-muted\/25,
+  [data-analytics-report] .bg-muted\/20 {
+    background: #ffffff !important;
+  }
+
+  [data-analytics-report] section,
+  [data-analytics-report] table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  [data-analytics-report] .recharts-responsive-container {
+    width: 100% !important;
+  }
+}

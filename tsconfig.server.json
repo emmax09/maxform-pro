@@ -1,0 +1,18 @@
+{
+  // The server had no project of its own: tsconfig.app.json includes only
+  // `src`, and tsconfig.node.json only `vite.config.ts`. Everything under
+  // `server/` and `api/` was therefore checked incidentally, if at all --
+  // which is how 22 type errors accumulated there unnoticed, including two API
+  // routes importing paths that resolved outside the repository. `npm run
+  // typecheck` covers both projects.
+  //
+  // `scripts/` is deliberately left out: those are development smoke tools with
+  // their own long tail of loose typing, and folding them in here would mean
+  // this command never reaching zero.
+  "extends": "./tsconfig.node.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node", "vitest/globals"]
+  },
+  "include": ["server", "api"]
+}

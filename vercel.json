@@ -1,0 +1,38 @@
+{
+  "crons": [
+    {
+      "path": "/api/campaigns/dispatch",
+      "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/email/dispatch",
+      "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/campaigns/analytics-worker",
+      "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/workflows/cron",
+      "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/cms/cron",
+      "schedule": "* * * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:workspaceId([A-Za-z0-9]{4,6})/content/:fileId([A-Za-z0-9_-]{22,48})",
+      "destination": "/api/workspace/content?module=files&action=clean-shared-content&workspaceId=:workspaceId&fileId=:fileId"
+    },
+    {
+      "source": "/:workspaceId([A-Za-z0-9]{4,6})/file/:fileToken([A-Za-z0-9_-]{44})",
+      "destination": "/api/workspace/content?module=files&action=branded-file&workspaceId=:workspaceId&fileToken=:fileToken"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+/** Official provider artwork shared by Integrations Hub and workflow nodes. */
+export const officialIntegrationLogoSources: Record<string, string> = {
+  google_workspace: "/images/integrations/google-workspace.svg",
+  google_sheets: "/images/integrations/google-sheets.svg",
+  gmail: "/images/integrations/gmail.svg",
+  microsoft_365: "/images/integrations/microsoft-365.svg",
+  zoom: "/images/integrations/zoom.svg",
+  slack: "/images/integrations/slack.png",
+  airtable: "/images/integrations/airtable.svg",
+  hubspot: "/images/integrations/hubspot.svg",
+  mailchimp: "/images/integrations/mailchimp.svg",
+  notion: "/images/integrations/notion.svg",
+  calendly: "/images/integrations/calendly.svg",
+  cal_com: "/images/integrations/cal-com.svg",
+  resend: "/images/integrations/resend.svg",
+  sendgrid: "/images/integrations/sendgrid.svg",
+  postmark: "/images/integrations/postmark.svg",
+  mailgun: "/images/integrations/mailgun.svg",
+  ses: "/images/integrations/ses.svg",
+  dropbox: "/images/integrations/dropbox.svg",
+  box: "/images/integrations/box.svg",
+  zapier: "/images/integrations/zapier.svg",
+  make: "/images/integrations/make.svg",
+  shopify: "/images/integrations/shopify.svg",
+  woocommerce: "/images/integrations/woocommerce.svg",
+  magento: "/images/integrations/magento.svg",
+  bigcommerce: "/images/integrations/bigcommerce.svg",
+  prestashop: "/images/integrations/prestashop.svg",
+  wix: "/images/integrations/wix.svg",
+  squarespace: "/images/integrations/squarespace.svg",
+  medusa: "/images/integrations/medusa.svg",
+};
+
+export const officialIntegrationLogo = (providerKey: string) =>
+  officialIntegrationLogoSources[providerKey] || null;
