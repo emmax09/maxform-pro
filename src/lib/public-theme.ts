@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { DEFAULT_BRAND_COLOR } from "@/lib/brand-color";
 
 type Rgb = {
   b: number;
@@ -105,9 +106,9 @@ export const publicThemeVariables = ({
     "--muted-foreground": colorToHslChannels(muted, "#666A73"),
     "--popover": colorToHslChannels(surfaceColor, background),
     "--popover-foreground": colorToHslChannels(foreground, "#17181A"),
-    "--primary": colorToHslChannels(accent, "#2563EB"),
+    "--primary": colorToHslChannels(accent, DEFAULT_BRAND_COLOR),
     "--primary-foreground": colorToHslChannels(accentForeground, "#FFFFFF"),
-    "--ring": colorToHslChannels(accent, "#2563EB"),
+    "--ring": colorToHslChannels(accent, DEFAULT_BRAND_COLOR),
     ...(radius ? { "--radius": radius } : {}),
   } as CSSProperties;
 };

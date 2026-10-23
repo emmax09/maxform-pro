@@ -63,14 +63,14 @@ const htmlBody = `<!doctype html>
             </tr></table>
           </td></tr>
           <tr><td style="padding:42px 30px 24px;">
-            <p style="margin:0 0 12px;color:#ff5a1f;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;">Workspace update</p>
+            <p style="margin:0 0 12px;color:#F93D0A;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;">Workspace update</p>
             <h1 style="margin:0;color:#111827;font-size:34px;line-height:1.12;letter-spacing:-.04em;">A clearer way to move work forward.</h1>
             <p style="margin:18px 0 0;color:#526071;font-size:16px;line-height:1.7;">Hi {{contact.name}}, this is a complete MaxForm campaign smoke test. It verifies that a well-designed message can travel through the live provider, render cleanly, and report engagement correctly.</p>
             <p style="margin:18px 0 0;color:#526071;font-size:15px;line-height:1.7;">Your forms, events, payments, files, CRM, and automations stay connected in one workspace so the next action is always close at hand.</p>
           </td></tr>
           <tr><td style="padding:0 30px 10px;">
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>
-              <td width="32%" style="padding:18px 14px;background:#fff7f3;border:1px solid #fed7c7;border-radius:12px;vertical-align:top;"><p style="margin:0;color:#ff5a1f;font-size:24px;font-weight:700;">01</p><p style="margin:8px 0 0;color:#172033;font-size:13px;font-weight:700;">Capture</p><p style="margin:7px 0 0;color:#64748b;font-size:12px;line-height:1.5;">Collect better responses with polished forms.</p></td>
+              <td width="32%" style="padding:18px 14px;background:#fff7f3;border:1px solid #fed7c7;border-radius:12px;vertical-align:top;"><p style="margin:0;color:#F93D0A;font-size:24px;font-weight:700;">01</p><p style="margin:8px 0 0;color:#172033;font-size:13px;font-weight:700;">Capture</p><p style="margin:7px 0 0;color:#64748b;font-size:12px;line-height:1.5;">Collect better responses with polished forms.</p></td>
               <td width="2%"></td>
               <td width="32%" style="padding:18px 14px;background:#f4f8ff;border:1px solid #dbeafe;border-radius:12px;vertical-align:top;"><p style="margin:0;color:#2563eb;font-size:24px;font-weight:700;">02</p><p style="margin:8px 0 0;color:#172033;font-size:13px;font-weight:700;">Connect</p><p style="margin:7px 0 0;color:#64748b;font-size:12px;line-height:1.5;">Keep contacts, payments, and events in sync.</p></td>
               <td width="2%"></td>
@@ -78,7 +78,7 @@ const htmlBody = `<!doctype html>
             </tr></table>
           </td></tr>
           <tr><td style="padding:26px 30px 34px;">
-            <table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr><td style="border-radius:10px;background:#ff5a1f;">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr><td style="border-radius:10px;background:#F93D0A;">
               <a href="${destination}" style="display:inline-block;padding:14px 22px;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700;">Explore the MaxForm test link&nbsp; →</a>
             </td></tr></table>
             <p style="margin:18px 0 0;color:#64748b;font-size:12px;line-height:1.6;">This message is part of a controlled development test. No action is required, but the button is intentionally included so click tracking can be verified.</p>

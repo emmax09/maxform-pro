@@ -30,7 +30,7 @@ const hexToRgb = (hex: string): [number, number, number] => {
     : normalized;
   const parsed = Number.parseInt(value, 16);
   if (!/^[\da-f]{6}$/i.test(value) || Number.isNaN(parsed)) {
-    return [37, 99, 235];
+    return [249, 61, 10];
   }
   return [(parsed >> 16) & 255, (parsed >> 8) & 255, parsed & 255];
 };
@@ -63,7 +63,7 @@ export const downloadInvoicePdf = async (
   const muted: [number, number, number] = [107, 114, 128];
   const faint: [number, number, number] = [229, 231, 235];
   const panel: [number, number, number] = [249, 250, 251];
-  const accent = hexToRgb(workspace.accentColor || "#2563eb");
+  const accent = hexToRgb(workspace.accentColor || "#F93D0A");
   let y = 68;
 
   const line = (at: number) => {

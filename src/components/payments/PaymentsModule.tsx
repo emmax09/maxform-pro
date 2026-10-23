@@ -3932,7 +3932,7 @@ function OrderDialog({
                     })),
                   },
                   {
-                    accentColor: "#2563eb",
+                    accentColor: "#F93D0A",
                     logoUrl: workspaceIdentity.logoUrl || "",
                     name: workspaceIdentity.workspaceName || "Workspace",
                   },
@@ -4334,7 +4334,7 @@ export function PaymentsModule({ userId }: { userId?: string }) {
 
   const downloadInvoice = (invoice: PaymentInvoice) => {
     void downloadInvoicePdf(invoice, {
-      accentColor: "#2563eb",
+      accentColor: "#F93D0A",
       logoUrl: workspaceIdentity.logoUrl || "",
       name: workspaceIdentity.workspaceName || "Workspace",
     })

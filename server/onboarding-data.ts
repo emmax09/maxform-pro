@@ -147,10 +147,11 @@ const jsonList = (value: unknown): string[] => {
 };
 
 /** The workspace default, matching server/settings.ts. */
-const DEFAULT_BRAND_COLOR = "#236BFE";
+const DEFAULT_BRAND_COLOR = "#F93D0A";
 
 const brandColorValue = (value: unknown) => {
   const result = String(value ?? "").trim().toUpperCase();
+  if (result === "#236BFE" || result === "#65758B") return DEFAULT_BRAND_COLOR;
   return /^#[0-9A-F]{6}$/.test(result) ? result : "";
 };
 
@@ -406,7 +407,7 @@ export async function completeOnboarding(
        postal_code = COALESCE(company_settings.postal_code, EXCLUDED.postal_code),
        country = COALESCE(company_settings.country, EXCLUDED.country),
        brand_color = CASE
-         WHEN COALESCE(company_settings.brand_color, '') IN ('', '#236BFE')
+         WHEN UPPER(COALESCE(company_settings.brand_color, '')) IN ('', '#236BFE', '#65758B')
            THEN EXCLUDED.brand_color
          ELSE company_settings.brand_color
        END,

@@ -16,19 +16,20 @@ export function BrandLogo({
 }: BrandLogoProps) {
   return (
     <span
-      className={cn("inline-flex items-center gap-2", className)}
+      className={cn("inline-flex items-center gap-2.5", className)}
       data-brand-logo
     >
       <span
-        className="inline-flex shrink-0 text-primary dark:text-white"
+        className="inline-flex shrink-0 items-center justify-center rounded-[9px] bg-primary text-primary-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]"
         data-brand-mark
+        style={{ width: markSize * 1.55, height: markSize * 1.55 }}
       >
-        <StackedLogo size={markSize} color="currentColor" />
+        <StackedLogo size={markSize * 0.94} color="currentColor" />
       </span>
       {showWordmark && (
         <span
           className={cn(
-            "font-bold uppercase tracking-[0.08em] text-foreground",
+            "font-semibold tracking-[-0.035em] text-foreground",
             wordmarkClassName,
           )}
         >

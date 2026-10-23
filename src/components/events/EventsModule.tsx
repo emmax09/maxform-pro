@@ -437,7 +437,7 @@ const defaultTicketDraft = (
   salesStart: "",
   salesEnd: "",
   waitlistEnabled: false,
-  color: "#2563EB",
+  color: "#F93D0A",
   active: true,
   sortOrder: order,
 });
@@ -1316,7 +1316,7 @@ function ColorField({
   onChange: (value: string) => void;
   value: string;
 }) {
-  const pickerValue = /^#[0-9A-F]{6}$/i.test(value) ? value : "#2563EB";
+  const pickerValue = /^#[0-9A-F]{6}$/i.test(value) ? value : "#F93D0A";
   return (
     <div>
       <Label htmlFor={id}>{label}</Label>
@@ -3582,7 +3582,7 @@ function TicketPreview({
 }) {
   const theme = design.theme || template?.theme || {
     background: "#FFFFFF",
-    accent: "#65758B",
+    accent: "#F93D0A",
     text: "#18181B",
     muted: "#71717A",
     edge: "solid" as const,

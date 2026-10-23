@@ -446,7 +446,7 @@ Make the form match your brand:
 ├─────────────────────────────────────────┤
 │                                         │
 │  Colors                                 │
-│  ├─ Accent:      [🎨 #2563EB]          │
+│  ├─ Accent:      [🎨 #F93D0A]          │
 │  └─ Background:  [🎨 #FFFFFF]          │
 │                                         │
 │  Typography                             │

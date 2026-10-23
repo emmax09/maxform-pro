@@ -200,7 +200,7 @@ function AuthVisualPanel() {
       <Link
         to="/"
         aria-label="MaxForm home"
-        className="absolute left-9 top-9 z-30 w-fit rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/60 **:data-brand-mark:text-primary! [&>span>span:last-child]:text-white! xl:left-11 xl:top-11"
+        className="absolute left-9 top-9 z-30 w-fit rounded-lg transition-opacity hover:opacity-80 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/60 [&>span>span:last-child]:text-white! xl:left-11 xl:top-11"
       >
         <BrandLogo markSize={26} wordmarkClassName="text-[16px]" />
       </Link>

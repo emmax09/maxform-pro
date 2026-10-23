@@ -8,7 +8,7 @@ const emptyState: OnboardingState = {
   businessName: "",
   businessType: "",
   industry: "",
-  brandColor: "#236BFE",
+  brandColor: "#F93D0A",
   logoUrl: "",
   teamSize: "",
   websiteUrl: "",

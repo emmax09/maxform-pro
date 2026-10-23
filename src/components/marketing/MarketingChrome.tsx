@@ -141,32 +141,32 @@ function MarketingNav() {
   }, []);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:pt-4">
+    <nav className="hero-light fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:pt-4">
       <div
         className={cn(
-          "mx-auto flex h-14 w-full max-w-[1120px] items-center justify-between rounded-full border pl-5 pr-2 transition-all duration-300",
+          "mx-auto flex h-16 w-full max-w-[1160px] items-center justify-between rounded-full border pl-4 pr-2.5 transition-all duration-300 sm:pl-5 sm:pr-3",
           scrolled
-            ? "border-border/70 bg-background/75 shadow-[0_8px_30px_-12px_hsl(var(--shadow-color)/0.28)] backdrop-blur-xl"
-            : "border-white/10 bg-white/4 backdrop-blur-md",
+            ? "border-[hsl(var(--border))] bg-white/95 shadow-[0_8px_30px_-12px_hsl(var(--shadow-color)/0.16)] backdrop-blur-xl"
+            : "border-[hsl(var(--border))] bg-white/88 shadow-[0_4px_18px_-12px_hsl(var(--shadow-color)/0.12)] backdrop-blur-xl",
         )}
       >
         <Link to="/" className="shrink-0">
           <BrandLogo
             markSize={18}
-            wordmarkClassName={cn("text-[15px]", !scrolled && "text-white")}
+            wordmarkClassName="text-[15px] text-foreground"
           />
         </Link>
 
-        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex xl:gap-3">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1.5 lg:flex xl:gap-2.5">
           {SECTION_LINKS.map((l) => (
             <a
               key={l.label}
               href={sectionHref(l.hash)}
               className={cn(
-                "whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] transition-colors xl:px-3.5 xl:text-[14px]",
+                "whitespace-nowrap rounded-full px-3 py-2 text-[13px] transition-colors xl:px-3.5 xl:text-[14px]",
                 scrolled
                   ? "text-muted-foreground hover:bg-muted hover:text-foreground"
-                  : "text-white/70 hover:bg-white/10 hover:text-white",
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
               )}
             >
               {l.label}
@@ -180,14 +180,14 @@ function MarketingNav() {
                 to={l.to}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] transition-colors xl:px-3.5 xl:text-[14px]",
+                  "whitespace-nowrap rounded-full px-3 py-2 text-[13px] transition-colors xl:px-3.5 xl:text-[14px]",
                   scrolled
                     ? active
                       ? "bg-muted font-medium text-foreground"
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"
                     : active
-                      ? "bg-white/10 font-medium text-white"
-                      : "text-white/70 hover:bg-white/10 hover:text-white",
+                      ? "bg-muted font-medium text-foreground"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
               >
                 {l.label}
@@ -196,14 +196,14 @@ function MarketingNav() {
           })}
         </div>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2 sm:gap-2.5">
           <button
             onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
             className={cn(
-              "relative flex h-9 w-9 items-center justify-center rounded-full transition-colors",
+              "relative flex h-10 w-10 items-center justify-center rounded-full transition-colors",
               scrolled
                 ? "text-muted-foreground hover:bg-muted hover:text-foreground"
-                : "text-white/70 hover:bg-white/10 hover:text-white",
+                : "text-muted-foreground hover:bg-muted hover:text-foreground",
             )}
             title="Toggle theme"
             aria-label="Toggle theme"
@@ -215,17 +215,17 @@ function MarketingNav() {
           <Link
             to="/auth"
             className={cn(
-              "hidden h-9 items-center rounded-full px-4 text-[14px] transition-colors sm:inline-flex",
+              "hidden h-10 items-center rounded-full px-4 text-[14px] transition-colors sm:inline-flex",
               scrolled
                 ? "text-muted-foreground hover:bg-muted hover:text-foreground"
-                : "text-white/70 hover:bg-white/10 hover:text-white",
+                : "text-muted-foreground hover:bg-muted hover:text-foreground",
             )}
           >
             Sign in
           </Link>
           <Link
             to="/auth"
-            className="hidden h-10 items-center rounded-full bg-primary px-5 text-[14px] font-semibold text-primary-foreground transition-colors hover:bg-[hsl(var(--primary-hover))] active:bg-[hsl(var(--primary-active))] sm:inline-flex"
+            className="hidden h-11 items-center rounded-full bg-primary px-5 text-[14px] font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-[hsl(var(--primary-hover))] active:bg-[hsl(var(--primary-active))] sm:inline-flex"
           >
             Start free
           </Link>
@@ -233,8 +233,8 @@ function MarketingNav() {
           <button
             onClick={() => setMobileMenuOpen(true)}
             className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full transition-colors lg:hidden",
-              scrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10",
+              "flex h-10 w-10 items-center justify-center rounded-full transition-colors lg:hidden",
+              "text-foreground hover:bg-muted",
             )}
             aria-label="Open menu"
           >
@@ -246,7 +246,7 @@ function MarketingNav() {
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent
           side="right"
-          className="public-theme flex h-dvh max-h-dvh w-[min(340px,calc(100vw-16px))] flex-col overflow-hidden bg-background p-0 sm:w-[340px]"
+          className="public-theme hero-light flex h-dvh max-h-dvh w-[min(340px,calc(100vw-16px))] flex-col overflow-hidden bg-background p-0 sm:w-[340px]"
         >
           <SheetHeader className="shrink-0 border-b border-border px-5 pb-4 pt-[calc(1.25rem+env(safe-area-inset-top))] sm:px-6 sm:pt-6">
             <div className="flex items-center justify-between">
@@ -262,13 +262,13 @@ function MarketingNav() {
             </div>
           </SheetHeader>
           <div className="flex min-h-0 flex-1 flex-col">
-            <nav className="modern-scroll min-h-0 flex-1 space-y-0.5 overflow-y-auto overscroll-contain px-4 py-4 sm:py-5">
+            <nav className="modern-scroll min-h-0 flex-1 space-y-1.5 overflow-y-auto overscroll-contain px-5 py-5 sm:py-6">
               {SECTION_LINKS.map((l) => (
                 <a
                   key={l.label}
                   href={sectionHref(l.hash)}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center rounded-md px-3 py-2.5 text-[15px] text-foreground hover:bg-muted"
+                  className="flex min-h-12 items-center rounded-xl px-4 py-3 text-[15px] text-foreground transition-colors hover:bg-muted"
                 >
                   {l.label}
                 </a>
@@ -280,7 +280,7 @@ function MarketingNav() {
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={pathname === l.to ? "page" : undefined}
                   className={cn(
-                    "flex items-center rounded-md px-3 py-2.5 text-[15px] hover:bg-muted",
+                    "flex min-h-12 items-center rounded-xl px-4 py-3 text-[15px] transition-colors hover:bg-muted",
                     pathname === l.to ? "bg-muted font-medium text-foreground" : "text-foreground",
                   )}
                 >
@@ -288,18 +288,18 @@ function MarketingNav() {
                 </Link>
               ))}
             </nav>
-            <div className="shrink-0 space-y-2 border-t border-border px-4 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-4 sm:py-5">
+            <div className="shrink-0 space-y-2.5 border-t border-border px-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] pt-5 sm:py-6">
               <Link
                 to="/auth"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex h-10 w-full items-center justify-center rounded-md border border-[hsl(var(--input-border))] text-[14px] font-medium text-foreground transition-colors hover:bg-muted"
+                className="flex h-11 w-full items-center justify-center rounded-xl border border-[hsl(var(--input-border))] text-[14px] font-medium text-foreground transition-colors hover:bg-muted"
               >
                 Sign in
               </Link>
               <Link
                 to="/auth"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex h-10 w-full items-center justify-center rounded-md bg-primary text-[14px] font-medium text-primary-foreground transition-colors hover:bg-[hsl(var(--primary-hover))]"
+                className="flex h-11 w-full items-center justify-center rounded-xl bg-primary text-[14px] font-medium text-primary-foreground transition-colors hover:bg-[hsl(var(--primary-hover))]"
               >
                 Start free
               </Link>

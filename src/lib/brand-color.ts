@@ -1,7 +1,7 @@
-export const DEFAULT_BRAND_COLOR = "#65758B";
+export const DEFAULT_BRAND_COLOR = "#F93D0A";
 
 export const BRAND_COLOR_PRESETS = [
-  "#65758B",
+  DEFAULT_BRAND_COLOR,
   "#2563EB",
   "#4F46E5",
   "#059669",
@@ -16,6 +16,7 @@ const legacyColors: Record<string, string> = {
   emerald: "#059669",
   rose: "#E11D48",
   slate: DEFAULT_BRAND_COLOR,
+  "#65758b": DEFAULT_BRAND_COLOR,
 };
 
 export function normalizeBrandColor(value: unknown) {
@@ -25,6 +26,8 @@ export function normalizeBrandColor(value: unknown) {
   if (legacyColor) return legacyColor;
 
   const trimmed = value.trim();
+  const legacyColorHex = legacyColors[trimmed.toLowerCase()];
+  if (legacyColorHex) return legacyColorHex;
   const expanded =
     /^#[0-9a-f]{3}$/i.test(trimmed)
       ? `#${trimmed

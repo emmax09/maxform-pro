@@ -34,7 +34,7 @@ export const defaultPreloaderSettings = (): PreloaderSettings => ({
   title: "Getting things ready",
   description: "Please wait a moment.",
   icon: "spinner",
-  iconColor: "#2563EB",
+  iconColor: "#F93D0A",
   iconSize: 34,
   titleColor: "#101828",
   titleFontSize: 20,

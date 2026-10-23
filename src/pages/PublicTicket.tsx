@@ -23,7 +23,7 @@ import { formatCurrency } from "@/lib/regional-options";
 import type { TicketElementResolver, TicketTheme } from "@/lib/ticket-theme";
 
 const fallbackTicketTheme: TicketTheme = {
-  accent: "#2563EB",
+  accent: "#F93D0A",
   background: "#FFFFFF",
   edge: "solid",
   motif: "none",
@@ -242,7 +242,7 @@ export default function PublicTicket() {
     return <main className="flex min-h-dvh items-center justify-center bg-zinc-100 px-5 text-zinc-950"><section className="w-full max-w-md rounded-2xl border border-zinc-200 bg-white p-8 text-center shadow-xs"><TicketIcon className="mx-auto h-8 w-8 text-zinc-500" /><h1 className="mt-5 text-xl font-semibold">Ticket link unavailable</h1><p className="mt-2 text-sm leading-6 text-zinc-600">{error || "Ask the event organizer to send the ticket again."}</p></section></main>;
   }
 
-  const accent = result.workspace.accentColor || "#236BFE";
+  const accent = result.workspace.accentColor || "#F93D0A";
   const theme = {
     ...publicThemeVariables({ accent, background: "#F4F4F5", border: "#E4E4E7", foreground: "#18181B", muted: "#71717A", radius: "0.875rem", surface: "#FFFFFF" }),
     backgroundImage: `radial-gradient(circle at 50% 0%, ${accent}18, transparent 34rem)`,

@@ -9,7 +9,7 @@ export type OnboardingState = {
   businessName: string;
   businessType: string;
   industry: string;
-  /** Hex, e.g. "#236BFE". Required before onboarding can complete. */
+  /** Hex, e.g. "#F93D0A". Required before onboarding can complete. */
   brandColor: string;
   /** Data URI or https URL; empty when the brand has no artwork yet. */
   logoUrl: string;

@@ -4,7 +4,7 @@ import {
 } from "./brand-color";
 
 /** The database fallback when a workspace has not chosen a colour yet. */
-export const DEFAULT_WORKSPACE_ACCENT = "#236BFE";
+export const DEFAULT_WORKSPACE_ACCENT = DEFAULT_BRAND_COLOR;
 
 export type AccentColorMode = "workspace" | "custom";
 

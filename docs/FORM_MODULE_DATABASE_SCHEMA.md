@@ -443,7 +443,7 @@ User-specific default settings for new forms.
 
 ```json
 {
-  "accentColor": "#65758B",
+  "accentColor": "#F93D0A",
   "accessMode": "public",
   "confirmationMessage": "Thanks. Your response has been received.",
   "fontFamily": "Inter",

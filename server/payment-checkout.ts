@@ -453,7 +453,7 @@ const formContext = async (identifier: string) => {
       COALESCE(pricing.coupons_enabled, FALSE) AS event_coupons_enabled,
       COALESCE(company.company_name, '') AS workspace_name,
       COALESCE(company.company_logo_url, '') AS workspace_logo_url,
-      COALESCE(company.brand_color, '#236BFE') AS workspace_brand_color
+      COALESCE(company.brand_color, '#F93D0A') AS workspace_brand_color
     FROM forms form
     JOIN form_settings settings ON settings.form_id = form.id
     LEFT JOIN events event ON event.registration_form_id = form.id
@@ -1974,7 +1974,7 @@ const handleOptions = async (
   const enabled = checkoutEnabled(context, payment);
   const eventTicketing = Boolean(context.event_id && context.ticketing_enabled);
   const workspace = {
-    accentColor: String(context.workspace_brand_color || "#236BFE"),
+    accentColor: String(context.workspace_brand_color || "#F93D0A"),
     logoUrl: String(context.workspace_logo_url || ""),
     name: String(context.workspace_name || "MaxForm workspace"),
   };
@@ -3406,7 +3406,7 @@ const statusPayload = async (idempotencyKey: string, reconcile = true) => {
       settings.confirmation AS form_confirmation,
       COALESCE(company.company_name, '') AS workspace_name,
       COALESCE(company.company_logo_url, '') AS workspace_logo_url,
-      COALESCE(company.brand_color, '#236BFE') AS workspace_brand_color,
+      COALESCE(company.brand_color, '#F93D0A') AS workspace_brand_color,
       (
         SELECT product.billing_type
         FROM payment_order_items item
@@ -3616,7 +3616,7 @@ const statusPayload = async (idempotencyKey: string, reconcile = true) => {
       ? `/forms/${encodeURIComponent(String(attempt.user_id))}/${encodeURIComponent(String(attempt.form_slug))}`
       : "/",
     workspace: {
-      accentColor: attempt.workspace_brand_color || "#236BFE",
+      accentColor: attempt.workspace_brand_color || "#F93D0A",
       logoUrl: attempt.workspace_logo_url || "",
       name: attempt.workspace_name || "Secure checkout",
     },

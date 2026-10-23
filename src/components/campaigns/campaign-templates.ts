@@ -71,7 +71,7 @@ export const campaignTemplates: CampaignTemplate[] = [
       "Three-story layout with a lead article, supporting links, and a sign-off.",
     subject: "{{workspace.name}} in review: what shipped this month",
     previewText: "Three things worth two minutes of your time.",
-    accent: "#2563EB",
+    accent: "#F93D0A",
     blocks: [
       { type: "label", patch: { content: "Monthly roundup" } },
       { type: "heading", patch: { content: "What we shipped this month" } },
@@ -248,7 +248,7 @@ export const campaignTemplates: CampaignTemplate[] = [
     description: "Short survey ask with the time cost stated honestly.",
     subject: "Two questions, about ninety seconds",
     previewText: "No login, no scoring, just two questions.",
-    accent: "#2563EB",
+    accent: "#F93D0A",
     blocks: [
       { type: "label", patch: { content: "Your turn" } },
       { type: "heading", patch: { content: "Two questions, ninety seconds" } },

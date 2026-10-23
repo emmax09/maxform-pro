@@ -1133,7 +1133,7 @@ const mapTicketType = (row: DatabaseRow): EventTicketType => ({
   salesStart: asString(row.sales_start),
   salesEnd: asString(row.sales_end),
   waitlistEnabled: asBoolean(row.waitlist_enabled),
-  color: asString(row.color) || "#2563EB",
+  color: asString(row.color) || "#F93D0A",
   active: asBoolean(row.active),
   sortOrder: asNumber(row.sort_order),
 });
@@ -1379,7 +1379,7 @@ const mapTicketDesignTemplate = (
     description: asString(row.description),
     theme: {
       background: theme.background || "#FFFFFF",
-      accent: theme.accent || "#65758B",
+      accent: theme.accent || "#F93D0A",
       text: theme.text || "#18181B",
       muted: theme.muted || "#71717A",
       edge:

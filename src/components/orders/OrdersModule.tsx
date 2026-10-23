@@ -1506,7 +1506,7 @@ function OrderDetailDialog({
                       })),
                     },
                     {
-                      accentColor: "#236BFE",
+                      accentColor: "#F93D0A",
                       logoUrl: identity.logoUrl || "",
                       name: identity.workspaceName || "Workspace",
                     },

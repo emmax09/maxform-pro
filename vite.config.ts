@@ -656,7 +656,7 @@ export default defineConfig(({ mode }) => {
           short_name: "MaxForm",
           description:
             "Forms, events, payments, CRM and automation in one workspace.",
-          theme_color: "#ff5a1f",
+          theme_color: "#F93D0A",
           background_color: "#ffffff",
           icons: [
             {

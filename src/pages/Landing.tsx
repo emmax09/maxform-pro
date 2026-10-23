@@ -186,13 +186,8 @@ const Landing = () => {
   return (
     <MarketingPage>
       {/* ============================ HERO ============================= */}
-      {/*
-        HERO: a full-bleed Onyx band in BOTH themes (marked .on-ink so the
-        semantic tokens resolve against a dark surface). Deliberately flat:
-        the brand system forbids gradient / glowing backgrounds, so depth
-        comes from the elevated product panel rather than a colour wash.
-      */}
-      <section className="on-ink relative flex items-center overflow-hidden bg-[hsl(var(--ls-ink))] pb-16 pt-[108px] sm:pb-24 sm:pt-[144px] lg:min-h-[880px] lg:pb-28 lg:pt-[150px]">
+      {/* Warm light hero keeps the jacket orange and portrait as the focus. */}
+      <section className="hero-light relative flex items-center overflow-hidden bg-background pb-16 pt-[108px] sm:pb-24 sm:pt-[144px] lg:min-h-[880px] lg:pb-28 lg:pt-[150px]">
         <Container className="relative">
           <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-10">
             {/* copy */}
@@ -200,7 +195,7 @@ const Landing = () => {
               <Reveal>
                 <Link
                   to="/auth"
-                  className="group inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/6 py-1 pl-1 pr-3 text-[11.5px] text-white/70 transition-colors hover:border-white/30 sm:text-[12.5px]"
+                  className="group inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-card py-1 pl-1 pr-3 text-[11.5px] text-muted-foreground shadow-xs transition-colors hover:border-primary/35 hover:bg-white sm:text-[12.5px]"
                 >
                   <span className="rounded-full bg-primary px-2 py-0.5 text-[11px] font-medium text-primary-foreground">
                     New
@@ -211,7 +206,7 @@ const Landing = () => {
               </Reveal>
 
               <Reveal delay={70}>
-                <h1 className="mt-5 text-[clamp(2rem,9vw,3rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-white sm:mt-6 sm:text-[clamp(2.15rem,4.1vw,3rem)]">
+                <h1 className="mt-5 text-[clamp(2rem,9vw,3rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-foreground sm:mt-6 sm:text-[clamp(2.15rem,4.1vw,3rem)]">
                   <span className="whitespace-nowrap">Build forms.</span>{" "}
                   <span className="whitespace-nowrap">Run events.</span>{" "}
                   <span className="whitespace-nowrap text-primary">Collect payments.</span>
@@ -219,7 +214,7 @@ const Landing = () => {
               </Reveal>
 
               <Reveal delay={130}>
-                <p className="mt-5 max-w-[460px] text-pretty text-[16px] leading-[1.6] text-white/70 sm:mt-6 sm:text-[17px]">
+                <p className="mt-5 max-w-[460px] text-pretty text-[16px] leading-[1.6] text-muted-foreground sm:mt-6 sm:text-[17px]">
                   Build forms, launch events, sell tickets, and collect payments from one
                   workspace. MaxForm automates every follow-up and keeps your responses,
                   customers, and revenue connected.
@@ -237,7 +232,7 @@ const Landing = () => {
                   </Link>
                   <Link
                     to="/#features"
-                    className="inline-flex h-11 items-center justify-center rounded-full bg-white px-7 text-[14px] font-semibold text-[hsl(var(--ls-ink))] transition-opacity hover:opacity-90 sm:h-12 sm:text-[15px]"
+                    className="inline-flex h-11 items-center justify-center rounded-full border border-border bg-card px-7 text-[14px] font-semibold text-foreground transition-colors hover:border-primary/35 hover:bg-muted sm:h-12 sm:text-[15px]"
                   >
                     Explore
                   </Link>
@@ -249,7 +244,7 @@ const Landing = () => {
                   {["Free trial included", "No submission limits", "Cancel anytime"].map((f) => (
                     <span
                       key={f}
-                      className="flex whitespace-nowrap items-center gap-1.5 text-[9px] text-white/55 min-[360px]:text-[10px] sm:gap-2 sm:text-[13.5px]"
+                      className="flex whitespace-nowrap items-center gap-1.5 text-[9px] text-muted-foreground min-[360px]:text-[10px] sm:gap-2 sm:text-[13.5px]"
                     >
                       <span className="h-0.5 w-0.5 shrink-0 rounded-full bg-primary sm:h-1 sm:w-1" />
                       {f}
@@ -277,7 +272,7 @@ const Landing = () => {
                 headline, metric tiles, and nav, rebuilt in markup so it stays
                 sharp at any size and follows the active theme.
               */}
-                <div className="on-surface ls-elevate overflow-hidden rounded-2xl border border-border bg-card">
+                <div className="ls-elevate overflow-hidden rounded-2xl border border-border bg-card">
                   {/* window chrome */}
                   <div className="flex h-9 items-center gap-2 border-b border-border bg-muted/50 px-3.5">
                     <div className="flex gap-1.5">
@@ -430,7 +425,7 @@ const Landing = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-3 left-5 z-20 hidden items-center gap-2 rounded-full border border-white/10 bg-[hsl(var(--brand-onyx))]/95 px-3 py-1.5 text-[10px] font-medium text-white shadow-[0_8px_24px_-10px_rgba(0,0,0,0.8)] backdrop-blur-md sm:inline-flex">
+                <div className="absolute -bottom-3 left-5 z-20 hidden items-center gap-2 rounded-full border border-primary/20 bg-white px-3 py-1.5 text-[10px] font-medium text-foreground shadow-md sm:inline-flex">
                   <span className="relative flex h-2 w-2">
                     {workflowDemoIndex === 1 && (
                       <span className="absolute inset-0 rounded-full bg-primary opacity-60 motion-safe:animate-ping" />

@@ -45,6 +45,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import type { OnboardingAnswers, OnboardingState } from "@/lib/onboarding";
+import { DEFAULT_BRAND_COLOR } from "@/lib/brand-color";
 import { cn } from "@/lib/utils";
 
 const steps: Array<{
@@ -150,7 +151,7 @@ const referralSources = [
  * a brand colour is mostly used for here.
  */
 const brandSwatches = [
-  "#236BFE",
+  DEFAULT_BRAND_COLOR,
   "#635BFF",
   "#0F766E",
   "#DB2777",
@@ -538,7 +539,7 @@ export function OnboardingFlow({
                     <input
                       aria-label="Custom brand colour"
                       type="color"
-                      value={answers.brandColor || "#236BFE"}
+                      value={answers.brandColor || DEFAULT_BRAND_COLOR}
                       onChange={(event) =>
                         patch({ brandColor: event.target.value.toUpperCase() })
                       }

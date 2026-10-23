@@ -49,14 +49,13 @@ const orderReviewRedirectSeconds = 90;
 const minVerifyDisplayMs = 33_000;
 
 const fallbackWorkspace = {
-  accentColor: "#ff5a1f",
+  accentColor: "#F93D0A",
   logoUrl: "",
   name: "Secure checkout",
 };
 
-// Used only while the workspace's real brand color is still unknown - never
-// a "wrong" brand color, just a neutral placeholder that never conflicts.
-const neutralAccent = "#ff5a1f";
+// Used only while the workspace's real brand color is still unknown.
+const fallbackAccent = "#F93D0A";
 
 type UrlWorkspace = {
   accentColor: string;
@@ -202,7 +201,7 @@ const hexToRgb = (hex: string): [number, number, number] => {
       : normalized;
   const parsed = Number.parseInt(value, 16);
   if (!/^[\da-f]{6}$/i.test(value) || Number.isNaN(parsed)) {
-    return [37, 99, 235];
+    return [249, 61, 10];
   }
   return [(parsed >> 16) & 255, (parsed >> 8) & 255, parsed & 255];
 };
@@ -216,7 +215,7 @@ const sanitizeFilename = (value: string) =>
 
 
 const fallbackTicketTheme = {
-  accent: "#2563EB",
+  accent: "#F93D0A",
   background: "#FFFFFF",
   edge: "solid" as const,
   motif: "none",
@@ -906,7 +905,7 @@ export default function PaymentVerification() {
   const knownWorkspace = result?.workspace || urlWorkspace || null;
   const brandKnown = Boolean(knownWorkspace);
   const workspace = knownWorkspace || fallbackWorkspace;
-  const accent = knownWorkspace?.accentColor || neutralAccent;
+  const accent = knownWorkspace?.accentColor || fallbackAccent;
   const themeVars = useMemo(
     () =>
       publicThemeVariables({

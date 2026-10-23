@@ -170,7 +170,7 @@ calculated  // Auto-calculated
     }
   ],
   "theme": {
-    "accentColor": "#2563EB",
+    "accentColor": "#F93D0A",
     "fontFamily": "Inter",
     "buttonStyle": "solid"
   },

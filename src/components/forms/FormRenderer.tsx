@@ -2533,7 +2533,7 @@ export function FormRenderer({
   const dark =
     theme.respondentMode === "dark" ||
     (theme.respondentMode === "auto" && respondentPrefersDark);
-  const accentColor = theme.accentColor || "#2563EB";
+  const accentColor = theme.accentColor || "#F93D0A";
   const themeBackground = theme.backgroundColor || "#FFFFFF";
   const themeContainerBackground =
     theme.containerBackgroundColor || themeBackground;

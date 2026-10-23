@@ -607,7 +607,7 @@ const googleAuthResult = (
       :root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; }
       body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #121214; color: #f8f8f7; }
       main { display: flex; align-items: center; gap: 12px; font-size: 14px; }
-      span { width: 18px; height: 18px; border: 2px solid #4b4b50; border-top-color: #ff5a1f; border-radius: 999px; animation: spin .8s linear infinite; }
+      span { width: 18px; height: 18px; border: 2px solid #4b4b50; border-top-color: #F93D0A; border-radius: 999px; animation: spin .8s linear infinite; }
       @keyframes spin { to { transform: rotate(360deg); } }
     </style>
   </head>

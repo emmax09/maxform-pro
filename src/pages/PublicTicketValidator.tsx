@@ -176,7 +176,7 @@ export default function PublicTicketValidator() {
   }
 
   const accepted = result?.result === "valid" || result?.result === "manual_override";
-  const brandColor = info.brandColor || "#236BFE";
+  const brandColor = info.brandColor || "#F93D0A";
   const brandForeground = readableColorOn(brandColor);
   const pageTheme = {
     ...publicThemeVariables({

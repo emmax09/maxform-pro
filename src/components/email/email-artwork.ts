@@ -8,7 +8,7 @@ export const templateAccents: Record<
   string,
   { accent: string; soft: string; deep: string; icon: string }
 > = {
-  forms: { accent: "#2563EB", soft: "#DBEAFE", deep: "#1E3A8A", icon: "✓" },
+  forms: { accent: "#F93D0A", soft: "#FFE0D6", deep: "#9A2505", icon: "✓" },
   events: { accent: "#7C3AED", soft: "#EDE9FE", deep: "#4C1D95", icon: "EV" },
   payments: { accent: "#0F766E", soft: "#CCFBF1", deep: "#134E4A", icon: "$" },
   documents: { accent: "#475569", soft: "#E2E8F0", deep: "#1E293B", icon: "✎" },

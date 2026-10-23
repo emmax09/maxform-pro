@@ -3161,8 +3161,8 @@ function ThemeEditor({
               id="theme-accent"
               label="Accent"
               value={theme.accentColor}
-              fallback="#2563EB"
-              placeholder="#2563EB"
+              fallback="#F93D0A"
+              placeholder="#F93D0A"
               onChange={(accentColor) =>
                 updateTheme({ accentColor, accentColorMode: "custom" })
               }

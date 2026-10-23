@@ -238,7 +238,7 @@ const publicValidatorWorkspace = async (
          'Event team'
        ) AS workspace_name,
        COALESCE(company.company_logo_url, '') AS workspace_logo_url,
-       COALESCE(NULLIF(company.brand_color, ''), '#236BFE') AS workspace_brand_color
+       COALESCE(NULLIF(company.brand_color, ''), '#F93D0A') AS workspace_brand_color
      FROM workspace_ticket_validator_links link
      JOIN users owner ON owner.id = link.user_id
      LEFT JOIN company_settings company ON company.user_id = link.user_id
@@ -253,7 +253,7 @@ const publicValidatorWorkspace = async (
   return {
     brandColor: /^#[0-9A-F]{6}$/i.test(String(row.workspace_brand_color || ""))
       ? String(row.workspace_brand_color).toUpperCase()
-      : "#236BFE",
+      : "#F93D0A",
     logoUrl: String(row.workspace_logo_url || ""),
     userId: String(row.user_id || ""),
     workspaceName: String(row.workspace_name || "Event team"),
@@ -695,7 +695,7 @@ const publicTicketDownload = async (
          'Event team'
        ) AS workspace_name,
        COALESCE(company.company_logo_url, '') AS workspace_logo_url,
-       COALESCE(NULLIF(company.brand_color, ''), '#236BFE') AS workspace_brand_color
+       COALESCE(NULLIF(company.brand_color, ''), '#F93D0A') AS workspace_brand_color
      FROM event_attendees attendee
      JOIN events event ON event.id = attendee.event_id
      JOIN users owner ON owner.id = event.created_by
@@ -773,7 +773,7 @@ const publicTicketDownload = async (
     workspace: {
       accentColor: /^#[0-9A-F]{6}$/i.test(workspaceBrandColor)
         ? workspaceBrandColor
-        : "#236BFE",
+        : "#F93D0A",
       logoUrl: String(first.workspace_logo_url || ""),
       name: String(first.workspace_name || "Event team"),
     },

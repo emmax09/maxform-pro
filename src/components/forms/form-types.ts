@@ -620,7 +620,7 @@ export const createId = (prefix = "item") => {
 };
 
 export const defaultTheme = (): FormTheme => ({
-  accentColor: "#2563EB",
+  accentColor: "#F93D0A",
   accentColorMode: "workspace",
   backgroundColor: "#FFFFFF",
   containerBackgroundColor: "",
@@ -704,7 +704,7 @@ export const defaultFormSettings = (): FormSettings => ({
     allowAnotherResponse: false,
     showResponseSummary: false,
     icon: "check",
-    accentColor: "#65758B",
+    accentColor: "#F93D0A",
     backgroundColor: "#FFFFFF",
     textAlign: "center",
   },

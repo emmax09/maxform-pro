@@ -2070,7 +2070,7 @@ function TemplateInspector({
             <ColorControl
               id="ticket-theme-accent"
               label="Accent"
-              fallback="#65758B"
+              fallback="#F93D0A"
               value={draft.theme.accent}
               onChange={(accent) => setTheme({ accent })}
             />

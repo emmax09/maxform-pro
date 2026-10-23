@@ -162,9 +162,11 @@ const composeWorkspaceAddress = (parts: {
 const boolean = (value: unknown, fallback: boolean) =>
   typeof value === "boolean" ? value : fallback;
 
+const DEFAULT_BRAND_COLOR = "#F93D0A";
 const brandColor = (value: unknown) => {
-  const result = String(value || "#236BFE").trim().toUpperCase();
-  return /^#[0-9A-F]{6}$/.test(result) ? result : "#236BFE";
+  const result = String(value || DEFAULT_BRAND_COLOR).trim().toUpperCase();
+  if (result === "#236BFE" || result === "#65758B") return DEFAULT_BRAND_COLOR;
+  return /^#[0-9A-F]{6}$/.test(result) ? result : DEFAULT_BRAND_COLOR;
 };
 
 const logoUrl = (value: unknown) => {
