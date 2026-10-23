@@ -22,7 +22,11 @@ export function BrandLogo({
       <span
         className="inline-flex shrink-0 items-center justify-center rounded-[9px] bg-primary text-primary-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.22)]"
         data-brand-mark
-        style={{ width: markSize * 1.55, height: markSize * 1.55 }}
+        style={{
+          width: markSize * 1.55,
+          height: markSize * 1.55,
+          backgroundColor: "var(--brand, #F93D0A)",
+        }}
       >
         <StackedLogo size={markSize * 0.94} color="currentColor" />
       </span>

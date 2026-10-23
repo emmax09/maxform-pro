@@ -157,13 +157,13 @@ function MarketingNav() {
           />
         </Link>
 
-        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1.5 lg:flex xl:gap-2.5">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-2.5 lg:flex xl:gap-4">
           {SECTION_LINKS.map((l) => (
             <a
               key={l.label}
               href={sectionHref(l.hash)}
               className={cn(
-                "whitespace-nowrap rounded-full px-3 py-2 text-[13px] transition-colors xl:px-3.5 xl:text-[14px]",
+                "whitespace-nowrap rounded-full px-3.5 py-2.5 text-[13px] transition-colors xl:px-4 xl:text-[14px]",
                 scrolled
                   ? "text-muted-foreground hover:bg-muted hover:text-foreground"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -180,7 +180,7 @@ function MarketingNav() {
                 to={l.to}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "whitespace-nowrap rounded-full px-3 py-2 text-[13px] transition-colors xl:px-3.5 xl:text-[14px]",
+                  "whitespace-nowrap rounded-full px-3.5 py-2.5 text-[13px] transition-colors xl:px-4 xl:text-[14px]",
                   scrolled
                     ? active
                       ? "bg-muted font-medium text-foreground"
@@ -262,13 +262,13 @@ function MarketingNav() {
             </div>
           </SheetHeader>
           <div className="flex min-h-0 flex-1 flex-col">
-            <nav className="modern-scroll min-h-0 flex-1 space-y-1.5 overflow-y-auto overscroll-contain px-5 py-5 sm:py-6">
+            <nav className="modern-scroll min-h-0 flex-1 space-y-2.5 overflow-y-auto overscroll-contain px-5 py-6 sm:py-7">
               {SECTION_LINKS.map((l) => (
                 <a
                   key={l.label}
                   href={sectionHref(l.hash)}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex min-h-12 items-center rounded-xl px-4 py-3 text-[15px] text-foreground transition-colors hover:bg-muted"
+                  className="flex min-h-14 items-center rounded-xl px-4 py-4 text-[16px] text-foreground transition-colors hover:bg-muted"
                 >
                   {l.label}
                 </a>
@@ -280,7 +280,7 @@ function MarketingNav() {
                   onClick={() => setMobileMenuOpen(false)}
                   aria-current={pathname === l.to ? "page" : undefined}
                   className={cn(
-                    "flex min-h-12 items-center rounded-xl px-4 py-3 text-[15px] transition-colors hover:bg-muted",
+                    "flex min-h-14 items-center rounded-xl px-4 py-4 text-[16px] transition-colors hover:bg-muted",
                     pathname === l.to ? "bg-muted font-medium text-foreground" : "text-foreground",
                   )}
                 >

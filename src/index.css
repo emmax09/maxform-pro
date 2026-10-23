@@ -274,7 +274,7 @@
     --brand-primary-hover: 13 89% 45%;
     --brand-primary-active: 13 91% 40%;
     --brand-primary-soft: 13 100% 68%;
-    --brand-primary-subtle: 14 100% 96%;
+    --brand-primary-subtle: 36 38% 95%;
     --brand-on-primary: 0 0% 100%;            /* #ffffff */
     --brand-onyx: 240 5.3% 7.5%;              /* #121214 */
 
@@ -284,7 +284,7 @@
     --surface: 0 0% 100%;                     /* #ffffff */
     --surface-elevated: 0 0% 100%;            /* #ffffff */
     --surface-muted: 60 4.3% 95.5%;           /* #f4f4f3 */
-    --surface-selected: 18 100% 96.1%;        /* #fff1eb */
+    --surface-selected: 36 45% 94.5%;
     --sidebar-background: 60 6.7% 94.1%;      /* #f1f1ef */
 
     /* - text - */
@@ -311,7 +311,7 @@
     --primary-hover: var(--brand-primary-hover);
     --primary-active: var(--brand-primary-active);
     --primary-subtle: var(--brand-primary-subtle);
-    --primary-subtle-hover: 14 100% 92%;
+    --primary-subtle-hover: 36 42% 91%;
     /*
      * Use a darker brand shade for small text on light surfaces; keep the
      * exact jacket orange for fills, icons, and larger display text.
@@ -522,21 +522,21 @@
     --brand-primary: 12.8 95.2% 50.8%;
     --brand-primary-hover: 13 89% 45%;
     --brand-primary-active: 13 91% 40%;
-    --brand-primary-subtle: 14 100% 96%;
+    --brand-primary-subtle: 36 38% 95%;
     --brand-on-primary: 0 0% 100%;
     --primary: var(--brand-primary);
     --primary-hover: var(--brand-primary-hover);
     --primary-active: var(--brand-primary-active);
     --primary-subtle: var(--brand-primary-subtle);
-    --primary-subtle-hover: 14 100% 92%;
+    --primary-subtle-hover: 36 42% 91%;
     --primary-text: var(--brand-primary-active);
     --primary-foreground: var(--brand-on-primary);
-    --background: 27 100% 98%;
-    --background-secondary: 27 80% 96%;
-    --surface: 30 100% 99.5%;
+    --background: 38 35% 98%;
+    --background-secondary: 38 30% 95.8%;
+    --surface: 40 45% 99.5%;
     --surface-elevated: 0 0% 100%;
     --surface-muted: 27 48% 95%;
-    --surface-selected: 18 100% 96.1%;
+    --surface-selected: 36 45% 94.5%;
     --foreground: 240 4.2% 9.4%;
     --text-primary: 240 4.2% 9.4%;
     --text-secondary: 240 3.7% 32.2%;
@@ -551,8 +551,8 @@
     --secondary-foreground: var(--text-primary);
     --accent: var(--surface-muted);
     --accent-foreground: var(--text-primary);
-    --border: 27 30% 88%;
-    --input: 27 30% 88%;
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
     --ring: var(--brand-primary);
     --focus-ring: var(--brand-primary);
     --shadow-color: 22 35% 24%;

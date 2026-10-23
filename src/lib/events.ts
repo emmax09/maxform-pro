@@ -677,7 +677,7 @@ const defaultFrontLayout = (): TicketCanvasElement[] =>
       "showIcon": true,
       "hideCaption": true,
       "textColor": "#FFFFFF",
-      "captionColor": "#F97316",
+      "captionColor": "#F93D0A",
       "fontWeight": 500
     }
   },
@@ -693,7 +693,7 @@ const defaultFrontLayout = (): TicketCanvasElement[] =>
       "showIcon": true,
       "hideCaption": true,
       "textColor": "#FFFFFF",
-      "captionColor": "#F97316",
+      "captionColor": "#F93D0A",
       "fontWeight": 500
     }
   },
@@ -706,7 +706,7 @@ const defaultFrontLayout = (): TicketCanvasElement[] =>
     "width": 14,
     "size": "small",
     "style": {
-      "textColor": "#F97316",
+      "textColor": "#F93D0A",
       "letterSpacing": 16,
       "textTransform": "uppercase",
       "fontWeight": 700,
@@ -778,7 +778,7 @@ const defaultFrontLayout = (): TicketCanvasElement[] =>
     "y": 34,
     "width": 12,
     "style": {
-      "textColor": "#F97316",
+      "textColor": "#F93D0A",
       "borderWidth": 3
     }
   },
@@ -791,7 +791,7 @@ const defaultFrontLayout = (): TicketCanvasElement[] =>
     "width": 20,
     "size": "small",
     "style": {
-      "textColor": "#F97316",
+      "textColor": "#F93D0A",
       "hideCaption": true,
       "letterSpacing": 12,
       "textTransform": "uppercase",
@@ -861,7 +861,7 @@ const defaultBackLayout = (): TicketCanvasElement[] =>
     "y": 36,
     "width": 8,
     "style": {
-      "textColor": "#F97316",
+      "textColor": "#F93D0A",
       "borderWidth": 3
     }
   },
@@ -877,7 +877,7 @@ const defaultBackLayout = (): TicketCanvasElement[] =>
       "showIcon": true,
       "hideCaption": true,
       "textColor": "#18181B",
-      "captionColor": "#F97316",
+      "captionColor": "#F93D0A",
       "fontWeight": 500
     }
   },
@@ -893,7 +893,7 @@ const defaultBackLayout = (): TicketCanvasElement[] =>
       "showIcon": true,
       "hideCaption": true,
       "textColor": "#18181B",
-      "captionColor": "#F97316",
+      "captionColor": "#F93D0A",
       "fontWeight": 500
     }
   },
@@ -909,7 +909,7 @@ const defaultBackLayout = (): TicketCanvasElement[] =>
       "showIcon": true,
       "hideCaption": true,
       "textColor": "#18181B",
-      "captionColor": "#F97316",
+      "captionColor": "#F93D0A",
       "fontWeight": 500
     }
   },

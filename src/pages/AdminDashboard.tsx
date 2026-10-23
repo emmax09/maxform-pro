@@ -106,8 +106,8 @@ export default function AdminDashboard() {
               <Card className="hover:border-primary transition-colors cursor-pointer">
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-2">
-                    <div className="h-10 w-10 rounded-full bg-orange-500/10 flex items-center justify-center">
-                      <Settings className="h-5 w-5 text-orange-500" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                      <Settings className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <CardTitle className="text-[14px]">System Settings</CardTitle>

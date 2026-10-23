@@ -154,7 +154,10 @@ export default function PublicTicketValidator() {
     return (
       <main className="flex min-h-dvh items-center justify-center bg-zinc-100 px-5 text-zinc-950">
         <div className="text-center" role="status">
-          <Loader2 className="mx-auto h-7 w-7 animate-spin text-orange-600" />
+          <Loader2
+            className="mx-auto h-7 w-7 animate-spin"
+            style={{ color: "var(--brand, #F93D0A)" }}
+          />
           <p className="mt-3 text-sm text-zinc-600">Opening secure validator</p>
         </div>
       </main>
