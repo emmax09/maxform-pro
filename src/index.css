@@ -513,12 +513,11 @@
   }
 
   /*
-   * Keep the landing hero and its navigation light even when the app is in
-   * dark mode. The warm paper surface lets the jacket orange and portrait
-   * carry the colour while keeping all normal semantic utilities readable.
+   * Give the landing hero, navigation, and mobile menu a coordinated surface
+   * in both themes. Light mode uses warm paper; dark mode uses the brand onyx.
    */
-  .public-theme .hero-light,
-  .public-theme.hero-light {
+  .public-theme .marketing-surface,
+  .public-theme.marketing-surface {
     color-scheme: light;
     --brand-primary: 12.8 95.2% 50.8%;
     --brand-primary-hover: 13 89% 45%;
@@ -591,7 +590,86 @@
     --color-popover-foreground: hsl(var(--popover-foreground));
   }
 
-  .public-theme .hero-light .ls-elevate {
+  .dark .public-theme .marketing-surface,
+  .dark .public-theme.marketing-surface {
+    color-scheme: dark;
+    --brand-primary: 12.8 95.2% 50.8%;
+    --brand-primary-hover: 13 100% 58%;
+    --brand-primary-active: 13 89% 45%;
+    --brand-primary-subtle: 14 46% 12%;
+    --brand-on-primary: 0 0% 100%;
+    --primary: var(--brand-primary);
+    --primary-hover: var(--brand-primary-hover);
+    --primary-active: var(--brand-primary-active);
+    --primary-subtle: var(--brand-primary-subtle);
+    --primary-subtle-hover: 14 53% 15%;
+    --primary-text: var(--brand-primary);
+    --primary-foreground: var(--brand-on-primary);
+    --background: 240 6.7% 5.9%;
+    --background-secondary: 240 5.3% 7.5%;
+    --surface: 240 5.7% 10.3%;
+    --surface-elevated: 240 5.7% 13.7%;
+    --surface-muted: 240 5.9% 16.7%;
+    --surface-selected: 15.6 45.8% 11.6%;
+    --foreground: 60 9.1% 97.8%;
+    --text-primary: 60 9.1% 97.8%;
+    --text-secondary: 240 5.6% 82.5%;
+    --text-muted: 240 4.2% 72.2%;
+    --card: var(--surface);
+    --card-foreground: var(--text-primary);
+    --popover: var(--surface-elevated);
+    --popover-foreground: var(--text-primary);
+    --muted: var(--surface-muted);
+    --muted-foreground: var(--text-muted);
+    --secondary: var(--background-secondary);
+    --secondary-foreground: var(--text-primary);
+    --accent: var(--surface-muted);
+    --accent-foreground: var(--text-primary);
+    --border: 240 5.2% 22.5%;
+    --input: 240 5.1% 26.9%;
+    --ring: var(--brand-primary);
+    --focus-ring: var(--brand-primary);
+    --shadow-color: 0 0% 0%;
+    --shadow-opacity: 0.35;
+    --success: 152.6 58.9% 49.6%;
+    --warning: 39.6 89.2% 60%;
+    --error: 0 100% 69.2%;
+    --destructive: var(--error);
+
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-success: hsl(var(--success));
+    --color-success-foreground: hsl(var(--success-foreground));
+    --color-warning: hsl(var(--warning));
+    --color-warning-foreground: hsl(var(--warning-foreground));
+    --color-info: hsl(var(--info));
+    --color-info-foreground: hsl(var(--info-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+  }
+
+  .dark .public-theme .marketing-surface .ls-elevate {
+    box-shadow:
+      0 0 0 1px hsl(var(--border) / 0.7),
+      0 32px 72px -28px hsl(0 0% 0% / 0.9);
+  }
+
+  .public-theme .marketing-surface .ls-elevate {
     box-shadow:
       0 1px 2px hsl(var(--shadow-color) / 0.04),
       0 4px 10px -2px hsl(var(--shadow-color) / 0.05),

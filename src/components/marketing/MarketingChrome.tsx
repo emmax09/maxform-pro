@@ -141,13 +141,13 @@ function MarketingNav() {
   }, []);
 
   return (
-    <nav className="hero-light fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:pt-4">
+    <nav className="marketing-surface fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:pt-4">
       <div
         className={cn(
           "mx-auto flex h-16 w-full max-w-[1160px] items-center justify-between rounded-full border pl-4 pr-2.5 transition-all duration-300 sm:pl-5 sm:pr-3",
           scrolled
-            ? "border-[hsl(var(--border))] bg-white/95 shadow-[0_8px_30px_-12px_hsl(var(--shadow-color)/0.16)] backdrop-blur-xl"
-            : "border-[hsl(var(--border))] bg-white/88 shadow-[0_4px_18px_-12px_hsl(var(--shadow-color)/0.12)] backdrop-blur-xl",
+            ? "border-border bg-background/95 shadow-[0_8px_30px_-12px_hsl(var(--shadow-color)/0.16)] backdrop-blur-xl"
+            : "border-border bg-background/88 shadow-[0_4px_18px_-12px_hsl(var(--shadow-color)/0.12)] backdrop-blur-xl",
         )}
       >
         <Link to="/" className="shrink-0">
@@ -246,7 +246,7 @@ function MarketingNav() {
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent
           side="right"
-          className="public-theme hero-light flex h-dvh max-h-dvh w-[min(340px,calc(100vw-16px))] flex-col overflow-hidden bg-background p-0 sm:w-[340px]"
+          className="public-theme marketing-surface flex h-dvh max-h-dvh w-[min(340px,calc(100vw-16px))] flex-col overflow-hidden bg-background p-0 sm:w-[340px]"
         >
           <SheetHeader className="shrink-0 border-b border-border px-5 pb-4 pt-[calc(1.25rem+env(safe-area-inset-top))] sm:px-6 sm:pt-6">
             <div className="flex items-center justify-between">

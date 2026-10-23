@@ -186,8 +186,8 @@ const Landing = () => {
   return (
     <MarketingPage>
       {/* ============================ HERO ============================= */}
-      {/* Warm light hero keeps the jacket orange and portrait as the focus. */}
-      <section className="hero-light relative flex items-center overflow-hidden bg-background pb-16 pt-[108px] sm:pb-24 sm:pt-[144px] lg:min-h-[880px] lg:pb-28 lg:pt-[150px]">
+      {/* The hero follows the selected theme while keeping the orange brand mark. */}
+      <section className="marketing-surface relative flex items-center overflow-hidden bg-background pb-16 pt-[108px] sm:pb-24 sm:pt-[144px] lg:min-h-[880px] lg:pb-28 lg:pt-[150px]">
         <Container className="relative">
           <div className="grid items-center gap-10 sm:gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-10">
             {/* copy */}
@@ -425,7 +425,7 @@ const Landing = () => {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-3 left-5 z-20 hidden items-center gap-2 rounded-full border border-primary/20 bg-white px-3 py-1.5 text-[10px] font-medium text-foreground shadow-md sm:inline-flex">
+                <div className="absolute -bottom-3 left-5 z-20 hidden items-center gap-2 rounded-full border border-primary/20 bg-card px-3 py-1.5 text-[10px] font-medium text-foreground shadow-md sm:inline-flex">
                   <span className="relative flex h-2 w-2">
                     {workflowDemoIndex === 1 && (
                       <span className="absolute inset-0 rounded-full bg-primary opacity-60 motion-safe:animate-ping" />
